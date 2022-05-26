@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class FrmMain
   Inherits System.Windows.Forms.Form
 
   'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,10 +22,29 @@ Partial Class Form1
   'No lo modifique con el editor de código.
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
-    components = New System.ComponentModel.Container()
+    Me.BtnLogin = New System.Windows.Forms.Button()
+    Me.SuspendLayout()
+    '
+    'BtnLogin
+    '
+    Me.BtnLogin.Location = New System.Drawing.Point(720, 8)
+    Me.BtnLogin.Name = "BtnLogin"
+    Me.BtnLogin.Size = New System.Drawing.Size(75, 23)
+    Me.BtnLogin.TabIndex = 0
+    Me.BtnLogin.Text = "(login icon)"
+    Me.BtnLogin.UseVisualStyleBackColor = True
+    '
+    'FrmMain
+    '
+    Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.ClientSize = New System.Drawing.Size(800, 450)
-    Me.Text = "Form1"
+    Me.Controls.Add(Me.BtnLogin)
+    Me.Name = "FrmMain"
+    Me.Text = "FrmMain"
+    Me.ResumeLayout(False)
+
   End Sub
 
+  Friend WithEvents BtnLogin As Button
 End Class

@@ -1,0 +1,14 @@
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.vbproj.AssemblyReference.cache
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.vbproj.SuggestedBindingRedirects.cache
+D:\dev\fondos-publicos\obj\Debug\fondos_publicos.FrmLogin.resources
+D:\dev\fondos-publicos\obj\Debug\fondos_publicos.FrmMain.resources
+D:\dev\fondos-publicos\obj\Debug\fondos_publicos.Resources.resources
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.vbproj.GenerateResource.cache
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.vbproj.CoreCompileInputs.cache
+D:\dev\fondos-publicos\bin\Debug\fondos-publicos.exe.config
+D:\dev\fondos-publicos\bin\Debug\fondos-publicos.exe
+D:\dev\fondos-publicos\bin\Debug\fondos-publicos.pdb
+D:\dev\fondos-publicos\bin\Debug\fondos-publicos.xml
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.exe
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.xml
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.pdb
