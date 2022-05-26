@@ -13,5 +13,14 @@
     Else MessageBox.Show("No válido")
     End If
   End Sub
+  ' Esto es solo de prueba
+  Private Async Sub BtnEmail_Click(sender As Object, e As EventArgs) Handles BtnEmail.Click
+    If InpEmail.Text.Length > 0 Then
+      Dim respuesta As Boolean = Await EnviarEmail(InpEmail.Text)
+      If respuesta = True Then
+        MessageBox.Show("Email enviado con éxito.")
+      End If
+    End If
+  End Sub
   ' Funciones
 End Class

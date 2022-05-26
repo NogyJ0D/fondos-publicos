@@ -28,6 +28,8 @@ Partial Class FrmLogin
     Me.InpLCaptcha = New System.Windows.Forms.TextBox()
     Me.LblLCaptcha = New System.Windows.Forms.Label()
     Me.BtnLCaptcha = New System.Windows.Forms.Button()
+    Me.BtnEmail = New System.Windows.Forms.Button()
+    Me.InpEmail = New System.Windows.Forms.TextBox()
     Me.SuspendLayout()
     '
     'InpLContraseña
@@ -79,11 +81,29 @@ Partial Class FrmLogin
     Me.BtnLCaptcha.Text = "Button1"
     Me.BtnLCaptcha.UseVisualStyleBackColor = True
     '
+    'BtnEmail
+    '
+    Me.BtnEmail.Location = New System.Drawing.Point(192, 248)
+    Me.BtnEmail.Name = "BtnEmail"
+    Me.BtnEmail.Size = New System.Drawing.Size(64, 24)
+    Me.BtnEmail.TabIndex = 9
+    Me.BtnEmail.Text = "Button1"
+    Me.BtnEmail.UseVisualStyleBackColor = True
+    '
+    'InpEmail
+    '
+    Me.InpEmail.Location = New System.Drawing.Point(8, 248)
+    Me.InpEmail.Name = "InpEmail"
+    Me.InpEmail.Size = New System.Drawing.Size(180, 20)
+    Me.InpEmail.TabIndex = 10
+    '
     'FrmLogin
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.ClientSize = New System.Drawing.Size(269, 281)
+    Me.Controls.Add(Me.InpEmail)
+    Me.Controls.Add(Me.BtnEmail)
     Me.Controls.Add(Me.BtnLCaptcha)
     Me.Controls.Add(Me.LblLCaptcha)
     Me.Controls.Add(Me.InpLCaptcha)
@@ -103,4 +123,6 @@ Partial Class FrmLogin
   Friend WithEvents InpLCaptcha As TextBox
   Friend WithEvents LblLCaptcha As Label
   Friend WithEvents BtnLCaptcha As Button
+  Friend WithEvents BtnEmail As Button
+  Friend WithEvents InpEmail As TextBox
 End Class

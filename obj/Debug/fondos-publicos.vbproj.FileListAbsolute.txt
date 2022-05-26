@@ -12,3 +12,10 @@ D:\dev\fondos-publicos\bin\Debug\fondos-publicos.xml
 D:\dev\fondos-publicos\obj\Debug\fondos-publicos.exe
 D:\dev\fondos-publicos\obj\Debug\fondos-publicos.xml
 D:\dev\fondos-publicos\obj\Debug\fondos-publicos.pdb
+D:\dev\fondos-publicos\bin\Debug\Newtonsoft.Json.dll
+D:\dev\fondos-publicos\bin\Debug\SendGrid.dll
+D:\dev\fondos-publicos\bin\Debug\StarkbankEcdsa.dll
+D:\dev\fondos-publicos\bin\Debug\Newtonsoft.Json.xml
+D:\dev\fondos-publicos\bin\Debug\SendGrid.pdb
+D:\dev\fondos-publicos\bin\Debug\SendGrid.xml
+D:\dev\fondos-publicos\obj\Debug\fondos-publicos.vbproj.CopyComplete
