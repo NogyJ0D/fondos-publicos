@@ -19,3 +19,24 @@ D:\dev\fondos-publicos\bin\Debug\Newtonsoft.Json.xml
 D:\dev\fondos-publicos\bin\Debug\SendGrid.pdb
 D:\dev\fondos-publicos\bin\Debug\SendGrid.xml
 D:\dev\fondos-publicos\obj\Debug\fondos-publicos.vbproj.CopyComplete
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\fondos-publicos.exe.config
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\fondos-publicos.exe
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\fondos-publicos.pdb
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\fondos-publicos.xml
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\Newtonsoft.Json.dll
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\SendGrid.dll
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\StarkbankEcdsa.dll
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\Newtonsoft.Json.xml
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\SendGrid.pdb
+C:\Valentin Giarra\VS Code\fondos-publicos\bin\Debug\SendGrid.xml
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.vbproj.AssemblyReference.cache
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.vbproj.SuggestedBindingRedirects.cache
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos_publicos.FrmLogin.resources
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos_publicos.FrmMain.resources
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos_publicos.Resources.resources
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.vbproj.GenerateResource.cache
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.vbproj.CoreCompileInputs.cache
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.vbproj.CopyComplete
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.exe
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.xml
+C:\Valentin Giarra\VS Code\fondos-publicos\obj\Debug\fondos-publicos.pdb
