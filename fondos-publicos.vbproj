@@ -129,6 +129,9 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormularioDePruebaParaValentin.resx">
+      <DependentUpon>FormularioDePruebaParaValentin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
