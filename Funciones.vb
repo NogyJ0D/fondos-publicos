@@ -33,5 +33,6 @@ Module Funciones
                 Return False
             End Try
         End If
+        Return False
     End Function
 End Module
