@@ -73,9 +73,9 @@ Partial Class Main
         '
         'BtnLogin
         '
-        Me.BtnLogin.Location = New System.Drawing.Point(756, 13)
+        Me.BtnLogin.Location = New System.Drawing.Point(752, 13)
         Me.BtnLogin.Name = "BtnLogin"
-        Me.BtnLogin.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLogin.Size = New System.Drawing.Size(79, 23)
         Me.BtnLogin.TabIndex = 4
         Me.BtnLogin.Text = "(login icon)"
         Me.BtnLogin.UseVisualStyleBackColor = True
