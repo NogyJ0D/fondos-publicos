@@ -34,6 +34,7 @@ Partial Class Main
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -160,10 +161,22 @@ Partial Class Main
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Descripción"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.0!)
+        Me.Label6.Location = New System.Drawing.Point(40, 191)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(757, 63)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Valen no entiendo nada ayuda"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button1)
@@ -194,4 +207,5 @@ Partial Class Main
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class
