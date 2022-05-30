@@ -98,10 +98,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Funciones.vb" />
-    <Compile Include="Main.Designer.vb">
-      <DependentUpon>Main.vb</DependentUpon>
+    <Compile Include="CtrMain.Designer.vb">
+      <DependentUpon>CtrMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main.vb">
+    <Compile Include="CtrMain.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -128,11 +128,11 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.vb</DependentUpon>
+    <EmbeddedResource Include="CtrMain.resx">
+      <DependentUpon>CtrMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
