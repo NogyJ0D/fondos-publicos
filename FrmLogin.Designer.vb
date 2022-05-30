@@ -66,11 +66,11 @@ Partial Class FrmLogin
         '
         Me.LblLCaptcha.AutoSize = True
         Me.LblLCaptcha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.LblLCaptcha.Location = New System.Drawing.Point(23, 127)
+        Me.LblLCaptcha.Location = New System.Drawing.Point(88, 128)
         Me.LblLCaptcha.Name = "LblLCaptcha"
-        Me.LblLCaptcha.Size = New System.Drawing.Size(155, 24)
+        Me.LblLCaptcha.Size = New System.Drawing.Size(76, 24)
         Me.LblLCaptcha.TabIndex = 7
-        Me.LblLCaptcha.Text = "Valen sos un gay"
+        Me.LblLCaptcha.Text = "captcha"
         '
         'BtnLCaptcha
         '
