@@ -196,8 +196,10 @@
     <Content Include="packages\starkbank-ecdsa.1.3.3\lib\netstandard2.0\StarkbankEcdsa.dll" />
     <Content Include="packages\starkbank-ecdsa.1.3.3\lib\netstandard2.1\StarkbankEcdsa.dll" />
     <Content Include="Recursos\ACCEDER.png" />
+    <Content Include="Recursos\Back.png" />
     <Content Include="Recursos\Boton_Login.png" />
     <Content Include="Recursos\Boton_Main.png" />
+    <Content Include="Recursos\Login.png" />
     <Content Include="Recursos\recargar.png" />
     <Content Include="Recursos\recargar_chico.png" />
     <Content Include="Recursos\recargar_hover.png" />
