@@ -2,6 +2,8 @@
   ' Load
   Private Sub CtrLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     PcbCaptcha.Image = MostrarCaptcha()
+
+    AddHandler Me.MouseMove, AddressOf MoverVentana ' Mover formulario
   End Sub
   ' Boton captcha
   Private Sub BtnCaptcha_Click(sender As Object, e As EventArgs) Handles BtnCaptcha.Click

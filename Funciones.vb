@@ -7,11 +7,22 @@ Module Funciones
   Public Sub CambiarVista(origen As String)
     Select Case origen
       Case "Main"
+        OpenedMain.BtnViewMain.Hide()
+        If UserLogged Then OpenedMain.BtnViewLogin.Hide()
+        If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
         OpenedMain.PnlView.Controls.Clear()
         OpenedMain.PnlView.Controls.Add(ViewMain)
       Case "Login"
+        OpenedMain.BtnViewLogin.Hide()
+        OpenedMain.BtnViewMain.Show()
         OpenedMain.PnlView.Controls.Clear()
         OpenedMain.PnlView.Controls.Add(ViewLogin)
+      Case "NuevosProy"
+        OpenedMain.BtnViewMain.Show()
+        If UserLogged Then OpenedMain.BtnViewLogin.Hide()
+        If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
+        OpenedMain.PnlView.Controls.Clear()
+        OpenedMain.PnlView.Controls.Add(ViewNuevosProy)
     End Select
   End Sub
   Public Function GenerarCaptcha(ByRef len As Integer, ByRef upper As Boolean) As String
@@ -73,5 +84,13 @@ Module Funciones
       Application.DoEvents()
     Loop
     stopW.Stop()
+  End Sub
+  ' Mover Ventana
+  Dim Pos As Point
+  Public Sub MoverVentana(sender As Object, e As System.Windows.Forms.MouseEventArgs)
+    If e.Button = Windows.Forms.MouseButtons.Left Then
+      OpenedMain.Location += Control.MousePosition - Pos
+    End If
+    Pos = Control.MousePosition
   End Sub
 End Module
