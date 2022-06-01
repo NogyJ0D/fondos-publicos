@@ -97,16 +97,6 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend Shared ReadOnly Property RecaptchaLogo() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("RecaptchaLogo", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
         Friend Shared ReadOnly Property recargar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("recargar", resourceCulture)
@@ -117,9 +107,19 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend Shared ReadOnly Property RECARGAR_MAS_CHIQUITO() As System.Drawing.Bitmap
+        Friend Shared ReadOnly Property recargar_chico() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("RECARGAR_MAS_CHIQUITO", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("recargar_chico", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend Shared ReadOnly Property recargar_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("recargar_hover", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

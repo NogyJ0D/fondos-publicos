@@ -1,46 +1,96 @@
 ﻿Public Class CtrLogin
   ' Load
   Private Sub CtrLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    LblLCaptcha.Text = GenerarCaptcha(6, False)
+    PcbCaptcha.Image = MostrarCaptcha()
   End Sub
-    ' Generar captcha
-    Private Sub BtnLCaptcha_Click(sender As Object, e As EventArgs) Handles BtnLCaptcha.Click
-        LblLCaptcha.Text = GenerarCaptcha(6, False)
-    End Sub
-    ' Iniciar
-    Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
-        If InpLCaptcha.Text = LblLCaptcha.Text Then
-            MessageBox.Show("Válido.")
-        Else MessageBox.Show("No válido")
-        End If
-    End Sub
-    ' Texto placeholder en los input
-    Private Sub InpLUsuario_Enter(sender As Object, e As EventArgs) Handles InpLUsuario.Enter
-        If InpLUsuario.Text = "Usuario" Then
-            InpLUsuario.Text = ""
-        End If
-    End Sub
-    Private Sub InpLUsuario_Leave(sender As Object, e As EventArgs) Handles InpLUsuario.Leave
-        If InpLUsuario.Text = "" Then
-            InpLUsuario.Text = "Usuario"
-        End If
-    End Sub
-    Private Sub InpLContraseña_Enter(sender As Object, e As EventArgs) Handles InpLContraseña.Enter
-        If InpLContraseña.Text = "Contraseña" Then
-            InpLContraseña.Text = ""
-        End If
-    End Sub
-    Private Sub InpLContraseña_Leave(sender As Object, e As EventArgs) Handles InpLContraseña.Leave
-        If InpLContraseña.Text = "" Then
-            InpLContraseña.Text = "Contraseña"
-        End If
-    End Sub
+  ' Boton captcha
+  Private Sub BtnCaptcha_Click(sender As Object, e As EventArgs) Handles BtnCaptcha.Click
+    PcbCaptcha.Image = MostrarCaptcha()
+    BtnCaptcha.Image = My.Resources.Resources.recargar_chico
+    Esperar(200)
+    BtnCaptcha.Image = My.Resources.Resources.recargar
+  End Sub
+  Private Sub BtnCaptcha_MouseEnter(sender As Object, e As EventArgs) Handles BtnCaptcha.MouseEnter
+    BtnCaptcha.Image = My.Resources.Resources.recargar_hover
+  End Sub
+  Private Sub BtnCaptcha_MouseLeave(sender As Object, e As EventArgs) Handles BtnCaptcha.MouseLeave
+    BtnCaptcha.Image = My.Resources.Resources.recargar
+  End Sub
+  ' Iniciar
+  Private Function BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
+    Dim Err As Boolean = False
 
-    Private Sub BtnLCaptcha_Click_1(sender As Object, e As EventArgs)
+    ' User mockup
+    Dim User As String = "123"
+    Dim Pass As String = "123"
 
-    End Sub
+    ' Falta
+    If InpUsuario.Text = "" Or InpUsuario.Text = "Usuario" Then
+      PnlUsuario.BackColor = Color.Red
+      Err = True
+      LblEUsuario.Text = "Ingrese un usuario"
+      LblEUsuario.Show()
+    Else
+      PnlUsuario.BackColor = Color.White
+      LblEUsuario.Hide()
+    End If
+    If InpContraseña.Text = "" Or InpContraseña.Text = "Contraseña" Then
+      PnlContraseña.BackColor = Color.Red
+      Err = True
+      LblEContraseña.Text = "Ingrese una contraseña"
+      LblEContraseña.Show()
+    Else
+      PnlContraseña.BackColor = Color.White
+      LblEContraseña.Hide()
+    End If
+    If InpCaptcha.Text <> Captcha Then
+      PnlCaptcha.BackColor = Color.Red
+      Err = True
+      LblECaptcha.Text = "El captcha no coincide"
+      LblECaptcha.Show()
+    Else
+      PnlCaptcha.BackColor = Color.White
+      LblECaptcha.Hide()
+    End If
 
+    ' No iguala
+    If InpUsuario.Text <> User Or InpContraseña.Text <> Pass Then
+      PnlUsuario.BackColor = Color.Red
+      PnlContraseña.BackColor = Color.Red
+      Err = True
+      LblECredenciales.Show()
+    Else LblECredenciales.Hide()
+    End If
 
+    ' Fin
+    If Err Then Return MessageBox.Show("Mal")
+    UserLogged = 1
+    UserNUsuario = "123"
 
-
+    CambiarVista("Main")
+    Return MessageBox.Show("Bien")
+  End Function
+  ' Texto placeholder en los input
+  Private Sub InpLUsuario_Enter(sender As Object, e As EventArgs) Handles InpUsuario.Enter
+    If InpUsuario.Text = "Usuario" Then
+      InpUsuario.Text = ""
+    End If
+  End Sub
+  Private Sub InpLUsuario_Leave(sender As Object, e As EventArgs) Handles InpUsuario.Leave
+    If InpUsuario.Text = "" Then
+      InpUsuario.Text = "Usuario"
+    End If
+  End Sub
+  Private Sub InpLContraseña_Enter(sender As Object, e As EventArgs) Handles InpContraseña.Enter
+    If InpContraseña.Text = "Contraseña" Then
+      InpContraseña.Text = ""
+      InpContraseña.PasswordChar = "*"
+    End If
+  End Sub
+  Private Sub InpLContraseña_Leave(sender As Object, e As EventArgs) Handles InpContraseña.Leave
+    If InpContraseña.Text = "" Then
+      InpContraseña.Text = "Contraseña"
+      InpContraseña.PasswordChar = ""
+    End If
+  End Sub
 End Class
