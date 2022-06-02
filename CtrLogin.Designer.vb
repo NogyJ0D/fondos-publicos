@@ -191,10 +191,10 @@ Partial Class CtrLogin
         '
         Me.BtnCaptcha.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnCaptcha.Image = Global.fondos_publicos.My.Resources.Resources.recargar
-        Me.BtnCaptcha.Location = New System.Drawing.Point(536, 240)
+        Me.BtnCaptcha.Location = New System.Drawing.Point(544, 248)
         Me.BtnCaptcha.Name = "BtnCaptcha"
-        Me.BtnCaptcha.Size = New System.Drawing.Size(72, 72)
-        Me.BtnCaptcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.BtnCaptcha.Size = New System.Drawing.Size(56, 56)
+        Me.BtnCaptcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.BtnCaptcha.TabIndex = 22
         Me.BtnCaptcha.TabStop = False
         '
