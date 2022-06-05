@@ -4,6 +4,7 @@
   ' Vistas del panel
   Public ViewMain As New CtrMain
   Public ViewLogin As New CtrLogin
+  Public ViewRegistro As New CtrRegistro
   Public ViewNuevosProy As New CtrNuevosProy
   Public Viewing As UserControl = ViewMain
   ' Captcha

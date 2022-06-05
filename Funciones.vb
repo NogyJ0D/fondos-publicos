@@ -5,25 +5,28 @@ Imports SendGrid.Helpers.Mail
 
 Module Funciones
   Public Sub CambiarVista(origen As String)
+    Dim Vista As UserControl
     Select Case origen
       Case "Main"
         OpenedMain.BtnViewMain.Hide()
         If UserLogged Then OpenedMain.BtnViewLogin.Hide()
         If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
-        OpenedMain.PnlView.Controls.Clear()
-        OpenedMain.PnlView.Controls.Add(ViewMain)
+        Vista = ViewMain
       Case "Login"
         OpenedMain.BtnViewLogin.Hide()
         OpenedMain.BtnViewMain.Show()
-        OpenedMain.PnlView.Controls.Clear()
-        OpenedMain.PnlView.Controls.Add(ViewLogin)
+        Vista = ViewLogin
+      Case "Registro"
+        Vista = ViewRegistro
       Case "NuevosProy"
         OpenedMain.BtnViewMain.Show()
         If UserLogged Then OpenedMain.BtnViewLogin.Hide()
         If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
-        OpenedMain.PnlView.Controls.Clear()
-        OpenedMain.PnlView.Controls.Add(ViewNuevosProy)
+        Vista = ViewNuevosProy
     End Select
+    Viewing = Vista
+    OpenedMain.PnlView.Controls.Clear()
+    OpenedMain.PnlView.Controls.Add(Vista)
   End Sub
   Public Function GenerarCaptcha(ByRef len As Integer, ByRef upper As Boolean) As String
     Dim rand As New Random()
@@ -92,5 +95,24 @@ Module Funciones
       OpenedMain.Location += Control.MousePosition - Pos
     End If
     Pos = Control.MousePosition
+  End Sub
+  Public Sub CambiarTema(tema As String)
+    Dim ColorNav, ColorView As Color
+    Select Case tema
+      Case "Claro"
+        ColorNav = Color.FromArgb(10, 74, 41)
+        ColorView = Color.FromArgb(16, 115, 64)
+      Case "Oscuro"
+        ColorNav = Color.FromArgb(0, 0, 0)
+        ColorView = Color.FromArgb(0, 0, 0)
+      Case "Rosario"
+        ColorNav = Color.FromArgb(27, 75, 136)
+        ColorView = Color.FromArgb(0, 102, 204)
+      Case "Francia"
+        ColorNav = Color.FromArgb(230, 57, 70)
+        ColorView = Color.FromArgb(241, 250, 238)
+    End Select
+    OpenedMain.PnlNav.BackColor = ColorNav
+    OpenedMain.PnlView.BackColor = ColorView
   End Sub
 End Module

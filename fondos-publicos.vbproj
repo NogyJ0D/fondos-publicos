@@ -97,6 +97,12 @@
     <Compile Include="CtrNuevosProy.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="CtrRegistro.Designer.vb">
+      <DependentUpon>CtrRegistro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CtrRegistro.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FrmMain.Designer.vb">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CtrNuevosProy.resx">
       <DependentUpon>CtrNuevosProy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrRegistro.resx">
+      <DependentUpon>CtrRegistro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>

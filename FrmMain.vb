@@ -2,6 +2,7 @@
   ' Load
   Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     PnlView.Controls.Add(Viewing)
+    CmbTema.SelectedItem = CmbTema.Items(0)
 
     AddHandler PnlNav.MouseMove, AddressOf MoverVentana
   End Sub
@@ -21,5 +22,8 @@
   Private Sub BtnNMinim_Click(sender As Object, e As EventArgs) Handles BtnNMinim.Click
     Me.WindowState = FormWindowState.Minimized
   End Sub
-  '   Mover ventana
+  ' Elegir tema
+  Private Sub CmbTema_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTema.SelectedIndexChanged
+    CambiarTema(CmbTema.SelectedItem)
+  End Sub
 End Class
