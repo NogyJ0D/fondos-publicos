@@ -26,10 +26,10 @@ Partial Class CtrLogin
     Me.BtnLogin = New System.Windows.Forms.Button()
     Me.InpCaptcha = New System.Windows.Forms.TextBox()
     Me.InpContraseña = New System.Windows.Forms.TextBox()
-    Me.InpUsuario = New System.Windows.Forms.TextBox()
-    Me.PnlUsuario = New System.Windows.Forms.Panel()
+    Me.InpCuil = New System.Windows.Forms.TextBox()
+    Me.PnlCuil = New System.Windows.Forms.Panel()
     Me.PnlContraseña = New System.Windows.Forms.Panel()
-    Me.LblEUsuario = New System.Windows.Forms.Label()
+    Me.LblECuil = New System.Windows.Forms.Label()
     Me.LblEContraseña = New System.Windows.Forms.Label()
     Me.LblECaptcha = New System.Windows.Forms.Label()
     Me.LblECredenciales = New System.Windows.Forms.Label()
@@ -38,7 +38,7 @@ Partial Class CtrLogin
     Me.BtnCaptcha = New System.Windows.Forms.PictureBox()
     Me.PcbCaptcha = New System.Windows.Forms.PictureBox()
     Me.BtnViewRegistro = New System.Windows.Forms.Button()
-    Me.PnlUsuario.SuspendLayout()
+    Me.PnlCuil.SuspendLayout()
     Me.PnlContraseña.SuspendLayout()
     Me.PnlCaptcha.SuspendLayout()
     CType(Me.BtnCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,30 +88,30 @@ Partial Class CtrLogin
     Me.InpContraseña.TabIndex = 1
     Me.InpContraseña.Text = "Contraseña"
     '
-    'InpUsuario
+    'InpCuil
     '
-    Me.InpUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
-    Me.InpUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-    Me.InpUsuario.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.InpUsuario.Font = New System.Drawing.Font("Verdana", 17.0!)
-    Me.InpUsuario.ForeColor = System.Drawing.Color.WhiteSmoke
-    Me.InpUsuario.Location = New System.Drawing.Point(2, 2)
-    Me.InpUsuario.Margin = New System.Windows.Forms.Padding(0)
-    Me.InpUsuario.Name = "InpUsuario"
-    Me.InpUsuario.Size = New System.Drawing.Size(365, 28)
-    Me.InpUsuario.TabIndex = 0
-    Me.InpUsuario.Text = "Usuario"
+    Me.InpCuil.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+    Me.InpCuil.BorderStyle = System.Windows.Forms.BorderStyle.None
+    Me.InpCuil.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.InpCuil.Font = New System.Drawing.Font("Verdana", 17.0!)
+    Me.InpCuil.ForeColor = System.Drawing.Color.WhiteSmoke
+    Me.InpCuil.Location = New System.Drawing.Point(2, 2)
+    Me.InpCuil.Margin = New System.Windows.Forms.Padding(0)
+    Me.InpCuil.Name = "InpCuil"
+    Me.InpCuil.Size = New System.Drawing.Size(365, 28)
+    Me.InpCuil.TabIndex = 0
+    Me.InpCuil.Text = "CUIL"
     '
-    'PnlUsuario
+    'PnlCuil
     '
-    Me.PnlUsuario.BackColor = System.Drawing.Color.White
-    Me.PnlUsuario.Controls.Add(Me.InpUsuario)
-    Me.PnlUsuario.Location = New System.Drawing.Point(240, 112)
-    Me.PnlUsuario.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
-    Me.PnlUsuario.Name = "PnlUsuario"
-    Me.PnlUsuario.Padding = New System.Windows.Forms.Padding(2)
-    Me.PnlUsuario.Size = New System.Drawing.Size(369, 32)
-    Me.PnlUsuario.TabIndex = 25
+    Me.PnlCuil.BackColor = System.Drawing.Color.White
+    Me.PnlCuil.Controls.Add(Me.InpCuil)
+    Me.PnlCuil.Location = New System.Drawing.Point(240, 112)
+    Me.PnlCuil.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+    Me.PnlCuil.Name = "PnlCuil"
+    Me.PnlCuil.Padding = New System.Windows.Forms.Padding(2)
+    Me.PnlCuil.Size = New System.Drawing.Size(369, 32)
+    Me.PnlCuil.TabIndex = 25
     '
     'PnlContraseña
     '
@@ -124,17 +124,17 @@ Partial Class CtrLogin
     Me.PnlContraseña.Size = New System.Drawing.Size(369, 32)
     Me.PnlContraseña.TabIndex = 26
     '
-    'LblEUsuario
+    'LblECuil
     '
-    Me.LblEUsuario.AutoSize = True
-    Me.LblEUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.LblEUsuario.ForeColor = System.Drawing.Color.Red
-    Me.LblEUsuario.Location = New System.Drawing.Point(240, 88)
-    Me.LblEUsuario.Name = "LblEUsuario"
-    Me.LblEUsuario.Size = New System.Drawing.Size(159, 20)
-    Me.LblEUsuario.TabIndex = 27
-    Me.LblEUsuario.Text = "Ingrese un usuario"
-    Me.LblEUsuario.Visible = False
+    Me.LblECuil.AutoSize = True
+    Me.LblECuil.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.LblECuil.ForeColor = System.Drawing.Color.Red
+    Me.LblECuil.Location = New System.Drawing.Point(240, 88)
+    Me.LblECuil.Name = "LblECuil"
+    Me.LblECuil.Size = New System.Drawing.Size(140, 20)
+    Me.LblECuil.TabIndex = 27
+    Me.LblECuil.Text = "Ingrese su CUIL"
+    Me.LblECuil.Visible = False
     '
     'LblEContraseña
     '
@@ -222,8 +222,8 @@ Partial Class CtrLogin
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.BackColor = System.Drawing.Color.Transparent
     Me.Controls.Add(Me.BtnViewRegistro)
-    Me.Controls.Add(Me.LblEUsuario)
-    Me.Controls.Add(Me.PnlUsuario)
+    Me.Controls.Add(Me.LblECuil)
+    Me.Controls.Add(Me.PnlCuil)
     Me.Controls.Add(Me.LblEContraseña)
     Me.Controls.Add(Me.PnlContraseña)
     Me.Controls.Add(Me.PnlCaptcha)
@@ -234,8 +234,8 @@ Partial Class CtrLogin
     Me.Controls.Add(Me.BtnLogin)
     Me.Name = "CtrLogin"
     Me.Size = New System.Drawing.Size(847, 460)
-    Me.PnlUsuario.ResumeLayout(False)
-    Me.PnlUsuario.PerformLayout()
+    Me.PnlCuil.ResumeLayout(False)
+    Me.PnlCuil.PerformLayout()
     Me.PnlContraseña.ResumeLayout(False)
     Me.PnlContraseña.PerformLayout()
     Me.PnlCaptcha.ResumeLayout(False)
@@ -249,12 +249,12 @@ Partial Class CtrLogin
   Friend WithEvents BtnLogin As Button
     Friend WithEvents InpCaptcha As TextBox
     Friend WithEvents InpContraseña As TextBox
-    Friend WithEvents InpUsuario As TextBox
+    Friend WithEvents InpCuil As TextBox
     Friend WithEvents BtnCaptcha As PictureBox
     Friend WithEvents PcbCaptcha As PictureBox
-    Friend WithEvents PnlUsuario As Panel
+    Friend WithEvents PnlCuil As Panel
     Friend WithEvents PnlContraseña As Panel
-    Friend WithEvents LblEUsuario As Label
+    Friend WithEvents LblECuil As Label
     Friend WithEvents LblEContraseña As Label
     Friend WithEvents LblECaptcha As Label
     Friend WithEvents LblECredenciales As Label

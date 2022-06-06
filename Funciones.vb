@@ -115,4 +115,13 @@ Module Funciones
     OpenedMain.PnlNav.BackColor = ColorNav
     OpenedMain.PnlView.BackColor = ColorView
   End Sub
+  Public Sub AuthError(pnl As Panel, lbl As Label, cond As Boolean)
+    If cond Then
+      pnl.BackColor = Color.Red
+      lbl.Show()
+    Else
+      pnl.BackColor = Color.White
+      lbl.Hide()
+    End If
+  End Sub
 End Module

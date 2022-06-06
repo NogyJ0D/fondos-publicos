@@ -7,14 +7,11 @@
   End Sub
   ' Boton captcha
   Private Sub BtnCaptcha_Click(sender As Object, e As EventArgs) Handles BtnCaptcha.Click
-
     BtnCaptcha.Size = New Size(46, 46)
     BtnCaptcha.Location = New Point(550, 252)
-    'BtnCaptcha.Image = My.Resources.Resources.recargar_chico
     Esperar(200)
     BtnCaptcha.Size = New Size(56, 56)
     BtnCaptcha.Location = New Point(544, 248)
-    'BtnCaptcha.Image = My.Resources.Resources.recargar
     PcbCaptcha.Image = MostrarCaptcha()
   End Sub
   Private Sub BtnCaptcha_MouseEnter(sender As Object, e As EventArgs) Handles BtnCaptcha.MouseEnter
@@ -28,41 +25,29 @@
     Dim Err As Boolean = False
 
     ' User mockup
-    Dim User As String = "123"
+    Dim Cuil As String = "123"
     Dim Pass As String = "123"
 
     ' Falta
-    If InpUsuario.Text = "" Or InpUsuario.Text = "Usuario" Then
-      PnlUsuario.BackColor = Color.Red
+    If InpCuil.Text = "" Or InpCuil.Text = "CUIL" Then
+      AuthError(PnlCuil, LblECuil, True)
       Err = True
-      LblEUsuario.Text = "Ingrese un usuario"
-      LblEUsuario.Show()
-    Else
-      PnlUsuario.BackColor = Color.White
-      LblEUsuario.Hide()
+    Else AuthError(PnlCuil, LblECuil, False)
     End If
     If InpContraseña.Text = "" Or InpContraseña.Text = "Contraseña" Then
-      PnlContraseña.BackColor = Color.Red
+      AuthError(PnlContraseña, LblEContraseña, True)
       Err = True
-      LblEContraseña.Text = "Ingrese una contraseña"
-      LblEContraseña.Show()
-    Else
-      PnlContraseña.BackColor = Color.White
-      LblEContraseña.Hide()
+    Else AuthError(PnlContraseña, LblEContraseña, False)
     End If
     If InpCaptcha.Text <> Captcha Then
-      PnlCaptcha.BackColor = Color.Red
+      AuthError(PnlCaptcha, LblECaptcha, True)
       Err = True
-      LblECaptcha.Text = "El captcha no coincide"
-      LblECaptcha.Show()
-    Else
-      PnlCaptcha.BackColor = Color.White
-      LblECaptcha.Hide()
+    Else AuthError(PnlCaptcha, LblECaptcha, False)
     End If
 
     ' No iguala
-    If InpUsuario.Text <> User Or InpContraseña.Text <> Pass Then
-      PnlUsuario.BackColor = Color.Red
+    If InpCuil.Text <> Cuil Or InpContraseña.Text <> Pass Then
+      PnlCuil.BackColor = Color.Red
       PnlContraseña.BackColor = Color.Red
       Err = True
       LblECredenciales.Show()
@@ -72,28 +57,28 @@
     ' Fin
     If Err Then Exit Sub
     UserLogged = 1
-    UserNUsuario = "123"
+    UserCuil = "123"
 
     CambiarVista("Main")
   End Sub
   ' Texto placeholder en los input
-  Private Sub InpLUsuario_Enter(sender As Object, e As EventArgs) Handles InpUsuario.Enter
-    If InpUsuario.Text = "Usuario" Then
-      InpUsuario.Text = ""
+  Private Sub InpCuil_Enter(sender As Object, e As EventArgs) Handles InpCuil.Enter
+    If InpCuil.Text = "CUIL" Then
+      InpCuil.Text = ""
     End If
   End Sub
-  Private Sub InpLUsuario_Leave(sender As Object, e As EventArgs) Handles InpUsuario.Leave
-    If InpUsuario.Text = "" Then
-      InpUsuario.Text = "Usuario"
+  Private Sub InpCuil_Leave(sender As Object, e As EventArgs) Handles InpCuil.Leave
+    If InpCuil.Text = "" Then
+      InpCuil.Text = "CUIL"
     End If
   End Sub
-  Private Sub InpLContraseña_Enter(sender As Object, e As EventArgs) Handles InpContraseña.Enter
+  Private Sub InpContraseña_Enter(sender As Object, e As EventArgs) Handles InpContraseña.Enter
     If InpContraseña.Text = "Contraseña" Then
       InpContraseña.Text = ""
       InpContraseña.PasswordChar = "*"
     End If
   End Sub
-  Private Sub InpLContraseña_Leave(sender As Object, e As EventArgs) Handles InpContraseña.Leave
+  Private Sub InpContraseña_Leave(sender As Object, e As EventArgs) Handles InpContraseña.Leave
     If InpContraseña.Text = "" Then
       InpContraseña.Text = "Contraseña"
       InpContraseña.PasswordChar = ""
