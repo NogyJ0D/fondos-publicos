@@ -11,6 +11,6 @@
   Public Captcha As String
 
   ' Modelo temporal de usuario
-  Public UserCuil As String
+  Public UserCuil As String = "123"
   Public UserLogged As Boolean = False
 End Module
