@@ -25,7 +25,6 @@
     Dim Err As Boolean = False
 
     ' User mockup
-    Dim Cuil As String = "123"
     Dim Pass As String = "123"
 
     ' Falta
@@ -46,7 +45,7 @@
     End If
 
     ' No iguala
-    If InpCuil.Text <> Cuil Or InpContraseña.Text <> Pass Then
+    If InpCuil.Text <> UserCuil Or InpContraseña.Text <> Pass Then
       PnlCuil.BackColor = Color.Red
       PnlContraseña.BackColor = Color.Red
       Err = True
@@ -57,20 +56,16 @@
     ' Fin
     If Err Then Exit Sub
     UserLogged = 1
-    UserCuil = "123"
+    UserCuil = InpCuil.Text
 
     CambiarVista("Main")
   End Sub
   ' Texto placeholder en los input
   Private Sub InpCuil_Enter(sender As Object, e As EventArgs) Handles InpCuil.Enter
-    If InpCuil.Text = "CUIL" Then
-      InpCuil.Text = ""
-    End If
+    AlternarHover(InpCuil, "CUIL", True)
   End Sub
   Private Sub InpCuil_Leave(sender As Object, e As EventArgs) Handles InpCuil.Leave
-    If InpCuil.Text = "" Then
-      InpCuil.Text = "CUIL"
-    End If
+    AlternarHover(InpCuil, "CUIL", False)
   End Sub
   Private Sub InpContraseña_Enter(sender As Object, e As EventArgs) Handles InpContraseña.Enter
     If InpContraseña.Text = "Contraseña" Then
