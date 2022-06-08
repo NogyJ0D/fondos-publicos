@@ -1,4 +1,5 @@
-﻿Public Class CtrLogin
+﻿Imports System.Data.SqlClient
+Public Class CtrLogin
   ' Load
   Private Sub CtrLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     PcbCaptcha.Image = MostrarCaptcha()
@@ -24,9 +25,6 @@
   Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
     Dim Err As Boolean = False
 
-    ' User mockup
-    Dim Pass As String = "123"
-
     ' Falta
     If InpCuil.Text = "" Or InpCuil.Text = "CUIL" Then
       AuthError(PnlCuil, LblECuil, True)
@@ -44,21 +42,38 @@
     Else AuthError(PnlCaptcha, LblECaptcha, False)
     End If
 
-    ' No iguala
-    If InpCuil.Text <> UserCuil Or InpContraseña.Text <> Pass Then
-      PnlCuil.BackColor = Color.Red
-      PnlContraseña.BackColor = Color.Red
-      Err = True
-      LblECredenciales.Show()
-    Else LblECredenciales.Hide()
-    End If
-
-    ' Fin
     If Err Then Exit Sub
-    UserLogged = 1
-    UserCuil = InpCuil.Text
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        conn.Open()
+        Dim sql As String = $"SELECT * FROM usuarios WHERE cuit = '{InpCuil.Text}' AND contrasena = '{InpContraseña.Text}'"
 
-    CambiarVista("Main")
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        cmd.ExecuteNonQuery()
+
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        da.SelectCommand = cmd
+        da.Fill(UserInfo)
+        If UserInfo.Rows.Count = 0 Then
+          Throw New Exception("No hay usuario") ' No hay usuario
+        End If
+
+        ' Si hay usuario
+        UserLogged = True
+        CambiarVista("Main")
+      Catch ex As Exception
+        PnlCuil.BackColor = Color.Red
+        PnlContraseña.BackColor = Color.Red
+        LblECredenciales.Show()
+
+        If ex.Message <> "No hay usuario" Then
+          MsgBox(ex.Message)
+        End If
+        UserInfo = New DataTable
+      Finally
+        conn.Close()
+      End Try
+    End Using
   End Sub
   ' Texto placeholder en los input
   Private Sub InpCuil_Enter(sender As Object, e As EventArgs) Handles InpCuil.Enter
@@ -92,5 +107,9 @@
 
   Private Sub BtnViewRegistro_Click(sender As Object, e As EventArgs) Handles BtnViewRegistro.Click
     CambiarVista("Registro")
+  End Sub
+
+  Private Sub BtnSkipCaptcha_Click(sender As Object, e As EventArgs) Handles BtnSkipCaptcha.Click
+    InpCaptcha.Text = Captcha
   End Sub
 End Class

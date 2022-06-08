@@ -11,6 +11,12 @@
   Public Captcha As String
 
   ' Modelo temporal de usuario
-  Public UserCuil As String = "123"
+  Public UserInfo As New DataTable
   Public UserLogged As Boolean = False
+
+  ' Cadenas sql locales
+  Private sqlValentin = "Data Source=DESKTOP-7N22TGM\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
+
+  ' Cambiar la cadena según quien está usando localmente
+  Public sqlConn = sqlValentin
 End Module

@@ -58,6 +58,9 @@ Partial Class CtrRegistro
     Me.LblELocalidad = New System.Windows.Forms.Label()
     Me.PnlLocalidad = New System.Windows.Forms.Panel()
     Me.InpLocalidad = New System.Windows.Forms.TextBox()
+    Me.LblECContraseña = New System.Windows.Forms.Label()
+    Me.PnlCContraseña = New System.Windows.Forms.Panel()
+    Me.InpCContraseña = New System.Windows.Forms.TextBox()
     Me.PnlCuil.SuspendLayout()
     Me.PnlContraseña.SuspendLayout()
     Me.PnlCaptcha.SuspendLayout()
@@ -71,6 +74,7 @@ Partial Class CtrRegistro
     Me.PnlFN.SuspendLayout()
     Me.Panel1.SuspendLayout()
     Me.PnlLocalidad.SuspendLayout()
+    Me.PnlCContraseña.SuspendLayout()
     Me.SuspendLayout()
     '
     'LblECuil
@@ -211,7 +215,7 @@ Partial Class CtrRegistro
     Me.BtnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.BtnRegistro.Font = New System.Drawing.Font("Verdana", 14.0!)
     Me.BtnRegistro.ForeColor = System.Drawing.Color.WhiteSmoke
-    Me.BtnRegistro.Location = New System.Drawing.Point(232, 384)
+    Me.BtnRegistro.Location = New System.Drawing.Point(424, 384)
     Me.BtnRegistro.Name = "BtnRegistro"
     Me.BtnRegistro.Size = New System.Drawing.Size(369, 33)
     Me.BtnRegistro.TabIndex = 10
@@ -334,7 +338,7 @@ Partial Class CtrRegistro
     Me.LblEDireccion.AutoSize = True
     Me.LblEDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.LblEDireccion.ForeColor = System.Drawing.Color.Red
-    Me.LblEDireccion.Location = New System.Drawing.Point(48, 136)
+    Me.LblEDireccion.Location = New System.Drawing.Point(48, 200)
     Me.LblEDireccion.Name = "LblEDireccion"
     Me.LblEDireccion.Size = New System.Drawing.Size(171, 20)
     Me.LblEDireccion.TabIndex = 50
@@ -345,7 +349,7 @@ Partial Class CtrRegistro
     '
     Me.PnlDireccion.BackColor = System.Drawing.Color.White
     Me.PnlDireccion.Controls.Add(Me.InpDireccion)
-    Me.PnlDireccion.Location = New System.Drawing.Point(49, 160)
+    Me.PnlDireccion.Location = New System.Drawing.Point(49, 224)
     Me.PnlDireccion.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
     Me.PnlDireccion.Name = "PnlDireccion"
     Me.PnlDireccion.Padding = New System.Windows.Forms.Padding(2)
@@ -408,7 +412,7 @@ Partial Class CtrRegistro
     Me.LblExito.AutoSize = True
     Me.LblExito.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.LblExito.ForeColor = System.Drawing.Color.White
-    Me.LblExito.Location = New System.Drawing.Point(224, 432)
+    Me.LblExito.Location = New System.Drawing.Point(416, 432)
     Me.LblExito.Name = "LblExito"
     Me.LblExito.Size = New System.Drawing.Size(382, 20)
     Me.LblExito.TabIndex = 55
@@ -433,7 +437,7 @@ Partial Class CtrRegistro
     Me.LblEFN.AutoSize = True
     Me.LblEFN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.LblEFN.ForeColor = System.Drawing.Color.Red
-    Me.LblEFN.Location = New System.Drawing.Point(48, 264)
+    Me.LblEFN.Location = New System.Drawing.Point(48, 336)
     Me.LblEFN.Name = "LblEFN"
     Me.LblEFN.Size = New System.Drawing.Size(319, 20)
     Me.LblEFN.TabIndex = 57
@@ -444,7 +448,7 @@ Partial Class CtrRegistro
     '
     Me.PnlFN.BackColor = System.Drawing.Color.White
     Me.PnlFN.Controls.Add(Me.InpFN)
-    Me.PnlFN.Location = New System.Drawing.Point(48, 336)
+    Me.PnlFN.Location = New System.Drawing.Point(48, 392)
     Me.PnlFN.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
     Me.PnlFN.Name = "PnlFN"
     Me.PnlFN.Padding = New System.Windows.Forms.Padding(2)
@@ -456,7 +460,7 @@ Partial Class CtrRegistro
     Me.Label1.AutoSize = True
     Me.Label1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.Label1.ForeColor = System.Drawing.Color.White
-    Me.Label1.Location = New System.Drawing.Point(-1, 1)
+    Me.Label1.Location = New System.Drawing.Point(0, 0)
     Me.Label1.Name = "Label1"
     Me.Label1.Size = New System.Drawing.Size(289, 18)
     Me.Label1.TabIndex = 59
@@ -467,7 +471,7 @@ Partial Class CtrRegistro
     Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
     Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
     Me.Panel1.Controls.Add(Me.Label1)
-    Me.Panel1.Location = New System.Drawing.Point(48, 296)
+    Me.Panel1.Location = New System.Drawing.Point(48, 360)
     Me.Panel1.Name = "Panel1"
     Me.Panel1.Size = New System.Drawing.Size(367, 22)
     Me.Panel1.TabIndex = 60
@@ -477,7 +481,7 @@ Partial Class CtrRegistro
     Me.LblELocalidad.AutoSize = True
     Me.LblELocalidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.LblELocalidad.ForeColor = System.Drawing.Color.Red
-    Me.LblELocalidad.Location = New System.Drawing.Point(48, 200)
+    Me.LblELocalidad.Location = New System.Drawing.Point(48, 264)
     Me.LblELocalidad.Name = "LblELocalidad"
     Me.LblELocalidad.Size = New System.Drawing.Size(170, 20)
     Me.LblELocalidad.TabIndex = 62
@@ -488,7 +492,7 @@ Partial Class CtrRegistro
     '
     Me.PnlLocalidad.BackColor = System.Drawing.Color.White
     Me.PnlLocalidad.Controls.Add(Me.InpLocalidad)
-    Me.PnlLocalidad.Location = New System.Drawing.Point(48, 224)
+    Me.PnlLocalidad.Location = New System.Drawing.Point(48, 288)
     Me.PnlLocalidad.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
     Me.PnlLocalidad.Name = "PnlLocalidad"
     Me.PnlLocalidad.Padding = New System.Windows.Forms.Padding(2)
@@ -509,11 +513,50 @@ Partial Class CtrRegistro
     Me.InpLocalidad.TabIndex = 6
     Me.InpLocalidad.Text = "Localidad"
     '
+    'LblECContraseña
+    '
+    Me.LblECContraseña.AutoSize = True
+    Me.LblECContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.LblECContraseña.ForeColor = System.Drawing.Color.Red
+    Me.LblECContraseña.Location = New System.Drawing.Point(48, 136)
+    Me.LblECContraseña.Name = "LblECContraseña"
+    Me.LblECContraseña.Size = New System.Drawing.Size(181, 20)
+    Me.LblECContraseña.TabIndex = 64
+    Me.LblECContraseña.Text = "Repita su contraseña"
+    Me.LblECContraseña.Visible = False
+    '
+    'PnlCContraseña
+    '
+    Me.PnlCContraseña.BackColor = System.Drawing.Color.White
+    Me.PnlCContraseña.Controls.Add(Me.InpCContraseña)
+    Me.PnlCContraseña.Location = New System.Drawing.Point(48, 160)
+    Me.PnlCContraseña.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+    Me.PnlCContraseña.Name = "PnlCContraseña"
+    Me.PnlCContraseña.Padding = New System.Windows.Forms.Padding(2)
+    Me.PnlCContraseña.Size = New System.Drawing.Size(369, 32)
+    Me.PnlCContraseña.TabIndex = 63
+    '
+    'InpCContraseña
+    '
+    Me.InpCContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+    Me.InpCContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
+    Me.InpCContraseña.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.InpCContraseña.Font = New System.Drawing.Font("Verdana", 17.0!)
+    Me.InpCContraseña.ForeColor = System.Drawing.Color.WhiteSmoke
+    Me.InpCContraseña.Location = New System.Drawing.Point(2, 2)
+    Me.InpCContraseña.Margin = New System.Windows.Forms.Padding(0)
+    Me.InpCContraseña.Name = "InpCContraseña"
+    Me.InpCContraseña.Size = New System.Drawing.Size(365, 28)
+    Me.InpCContraseña.TabIndex = 5
+    Me.InpCContraseña.Text = "Repetir contraseña"
+    '
     'CtrRegistro
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.BackColor = System.Drawing.Color.Transparent
+    Me.Controls.Add(Me.LblECContraseña)
+    Me.Controls.Add(Me.PnlCContraseña)
     Me.Controls.Add(Me.LblELocalidad)
     Me.Controls.Add(Me.PnlLocalidad)
     Me.Controls.Add(Me.Panel1)
@@ -564,6 +607,8 @@ Partial Class CtrRegistro
     Me.Panel1.PerformLayout()
     Me.PnlLocalidad.ResumeLayout(False)
     Me.PnlLocalidad.PerformLayout()
+    Me.PnlCContraseña.ResumeLayout(False)
+    Me.PnlCContraseña.PerformLayout()
     Me.ResumeLayout(False)
     Me.PerformLayout()
 
@@ -604,4 +649,7 @@ Partial Class CtrRegistro
   Friend WithEvents LblELocalidad As Label
   Friend WithEvents PnlLocalidad As Panel
   Friend WithEvents InpLocalidad As TextBox
+  Friend WithEvents LblECContraseña As Label
+  Friend WithEvents PnlCContraseña As Panel
+  Friend WithEvents InpCContraseña As TextBox
 End Class
