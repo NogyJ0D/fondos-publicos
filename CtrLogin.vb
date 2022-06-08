@@ -46,7 +46,7 @@ Public Class CtrLogin
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
-        Dim sql As String = $"SELECT * FROM usuarios WHERE cuit = '{InpCuil.Text}' AND contrasena = '{InpContraseña.Text}'"
+        Dim sql As String = $"SELECT * FROM usuarios WHERE cuit = '{InpCuil.Text}'"
 
         Dim cmd As SqlCommand = New SqlCommand(sql, conn)
         cmd.ExecuteNonQuery()
@@ -55,10 +55,17 @@ Public Class CtrLogin
         da.SelectCommand = cmd
         da.Fill(UserInfo)
         If UserInfo.Rows.Count = 0 Then
-          Throw New Exception("No hay usuario") ' No hay usuario
+          LblECredenciales.Text = "El usuario ingresado no existe"
+          Throw New Exception() ' No hay usuario
         End If
 
         ' Si hay usuario
+
+        Dim passCheck = BCrypt.Net.BCrypt.Verify(InpContraseña.Text, UserInfo.Rows(0).Item(4))
+        If Not passCheck Then
+          Throw New Exception()
+        End If
+
         UserLogged = True
         CambiarVista("Main")
       Catch ex As Exception
@@ -66,9 +73,7 @@ Public Class CtrLogin
         PnlContraseña.BackColor = Color.Red
         LblECredenciales.Show()
 
-        If ex.Message <> "No hay usuario" Then
-          MsgBox(ex.Message)
-        End If
+        'MsgBox(ex.Message)
         UserInfo = New DataTable
       Finally
         conn.Close()
