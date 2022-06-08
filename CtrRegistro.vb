@@ -1,4 +1,6 @@
-﻿Public Class CtrRegistro
+﻿Imports System.Data.SqlClient
+
+Public Class CtrRegistro
   Private Sub CtrRegistro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     PcbCaptcha.Image = MostrarCaptcha()
 
@@ -87,11 +89,13 @@
     End If
 
     If Not Err Then
-      If Registrar() Then
-        BtnRegistro.Enabled = False
-        LblExito.ForeColor = Color.White
-        LblExito.Text = "Registro exitoso, valide su email para ingresar."
-        LblExito.Show()
+      If Not BuscarUsuario() Then
+        If Registrar() Then
+          BtnRegistro.Enabled = False
+          LblExito.ForeColor = Color.White
+          LblExito.Text = "Registro exitoso, valide su email para ingresar."
+          LblExito.Show()
+        End If
       End If
     End If
   End Sub
@@ -163,23 +167,57 @@
     End If
   End Sub
   ' ---
-  Private Function Registrar()
-    ' TODO: Refactorizar con Using
+  Private Function BuscarUsuario()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        conn.Open()
+        Dim sql As String = $"SELECT * FROM usuarios WHERE cuit = '{InpCuil.Text}' OR correo_electronico = '{InpEmail.Text}'"
 
-    'dbCmd.Connection = Conexion.dbConn
-    'dbCmd.CommandType = CommandType.Text
-    'sql = $"INSERT INTO usuarios
-    '            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, localidad, codigo_postal, 'correo_electronico)
-    '          VALUES
-    '            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{InpContraseña.Text}', ''{InpFN.Value}', '{InpDireccion.Text}', '{InpLocalidad.Text}', '{InpCP.Text}', '{InpEmail.Text}')"
-    'dbCmd.CommandText = sql
-    'Try
-    '  dbCmd.ExecuteNonQuery()
-    '  dbCmd.Dispose()
-    '  Return True
-    'Catch ex As Exception
-    '  MsgBox(ex.ToString)
-    '  Return False
-    'End Try
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        cmd.ExecuteNonQuery()
+
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        da.SelectCommand = cmd
+        Dim dt As New DataTable
+        da.Fill(dt)
+
+        If dt.Rows.Count > 0 Then
+          LblExito.ForeColor = Color.Red
+          LblExito.Text = "Ya existe un usuario con ese CUIL o correo."
+          LblExito.Show()
+          conn.Close()
+          Return True
+        End If
+        Return False
+      Catch ex As Exception
+        MsgBox(ex.Message)
+        conn.Close()
+        Return False
+      End Try
+    End Using
+  End Function
+  Private Function Registrar()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        Dim hashedPass = BCrypt.Net.BCrypt.HashPassword(InpContraseña.Text)
+        conn.Open()
+        Dim sql As String = $"INSERT INTO usuarios
+            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, localidad, codigo_postal, correo_electronico)
+        VALUES
+            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{InpFN.Value}', '{InpDireccion.Text}', '{InpLocalidad.Text}', '{InpCP.Text}', '{InpEmail.Text}')"
+
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        cmd.ExecuteNonQuery()
+
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        da.SelectCommand = cmd
+        conn.Close()
+        Return True
+      Catch ex As Exception
+        conn.Close()
+        MsgBox(ex.Message)
+        Return False
+      End Try
+    End Using
   End Function
 End Class
