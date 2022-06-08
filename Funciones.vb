@@ -9,8 +9,9 @@ Module Funciones
     Select Case origen
       Case "Main"
         OpenedMain.BtnViewMain.Hide()
-        If UserLogged Then OpenedMain.BtnViewLogin.Hide()
-        If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
+        If UserLogged Then : OpenedMain.BtnViewLogin.Hide()
+        Else : OpenedMain.BtnViewLogin.Show()
+        End If
         Vista = ViewMain
       Case "Login"
         OpenedMain.BtnViewLogin.Hide()
@@ -20,8 +21,9 @@ Module Funciones
         Vista = ViewRegistro
       Case "NuevosProy"
         OpenedMain.BtnViewMain.Show()
-        If UserLogged Then OpenedMain.BtnViewLogin.Hide()
-        If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
+        If UserLogged Then : OpenedMain.BtnViewLogin.Hide()
+        Else : OpenedMain.BtnViewLogin.Show()
+        End If
         Vista = ViewNuevosProy
     End Select
     Viewing = Vista
