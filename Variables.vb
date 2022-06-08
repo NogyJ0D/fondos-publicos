@@ -10,9 +10,14 @@
   ' Captcha
   Public Captcha As String
 
-  ' Modelo temporal de usuario
+  ' Modelo de usuario
   Public UserInfo As New DataTable
   Public UserLogged As Boolean = False
+
+  ' Proyectos
+
+
+
 
   ' Cadenas sql locales
   Private sqlValentin = "Data Source=DESKTOP-7N22TGM\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
