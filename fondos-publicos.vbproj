@@ -114,6 +114,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CtrCargarProy.Designer.vb">
+      <DependentUpon>CtrCargarProy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CtrCargarProy.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CtrLogin.Designer.vb">
       <DependentUpon>CtrLogin.vb</DependentUpon>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CtrCargarProy.resx">
+      <DependentUpon>CtrCargarProy.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CtrLogin.resx">
       <DependentUpon>CtrLogin.vb</DependentUpon>
     </EmbeddedResource>
