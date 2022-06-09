@@ -77,7 +77,7 @@ Partial Class CtrMain
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(10, 13)
+        Me.Label3.Location = New System.Drawing.Point(12, 14)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(173, 23)
         Me.Label3.TabIndex = 4
