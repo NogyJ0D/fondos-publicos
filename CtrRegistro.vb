@@ -1,4 +1,6 @@
-﻿Public Class CtrRegistro
+﻿Imports System.Data.SqlClient
+
+Public Class CtrRegistro
   Private Sub CtrRegistro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     PcbCaptcha.Image = MostrarCaptcha()
 
@@ -19,7 +21,7 @@
     BtnCaptcha.Image = My.Resources.Resources.recargar
   End Sub
 
-  Private Sub BtnRegistro_Click(sender As Object, e As EventArgs) Handles BtnRegistro.Click
+  Private Async Sub BtnRegistro_Click(sender As Object, e As EventArgs) Handles BtnRegistro.Click
     Dim Err As Boolean = False
 
     If InpCuil.Text = "" Or InpCuil.Text = "CUIL" Then
@@ -31,6 +33,11 @@
       AuthError(PnlContraseña, LblEContraseña, True)
       Err = True
     Else AuthError(PnlContraseña, LblEContraseña, False)
+    End If
+    If InpCContraseña.Text = "" Or InpCContraseña.Text = "Repetir contraseña" Then
+      AuthError(PnlCContraseña, LblECContraseña, True)
+      Err = True
+    Else AuthError(PnlCContraseña, LblECContraseña, False)
     End If
     If InpEmail.Text = "" Or InpEmail.Text = "Email" Then
       AuthError(PnlEmail, LblEEmail, True)
@@ -72,11 +79,25 @@
       Err = True
     Else AuthError(PnlCaptcha, LblECaptcha, False)
     End If
+    If InpContraseña.Text <> InpCContraseña.Text Then
+      PnlContraseña.BackColor = Color.Red
+      PnlCContraseña.BackColor = Color.Red
+      LblExito.ForeColor = Color.Red
+      LblExito.Text = "Las contraseñas no coinciden"
+      LblExito.Show()
+      Err = True
+    End If
 
     If Not Err Then
-      BtnRegistro.Enabled = False
-      LblExito.Show()
-      UserCuil = InpCuil.Text
+      If Not BuscarUsuario() Then
+        If Registrar() Then
+          BtnRegistro.Enabled = False
+          LblExito.ForeColor = Color.White
+          LblExito.Text = "Registro exitoso, valide su email para ingresar."
+          Await EnviarEmail(InpEmail.Text)
+          LblExito.Show()
+        End If
+      End If
     End If
   End Sub
   ' Hovers
@@ -87,10 +108,16 @@
     AlternarHover(InpCuil, "CUIL", False)
   End Sub
   Private Sub InpContraseña_Enter(sender As Object, e As EventArgs) Handles InpContraseña.Enter
-    AlternarHover(InpContraseña, "Contraseña", True)
+    If InpContraseña.Text = "Contraseña" Then
+      InpContraseña.Text = ""
+      InpContraseña.PasswordChar = "*"
+    End If
   End Sub
   Private Sub InpContraseña_Leave(sender As Object, e As EventArgs) Handles InpContraseña.Leave
-    AlternarHover(InpContraseña, "Contraseña", False)
+    If InpContraseña.Text = "" Then
+      InpContraseña.Text = "Contraseña"
+      InpContraseña.PasswordChar = ""
+    End If
   End Sub
   Private Sub InpDireccion_Enter(sender As Object, e As EventArgs) Handles InpDireccion.Enter
     AlternarHover(InpDireccion, "Calle y altura", True)
@@ -128,4 +155,70 @@
   Private Sub InpCP_Leave(sender As Object, e As EventArgs) Handles InpCP.Leave
     AlternarHover(InpCP, "Código Postal", False)
   End Sub
+  Private Sub InpCContraseña_Enter(sender As Object, e As EventArgs) Handles InpCContraseña.Enter
+    If InpCContraseña.Text = "Repetir contraseña" Then
+      InpCContraseña.Text = ""
+      InpCContraseña.PasswordChar = "*"
+    End If
+  End Sub
+  Private Sub InpCContraseña_Leave(sender As Object, e As EventArgs) Handles InpCContraseña.Leave
+    If InpCContraseña.Text = "" Then
+      InpCContraseña.Text = "Repetir contraseña"
+      InpCContraseña.PasswordChar = ""
+    End If
+  End Sub
+  ' ---
+  Private Function BuscarUsuario()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        conn.Open()
+        Dim sql As String = $"SELECT * FROM usuarios WHERE cuit = '{InpCuil.Text}' OR correo_electronico = '{InpEmail.Text}'"
+
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        cmd.ExecuteNonQuery()
+
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        da.SelectCommand = cmd
+        Dim dt As New DataTable
+        da.Fill(dt)
+
+        If dt.Rows.Count > 0 Then
+          LblExito.ForeColor = Color.Red
+          LblExito.Text = "Ya existe un usuario con ese CUIL o correo."
+          LblExito.Show()
+          conn.Close()
+          Return True
+        End If
+        Return False
+      Catch ex As Exception
+        MsgBox(ex.Message)
+        conn.Close()
+        Return False
+      End Try
+    End Using
+  End Function
+  Private Function Registrar()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        Dim hashedPass = BCrypt.Net.BCrypt.HashPassword(InpContraseña.Text)
+        conn.Open()
+        Dim sql As String = $"INSERT INTO usuarios
+            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, localidad, codigo_postal, correo_electronico)
+        VALUES
+            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{InpFN.Value}', '{InpDireccion.Text}', '{InpLocalidad.Text}', '{InpCP.Text}', '{InpEmail.Text}')"
+
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        cmd.ExecuteNonQuery()
+
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        da.SelectCommand = cmd
+        conn.Close()
+        Return True
+      Catch ex As Exception
+        conn.Close()
+        MsgBox(ex.Message)
+        Return False
+      End Try
+    End Using
+  End Function
 End Class

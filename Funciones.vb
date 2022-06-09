@@ -9,8 +9,9 @@ Module Funciones
     Select Case origen
       Case "Main"
         OpenedMain.BtnViewMain.Hide()
-        If UserLogged Then OpenedMain.BtnViewLogin.Hide()
-        If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
+        If UserLogged Then : OpenedMain.BtnViewLogin.Hide()
+        Else : OpenedMain.BtnViewLogin.Show()
+        End If
         Vista = ViewMain
       Case "Login"
         OpenedMain.BtnViewLogin.Hide()
@@ -20,8 +21,9 @@ Module Funciones
         Vista = ViewRegistro
       Case "NuevosProy"
         OpenedMain.BtnViewMain.Show()
-        If UserLogged Then OpenedMain.BtnViewLogin.Hide()
-        If Not UserLogged Then OpenedMain.BtnViewLogin.Show()
+        If UserLogged Then : OpenedMain.BtnViewLogin.Hide()
+        Else : OpenedMain.BtnViewLogin.Show()
+        End If
         Vista = ViewNuevosProy
     End Select
     Viewing = Vista
@@ -56,18 +58,18 @@ Module Funciones
     Return newImage
   End Function
   Public Async Function EnviarEmail(email As String) As Task(Of Boolean)
-    Dim foto = "https://www.lavoz.com.ar/resizer/YT06bU_V2GqH2_drCrDrELNH9QU=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/AIROXALBW5ECLJRSCCJRJKA3OU.jpg"
+    Dim foto = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gtk-ok.svg/2048px-Gtk-ok.svg.png"
     If email.Length > 0 Then
       Try
         Dim apiKey = ConfigurationManager.AppSettings("SENDGRID_APIKEY")
         Dim cliente = New SendGridClient(apiKey)
         Dim msg = New SendGridMessage() With {
-.From = New EmailAddress(email, "Mauricio Macri"),
-.Subject = "Email de prueba - Fondos públicos",
-.PlainTextContent = "Hola, soy un email",
-.HtmlContent = $"<b>UwU</b><img src='{foto}'/>"
+.From = New EmailAddress(email, "Fondos Públicos"),
+.Subject = "Registro exitoso - Fondos Públicos",
+.PlainTextContent = "Registro exitoso - Fondos Públicos",
+.HtmlContent = $"<b>Gracias por registrarte en Fondos Públicos</b><img src='{foto}'/>"
 }
-        msg.AddTo(New EmailAddress(email, "Fondear"))
+        msg.AddTo(New EmailAddress(email, "Fondos Públicos"))
         Dim response = Await cliente.SendEmailAsync(msg)
         Return True
       Catch ex As Exception

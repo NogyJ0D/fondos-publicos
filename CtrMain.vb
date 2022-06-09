@@ -1,28 +1,63 @@
-﻿Public Class CtrMain
-    ' Load
-    Private Sub CtrMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AddHandler Me.MouseMove, AddressOf MoverVentana ' Mover formulario
-        Panel9.Hide()
-    End Sub
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        Panel9.Show()
-        TextProyectos.Visible = True
-        TextProyectos.Text = "Vamos a pavimentar las arterias más concurridas de la ciudad para beneficiar al... Etc. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        With TextProyectos
-            Dim OldSelStart As Integer = TextProyectos.SelectionStart
-            Dim OldSelLen As Integer = TextProyectos.SelectionLength
-            TextProyectos.SelectionStart = 0
-            TextProyectos.SelectionLength = Len(TextProyectos.Text)
-            TextProyectos.SelectionIndent = 20
-            TextProyectos.SelectionStart = OldSelStart
-            TextProyectos.SelectionLength = OldSelLen
-        End With
-    End Sub
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-    TextProyectos.Clear()
-  End Sub
+﻿Imports System.Data.SqlClient
+Public Class CtrMain
+  Public ProyAprob As New DataTable
+  'Public ProyViendo
+  ' Load
+  Private Sub CtrMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    AddHandler Me.MouseMove, AddressOf MoverVentana ' Mover formulario
 
+    ContarProyectos()
+    LlenarProyectos()
+  End Sub
   Private Sub BtnViewNuevosProy_Click(sender As Object, e As EventArgs) Handles BtnViewNuevosProy.Click
     CambiarVista("NuevosProy")
+  End Sub
+  Private Sub ContarProyectos()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        conn.Open()
+        Dim sql As String = "SELECT COUNT(*) FROM proyectos WHERE id_estado = 1"
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        Dim dr As SqlDataReader = cmd.ExecuteReader()
+        While dr.Read()
+          LblPTop.Text = "Proyectos: " & dr.Item(0)
+        End While
+      Catch ex As Exception
+        MsgBox(ex.Message)
+      Finally
+        conn.Close()
+      End Try
+    End Using
+  End Sub
+  Private Sub LlenarProyectos()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        conn.Open()
+        Dim sql As String =
+          "SELECT id_proyecto, titulo, descripcion, fecha, monto
+          FROM proyectos
+          WHERE id_estado = 1
+          ORDER BY fecha DESC"
+
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        cmd.ExecuteNonQuery()
+
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        da.SelectCommand = cmd
+        da.Fill(ProyAprob)
+        DgvPAprob.DataSource = ProyAprob
+      Catch ex As Exception
+        MsgBox(ex.Message)
+      Finally
+        conn.Close()
+      End Try
+    End Using
+  End Sub
+  Private Sub DgvPAprob_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPAprob.CellClick
+    Try
+      TxbPDesc.Text = DgvPAprob.Rows(e.RowIndex).Cells.Item(2).Value & " - " & DgvPAprob.Rows(e.RowIndex).Cells.Item(1).Value
+      PnlPABorde.Show()
+    Catch ex As System.ArgumentOutOfRangeException
+    End Try
   End Sub
 End Class
