@@ -31,14 +31,17 @@ Partial Class FrmMain
     Me.BtnViewLogin = New System.Windows.Forms.PictureBox()
     Me.BtnViewMain = New System.Windows.Forms.PictureBox()
     Me.PnlView = New System.Windows.Forms.Panel()
+    Me.BtnLogout = New System.Windows.Forms.PictureBox()
     Me.PnlNav.SuspendLayout()
     CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.BtnViewMain, System.ComponentModel.ISupportInitialize).BeginInit()
+    CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.SuspendLayout()
     '
     'PnlNav
     '
     Me.PnlNav.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.PnlNav.Controls.Add(Me.BtnLogout)
     Me.PnlNav.Controls.Add(Me.Label1)
     Me.PnlNav.Controls.Add(Me.CmbTema)
     Me.PnlNav.Controls.Add(Me.BtnNMinim)
@@ -138,6 +141,21 @@ Partial Class FrmMain
     Me.PnlView.Size = New System.Drawing.Size(847, 466)
     Me.PnlView.TabIndex = 2
     '
+    'BtnLogout
+    '
+    Me.BtnLogout.Cursor = System.Windows.Forms.Cursors.Hand
+    Me.BtnLogout.Dock = System.Windows.Forms.DockStyle.Left
+    Me.BtnLogout.Enabled = False
+    Me.BtnLogout.Image = CType(resources.GetObject("BtnLogout.Image"), System.Drawing.Image)
+    Me.BtnLogout.Location = New System.Drawing.Point(84, 0)
+    Me.BtnLogout.Name = "BtnLogout"
+    Me.BtnLogout.Padding = New System.Windows.Forms.Padding(7)
+    Me.BtnLogout.Size = New System.Drawing.Size(42, 42)
+    Me.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+    Me.BtnLogout.TabIndex = 8
+    Me.BtnLogout.TabStop = False
+    Me.BtnLogout.Visible = False
+    '
     'FrmMain
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -153,6 +171,7 @@ Partial Class FrmMain
     Me.PnlNav.PerformLayout()
     CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.BtnViewMain, System.ComponentModel.ISupportInitialize).EndInit()
+    CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).EndInit()
     Me.ResumeLayout(False)
 
   End Sub
@@ -164,4 +183,5 @@ Partial Class FrmMain
     Friend WithEvents BtnNCerrar As Button
     Friend WithEvents CmbTema As ComboBox
     Friend WithEvents Label1 As Label
+  Friend WithEvents BtnLogout As PictureBox
 End Class

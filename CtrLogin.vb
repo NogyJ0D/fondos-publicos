@@ -61,24 +61,13 @@ Public Class CtrLogin
         End If
 
         ' Si hay usuario
-
         Dim passCheck = BCrypt.Net.BCrypt.Verify(InpContraseña.Text, dt.Rows(0).Item(4))
-        If Not passCheck Then
+        If Not passCheck Then ' Si la contraseña no está bien
           Throw New Exception()
         End If
 
-        UserInfo.Id = dt.Rows(0).Item(0)
-        UserInfo.CUIT = dt.Rows(0).Item(1)
-        UserInfo.Nombre = dt.Rows(0).Item(2)
-        UserInfo.Apellido = dt.Rows(0).Item(3)
-        UserInfo.FechaN = dt.Rows(0).Item(5)
-        UserInfo.Direccion = dt.Rows(0).Item(6)
-        UserInfo.IdLocalidad = dt.Rows(0).Item(7)
-        UserInfo.Correo = dt.Rows(0).Item(8)
-        UserInfo.Rol = dt.Rows(0).Item(9)
+        UserInfo.Login(dt.Rows(0).Item(0), dt.Rows(0).Item(1), dt.Rows(0).Item(2), dt.Rows(0).Item(3), dt.Rows(0).Item(5), dt.Rows(0).Item(6), dt.Rows(0).Item(7), dt.Rows(0).Item(8), dt.Rows(0).Item(9))
 
-        UserLogged = True
-        OpenedMain.BtnViewLogin.Hide()
         CambiarVista("Main")
       Catch ex As Exception
         PnlCuil.BackColor = Color.Red

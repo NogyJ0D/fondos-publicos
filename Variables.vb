@@ -6,6 +6,7 @@
   Public ViewLogin As New CtrLogin
   Public ViewRegistro As New CtrRegistro
   Public ViewNuevosProy As New CtrNuevosProy
+  Public ViewCargarProy As New CtrCargarProy
   Public Viewing As UserControl = ViewMain
   ' Captcha
   Public Captcha As String
@@ -18,5 +19,5 @@
   Private sqlValentin = "Data Source=DESKTOP-7N22TGM\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
   Private sqlValentinIzo = "Data Source=LAB-L04\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
   ' Cambiar la cadena según quien está usando localmente
-  Public sqlConn = sqlValentinIzo
+  Public sqlConn = sqlValentin
 End Module

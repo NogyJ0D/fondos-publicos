@@ -12,9 +12,19 @@ Module Funciones
       Case "Login"
         Vista = ViewLogin
       Case "Registro"
-        Vista = ViewRegistro
+        If Not UserLogged Then
+          Vista = ViewRegistro
+        Else
+          MsgBox("No puedes registrarte teniendo ya una cuenta abierta.", MsgBoxStyle.Critical, "Error")
+        End If
       Case "NuevosProy"
         Vista = ViewNuevosProy
+      Case "ViewCargarProy"
+        If UserInfo.UserRol >= 2 Then
+          Vista = ViewCargarProy
+        Else
+          MsgBox("No posees el rol válido para esto.", MsgBoxStyle.Critical, "Permisos insuficientes")
+        End If
     End Select
     Viewing = Vista
     OpenedMain.PnlView.Controls.Clear()

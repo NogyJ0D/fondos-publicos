@@ -1,8 +1,5 @@
 ﻿Imports System.Data.SqlClient
 Public Class CtrMain
-  Public ProyAprob As New DataTable
-  'Public ProyViendo
-  ' Load
   Private Sub CtrMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     AddHandler Me.MouseMove, AddressOf MoverVentana ' Mover formulario
 
@@ -12,7 +9,7 @@ Public Class CtrMain
   Private Sub BtnViewNuevosProy_Click(sender As Object, e As EventArgs) Handles BtnViewNuevosProy.Click
     CambiarVista("NuevosProy")
   End Sub
-  Private Sub ContarProyectos()
+  Public Sub ContarProyectos()
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
@@ -29,7 +26,7 @@ Public Class CtrMain
       End Try
     End Using
   End Sub
-  Private Sub LlenarProyectos()
+  Public Sub LlenarProyectos()
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
@@ -44,6 +41,7 @@ Public Class CtrMain
 
         Dim da As SqlDataAdapter = New SqlDataAdapter
         da.SelectCommand = cmd
+        Dim ProyAprob As New DataTable
         da.Fill(ProyAprob)
         DgvPAprob.DataSource = ProyAprob
       Catch ex As Exception

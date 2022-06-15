@@ -1,13 +1,13 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class CtrNuevosProy
-  Public ProyVotacion As New DataTable
-  Public ProyViendo
   Private Sub CtrNuevosProy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    AddHandler Me.MouseMove, AddressOf MoverVentana
+
     ContarProyectos()
     LlenarProyectos()
   End Sub
-  Private Sub ContarProyectos()
+  Public Sub ContarProyectos()
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
@@ -24,7 +24,7 @@ Public Class CtrNuevosProy
       End Try
     End Using
   End Sub
-  Private Sub LlenarProyectos()
+  Public Sub LlenarProyectos()
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
@@ -39,6 +39,7 @@ Public Class CtrNuevosProy
 
         Dim da As SqlDataAdapter = New SqlDataAdapter
         da.SelectCommand = cmd
+        Dim ProyVotacion As New DataTable
         da.Fill(ProyVotacion)
         DgvP.DataSource = ProyVotacion
       Catch ex As Exception
@@ -88,7 +89,8 @@ Public Class CtrNuevosProy
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
-        Dim sql As String = $"SELECT * FROM votos_proyectos WHERE id_proyecto = {LblProyId.Text} AND id_usuario = {UserInfo.Id} "
+        ' TODO: Cambiar * por COUNT
+        Dim sql As String = $"SELECT * FROM votos_proyectos WHERE id_proyecto = {LblProyId.Text} AND id_usuario = {UserInfo.UserId()}"
         Dim cmd As SqlCommand = New SqlCommand(sql, conn)
         cmd.ExecuteNonQuery()
 
@@ -100,6 +102,9 @@ Public Class CtrNuevosProy
         If dt.Rows.Count > 0 Then
           BtnVotarC.Enabled = False
           BtnVotarF.Enabled = False
+        Else
+          BtnVotarC.Enabled = True
+          BtnVotarF.Enabled = True
         End If
       Catch ex As Exception
         MsgBox(ex.Message)
@@ -112,7 +117,7 @@ Public Class CtrNuevosProy
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
-        Dim sql As String = $"INSERT INTO votos_proyectos (id_proyecto, id_usuario, tipo_voto) VALUES ({LblProyId.Text}, {UserInfo.Id}, 0)"
+        Dim sql As String = $"INSERT INTO votos_proyectos (id_proyecto, id_usuario, tipo_voto) VALUES ({LblProyId.Text}, {UserInfo.UserId()}, 0)"
         Dim cmd As SqlCommand = New SqlCommand(sql, conn)
         cmd.ExecuteNonQuery()
         ContarVotos(0)
@@ -128,7 +133,7 @@ Public Class CtrNuevosProy
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
         conn.Open()
-        Dim sql As String = $"INSERT INTO votos_proyectos (id_proyecto, id_usuario, tipo_voto) VALUES ({LblProyId.Text}, {UserInfo.Id}, 1)"
+        Dim sql As String = $"INSERT INTO votos_proyectos (id_proyecto, id_usuario, tipo_voto) VALUES ({LblProyId.Text}, {UserInfo.UserId()}, 1)"
         Dim cmd As SqlCommand = New SqlCommand(sql, conn)
         cmd.ExecuteNonQuery()
         ContarVotos(1)
@@ -141,4 +146,9 @@ Public Class CtrNuevosProy
     End Using
   End Sub
 
+  Private Sub BtnANP_Click(sender As Object, e As EventArgs) Handles BtnANP.Click
+    If UserInfo.UserRol >= 2 Then
+      CambiarVista("ViewCargarProy")
+    End If
+  End Sub
 End Class
