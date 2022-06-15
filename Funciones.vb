@@ -8,22 +8,12 @@ Module Funciones
     Dim Vista As UserControl
     Select Case origen
       Case "Main"
-        OpenedMain.BtnViewMain.Hide()
-        If UserLogged Then : OpenedMain.BtnViewLogin.Hide()
-        Else : OpenedMain.BtnViewLogin.Show()
-        End If
         Vista = ViewMain
       Case "Login"
-        OpenedMain.BtnViewLogin.Hide()
-        OpenedMain.BtnViewMain.Show()
         Vista = ViewLogin
       Case "Registro"
         Vista = ViewRegistro
       Case "NuevosProy"
-        OpenedMain.BtnViewMain.Show()
-        If UserLogged Then : OpenedMain.BtnViewLogin.Hide()
-        Else : OpenedMain.BtnViewLogin.Show()
-        End If
         Vista = ViewNuevosProy
     End Select
     Viewing = Vista

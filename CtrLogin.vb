@@ -67,6 +67,7 @@ Public Class CtrLogin
         End If
 
         UserLogged = True
+        OpenedMain.BtnViewLogin.Hide()
         CambiarVista("Main")
       Catch ex As Exception
         PnlCuil.BackColor = Color.Red

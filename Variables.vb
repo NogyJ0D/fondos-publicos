@@ -20,7 +20,7 @@
 
 
   ' Cadenas sql locales
-  Private sqlValentin = "Data Source=DESKTOP-7N22TGM\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
+  Private sqlValentin = "Data Source=DESKTOP-7N22TGM\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=manual322"
 
   ' Cambiar la cadena según quien está usando localmente
   Public sqlConn = sqlValentin

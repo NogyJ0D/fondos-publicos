@@ -48,19 +48,17 @@ Partial Class CtrRegistro
     Me.InpDireccion = New System.Windows.Forms.TextBox()
     Me.LblECP = New System.Windows.Forms.Label()
     Me.PnlCP = New System.Windows.Forms.Panel()
-    Me.InpCP = New System.Windows.Forms.TextBox()
+    Me.InpCP = New System.Windows.Forms.ComboBox()
     Me.LblExito = New System.Windows.Forms.Label()
     Me.InpFN = New System.Windows.Forms.DateTimePicker()
     Me.LblEFN = New System.Windows.Forms.Label()
     Me.PnlFN = New System.Windows.Forms.Panel()
     Me.Label1 = New System.Windows.Forms.Label()
     Me.Panel1 = New System.Windows.Forms.Panel()
-    Me.LblELocalidad = New System.Windows.Forms.Label()
-    Me.PnlLocalidad = New System.Windows.Forms.Panel()
-    Me.InpLocalidad = New System.Windows.Forms.TextBox()
     Me.LblECContraseña = New System.Windows.Forms.Label()
     Me.PnlCContraseña = New System.Windows.Forms.Panel()
     Me.InpCContraseña = New System.Windows.Forms.TextBox()
+    Me.BtnDebugCaptcha = New System.Windows.Forms.Button()
     Me.PnlCuil.SuspendLayout()
     Me.PnlContraseña.SuspendLayout()
     Me.PnlCaptcha.SuspendLayout()
@@ -73,7 +71,6 @@ Partial Class CtrRegistro
     Me.PnlCP.SuspendLayout()
     Me.PnlFN.SuspendLayout()
     Me.Panel1.SuspendLayout()
-    Me.PnlLocalidad.SuspendLayout()
     Me.PnlCContraseña.SuspendLayout()
     Me.SuspendLayout()
     '
@@ -215,7 +212,7 @@ Partial Class CtrRegistro
     Me.BtnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.BtnRegistro.Font = New System.Drawing.Font("Verdana", 14.0!)
     Me.BtnRegistro.ForeColor = System.Drawing.Color.WhiteSmoke
-    Me.BtnRegistro.Location = New System.Drawing.Point(424, 384)
+    Me.BtnRegistro.Location = New System.Drawing.Point(48, 392)
     Me.BtnRegistro.Name = "BtnRegistro"
     Me.BtnRegistro.Size = New System.Drawing.Size(369, 33)
     Me.BtnRegistro.TabIndex = 10
@@ -396,23 +393,22 @@ Partial Class CtrRegistro
     'InpCP
     '
     Me.InpCP.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
-    Me.InpCP.BorderStyle = System.Windows.Forms.BorderStyle.None
     Me.InpCP.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.InpCP.Font = New System.Drawing.Font("Verdana", 17.0!)
-    Me.InpCP.ForeColor = System.Drawing.Color.WhiteSmoke
+    Me.InpCP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.InpCP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.InpCP.ForeColor = System.Drawing.Color.Black
+    Me.InpCP.FormattingEnabled = True
     Me.InpCP.Location = New System.Drawing.Point(2, 2)
-    Me.InpCP.Margin = New System.Windows.Forms.Padding(0)
     Me.InpCP.Name = "InpCP"
     Me.InpCP.Size = New System.Drawing.Size(365, 28)
-    Me.InpCP.TabIndex = 7
-    Me.InpCP.Text = "Código Postal"
+    Me.InpCP.TabIndex = 0
     '
     'LblExito
     '
     Me.LblExito.AutoSize = True
     Me.LblExito.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.LblExito.ForeColor = System.Drawing.Color.White
-    Me.LblExito.Location = New System.Drawing.Point(416, 432)
+    Me.LblExito.Location = New System.Drawing.Point(424, 398)
     Me.LblExito.Name = "LblExito"
     Me.LblExito.Size = New System.Drawing.Size(382, 20)
     Me.LblExito.TabIndex = 55
@@ -424,8 +420,9 @@ Partial Class CtrRegistro
     Me.InpFN.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.InpFN.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
     Me.InpFN.CalendarTitleBackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+    Me.InpFN.CustomFormat = "dd/MM/yyyy"
     Me.InpFN.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.InpFN.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+    Me.InpFN.Format = System.Windows.Forms.DateTimePickerFormat.Custom
     Me.InpFN.Location = New System.Drawing.Point(2, 2)
     Me.InpFN.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
     Me.InpFN.Name = "InpFN"
@@ -437,7 +434,7 @@ Partial Class CtrRegistro
     Me.LblEFN.AutoSize = True
     Me.LblEFN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.LblEFN.ForeColor = System.Drawing.Color.Red
-    Me.LblEFN.Location = New System.Drawing.Point(48, 336)
+    Me.LblEFN.Location = New System.Drawing.Point(48, 264)
     Me.LblEFN.Name = "LblEFN"
     Me.LblEFN.Size = New System.Drawing.Size(319, 20)
     Me.LblEFN.TabIndex = 57
@@ -448,7 +445,7 @@ Partial Class CtrRegistro
     '
     Me.PnlFN.BackColor = System.Drawing.Color.White
     Me.PnlFN.Controls.Add(Me.InpFN)
-    Me.PnlFN.Location = New System.Drawing.Point(48, 392)
+    Me.PnlFN.Location = New System.Drawing.Point(48, 320)
     Me.PnlFN.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
     Me.PnlFN.Name = "PnlFN"
     Me.PnlFN.Padding = New System.Windows.Forms.Padding(2)
@@ -471,47 +468,10 @@ Partial Class CtrRegistro
     Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
     Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
     Me.Panel1.Controls.Add(Me.Label1)
-    Me.Panel1.Location = New System.Drawing.Point(48, 360)
+    Me.Panel1.Location = New System.Drawing.Point(48, 288)
     Me.Panel1.Name = "Panel1"
     Me.Panel1.Size = New System.Drawing.Size(367, 22)
     Me.Panel1.TabIndex = 60
-    '
-    'LblELocalidad
-    '
-    Me.LblELocalidad.AutoSize = True
-    Me.LblELocalidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.LblELocalidad.ForeColor = System.Drawing.Color.Red
-    Me.LblELocalidad.Location = New System.Drawing.Point(48, 264)
-    Me.LblELocalidad.Name = "LblELocalidad"
-    Me.LblELocalidad.Size = New System.Drawing.Size(170, 20)
-    Me.LblELocalidad.TabIndex = 62
-    Me.LblELocalidad.Text = "Ingrese su localidad"
-    Me.LblELocalidad.Visible = False
-    '
-    'PnlLocalidad
-    '
-    Me.PnlLocalidad.BackColor = System.Drawing.Color.White
-    Me.PnlLocalidad.Controls.Add(Me.InpLocalidad)
-    Me.PnlLocalidad.Location = New System.Drawing.Point(48, 288)
-    Me.PnlLocalidad.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
-    Me.PnlLocalidad.Name = "PnlLocalidad"
-    Me.PnlLocalidad.Padding = New System.Windows.Forms.Padding(2)
-    Me.PnlLocalidad.Size = New System.Drawing.Size(369, 32)
-    Me.PnlLocalidad.TabIndex = 61
-    '
-    'InpLocalidad
-    '
-    Me.InpLocalidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
-    Me.InpLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.None
-    Me.InpLocalidad.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.InpLocalidad.Font = New System.Drawing.Font("Verdana", 17.0!)
-    Me.InpLocalidad.ForeColor = System.Drawing.Color.WhiteSmoke
-    Me.InpLocalidad.Location = New System.Drawing.Point(2, 2)
-    Me.InpLocalidad.Margin = New System.Windows.Forms.Padding(0)
-    Me.InpLocalidad.Name = "InpLocalidad"
-    Me.InpLocalidad.Size = New System.Drawing.Size(365, 28)
-    Me.InpLocalidad.TabIndex = 6
-    Me.InpLocalidad.Text = "Localidad"
     '
     'LblECContraseña
     '
@@ -550,15 +510,24 @@ Partial Class CtrRegistro
     Me.InpCContraseña.TabIndex = 5
     Me.InpCContraseña.Text = "Repetir contraseña"
     '
+    'BtnDebugCaptcha
+    '
+    Me.BtnDebugCaptcha.FlatAppearance.BorderSize = 0
+    Me.BtnDebugCaptcha.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+    Me.BtnDebugCaptcha.Location = New System.Drawing.Point(816, 440)
+    Me.BtnDebugCaptcha.Name = "BtnDebugCaptcha"
+    Me.BtnDebugCaptcha.Size = New System.Drawing.Size(35, 23)
+    Me.BtnDebugCaptcha.TabIndex = 65
+    Me.BtnDebugCaptcha.UseVisualStyleBackColor = True
+    '
     'CtrRegistro
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.BackColor = System.Drawing.Color.Transparent
+    Me.Controls.Add(Me.BtnDebugCaptcha)
     Me.Controls.Add(Me.LblECContraseña)
     Me.Controls.Add(Me.PnlCContraseña)
-    Me.Controls.Add(Me.LblELocalidad)
-    Me.Controls.Add(Me.PnlLocalidad)
     Me.Controls.Add(Me.Panel1)
     Me.Controls.Add(Me.PnlFN)
     Me.Controls.Add(Me.LblEFN)
@@ -601,12 +570,9 @@ Partial Class CtrRegistro
     Me.PnlDireccion.ResumeLayout(False)
     Me.PnlDireccion.PerformLayout()
     Me.PnlCP.ResumeLayout(False)
-    Me.PnlCP.PerformLayout()
     Me.PnlFN.ResumeLayout(False)
     Me.Panel1.ResumeLayout(False)
     Me.Panel1.PerformLayout()
-    Me.PnlLocalidad.ResumeLayout(False)
-    Me.PnlLocalidad.PerformLayout()
     Me.PnlCContraseña.ResumeLayout(False)
     Me.PnlCContraseña.PerformLayout()
     Me.ResumeLayout(False)
@@ -639,17 +605,15 @@ Partial Class CtrRegistro
   Friend WithEvents InpDireccion As TextBox
   Friend WithEvents LblECP As Label
   Friend WithEvents PnlCP As Panel
-  Friend WithEvents InpCP As TextBox
   Friend WithEvents LblExito As Label
   Friend WithEvents InpFN As DateTimePicker
   Friend WithEvents LblEFN As Label
   Friend WithEvents PnlFN As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel1 As Panel
-  Friend WithEvents LblELocalidad As Label
-  Friend WithEvents PnlLocalidad As Panel
-  Friend WithEvents InpLocalidad As TextBox
+  Friend WithEvents Label1 As Label
+  Friend WithEvents Panel1 As Panel
   Friend WithEvents LblECContraseña As Label
   Friend WithEvents PnlCContraseña As Panel
   Friend WithEvents InpCContraseña As TextBox
+  Friend WithEvents InpCP As ComboBox
+  Friend WithEvents BtnDebugCaptcha As Button
 End Class

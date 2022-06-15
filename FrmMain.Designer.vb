@@ -128,7 +128,6 @@ Partial Class FrmMain
     Me.BtnViewMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
     Me.BtnViewMain.TabIndex = 3
     Me.BtnViewMain.TabStop = False
-    Me.BtnViewMain.Visible = False
     '
     'PnlView
     '

@@ -5,6 +5,7 @@ Public Class CtrRegistro
     PcbCaptcha.Image = MostrarCaptcha()
 
     AddHandler Me.MouseMove, AddressOf MoverVentana
+    CargarCP()
   End Sub
   Private Sub BtnCaptcha_Click(sender As Object, e As EventArgs) Handles BtnCaptcha.Click
     BtnCaptcha.Size = New Size(46, 46)
@@ -58,16 +59,6 @@ Public Class CtrRegistro
       AuthError(PnlDireccion, LblEDireccion, True)
       Err = True
     Else AuthError(PnlDireccion, LblEDireccion, False)
-    End If
-    If InpLocalidad.Text = "" Or InpLocalidad.Text = "Localidad" Then
-      AuthError(PnlLocalidad, LblELocalidad, True)
-      Err = True
-    Else AuthError(PnlLocalidad, LblELocalidad, False)
-    End If
-    If InpCP.Text = "" Or InpCP.Text = "Código Postal" Then
-      AuthError(PnlCP, LblECP, True)
-      Err = True
-    Else AuthError(PnlCP, LblECP, False)
     End If
     If DateDiff(DateInterval.Day, InpFN.Value, Now.Date) < 5843 Then
       AuthError(PnlFN, LblEFN, True)
@@ -125,12 +116,6 @@ Public Class CtrRegistro
   Private Sub InpDireccion_Leave(sender As Object, e As EventArgs) Handles InpDireccion.Leave
     AlternarHover(InpDireccion, "Calle y altura", False)
   End Sub
-  Private Sub InpLocalidad_Enter(sender As Object, e As EventArgs) Handles InpLocalidad.Enter
-    AlternarHover(InpLocalidad, "Localidad", True)
-  End Sub
-  Private Sub InpLocalidad_Leave(sender As Object, e As EventArgs) Handles InpLocalidad.Leave
-    AlternarHover(InpLocalidad, "Localidad", False)
-  End Sub
   Private Sub InpEmail_Enter(sender As Object, e As EventArgs) Handles InpEmail.Enter
     AlternarHover(InpEmail, "Email", True)
   End Sub
@@ -148,12 +133,6 @@ Public Class CtrRegistro
   End Sub
   Private Sub InpApellido_Leave(sender As Object, e As EventArgs) Handles InpApellido.Leave
     AlternarHover(InpApellido, "Apellido", False)
-  End Sub
-  Private Sub InpCP_Enter(sender As Object, e As EventArgs) Handles InpCP.Enter
-    AlternarHover(InpCP, "Código Postal", True)
-  End Sub
-  Private Sub InpCP_Leave(sender As Object, e As EventArgs) Handles InpCP.Leave
-    AlternarHover(InpCP, "Código Postal", False)
   End Sub
   Private Sub InpCContraseña_Enter(sender As Object, e As EventArgs) Handles InpCContraseña.Enter
     If InpCContraseña.Text = "Repetir contraseña" Then
@@ -202,10 +181,14 @@ Public Class CtrRegistro
       Try
         Dim hashedPass = BCrypt.Net.BCrypt.HashPassword(InpContraseña.Text)
         conn.Open()
-        Dim sql As String = $"INSERT INTO usuarios
-            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, localidad, codigo_postal, correo_electronico)
+        MsgBox($"INSERT INTO usuarios
+            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, id_localidad, correo_electronico)
         VALUES
-            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{InpFN.Value}', '{InpDireccion.Text}', '{InpLocalidad.Text}', '{InpCP.Text}', '{InpEmail.Text}')"
+            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{Format(InpFN.Value, "dd/MM/yyyy")}', '{InpDireccion.Text}', {InpCP.SelectedValue.ToString}, '{InpEmail.Text}')")
+        Dim sql As String = $"INSERT INTO usuarios
+            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, id_localidad, correo_electronico)
+        VALUES
+            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{Format(InpFN.Value, "dd/MM/yyyy")}', '{InpDireccion.Text}', {InpCP.SelectedValue.ToString}, '{InpEmail.Text}')"
 
         Dim cmd As SqlCommand = New SqlCommand(sql, conn)
         cmd.ExecuteNonQuery()
@@ -216,9 +199,37 @@ Public Class CtrRegistro
         Return True
       Catch ex As Exception
         conn.Close()
-        MsgBox(ex.Message)
+        MsgBox(ex.ToString)
         Return False
       End Try
     End Using
   End Function
+  Private Sub CargarCP()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        conn.Open()
+        Dim sql As String = "SELECT id_localidad AS ID, codigo_postal AS CP FROM localidades"
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        cmd.ExecuteNonQuery()
+
+        Dim ds As New DataSet()
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        da.SelectCommand = cmd
+        da.Fill(ds)
+
+        InpCP.DataSource = ds.Tables(0)
+        InpCP.DisplayMember = "CP"
+        InpCP.ValueMember = "ID"
+
+        conn.Close()
+      Catch ex As Exception
+        conn.Close()
+        MsgBox(ex.Message)
+      End Try
+    End Using
+  End Sub
+  ' Debug
+  Private Sub BtnDebugCaptcha_Click(sender As Object, e As EventArgs) Handles BtnDebugCaptcha.Click
+    InpCaptcha.Text = Captcha
+  End Sub
 End Class
