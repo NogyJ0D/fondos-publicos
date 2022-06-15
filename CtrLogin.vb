@@ -52,19 +52,30 @@ Public Class CtrLogin
         cmd.ExecuteNonQuery()
 
         Dim da As SqlDataAdapter = New SqlDataAdapter
+        Dim dt As New DataTable
         da.SelectCommand = cmd
-        da.Fill(UserInfo)
-        If UserInfo.Rows.Count = 0 Then
+        da.Fill(dt)
+        If dt.Rows.Count = 0 Then
           LblECredenciales.Text = "El usuario ingresado no existe"
           Throw New Exception() ' No hay usuario
         End If
 
         ' Si hay usuario
 
-        Dim passCheck = BCrypt.Net.BCrypt.Verify(InpContraseña.Text, UserInfo.Rows(0).Item(4))
+        Dim passCheck = BCrypt.Net.BCrypt.Verify(InpContraseña.Text, dt.Rows(0).Item(4))
         If Not passCheck Then
           Throw New Exception()
         End If
+
+        UserInfo.Id = dt.Rows(0).Item(0)
+        UserInfo.CUIT = dt.Rows(0).Item(1)
+        UserInfo.Nombre = dt.Rows(0).Item(2)
+        UserInfo.Apellido = dt.Rows(0).Item(3)
+        UserInfo.FechaN = dt.Rows(0).Item(5)
+        UserInfo.Direccion = dt.Rows(0).Item(6)
+        UserInfo.IdLocalidad = dt.Rows(0).Item(7)
+        UserInfo.Correo = dt.Rows(0).Item(8)
+        UserInfo.Rol = dt.Rows(0).Item(9)
 
         UserLogged = True
         OpenedMain.BtnViewLogin.Hide()
@@ -73,9 +84,6 @@ Public Class CtrLogin
         PnlCuil.BackColor = Color.Red
         PnlContraseña.BackColor = Color.Red
         LblECredenciales.Show()
-
-        'MsgBox(ex.Message)
-        UserInfo = New DataTable
       Finally
         conn.Close()
       End Try

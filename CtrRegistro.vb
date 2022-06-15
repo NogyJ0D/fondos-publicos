@@ -181,14 +181,10 @@ Public Class CtrRegistro
       Try
         Dim hashedPass = BCrypt.Net.BCrypt.HashPassword(InpContraseña.Text)
         conn.Open()
-        MsgBox($"INSERT INTO usuarios
-            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, id_localidad, correo_electronico)
-        VALUES
-            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{Format(InpFN.Value, "dd/MM/yyyy")}', '{InpDireccion.Text}', {InpCP.SelectedValue.ToString}, '{InpEmail.Text}')")
         Dim sql As String = $"INSERT INTO usuarios
             (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, id_localidad, correo_electronico)
         VALUES
-            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{Format(InpFN.Value, "dd/MM/yyyy")}', '{InpDireccion.Text}', {InpCP.SelectedValue.ToString}, '{InpEmail.Text}')"
+            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{CDate(InpFN.Value.ToShortDateString).ToString("yyyy/MM/dd")}', '{InpDireccion.Text}', {InpCP.SelectedValue.ToString}, '{InpEmail.Text}')"
 
         Dim cmd As SqlCommand = New SqlCommand(sql, conn)
         cmd.ExecuteNonQuery()
@@ -227,9 +223,5 @@ Public Class CtrRegistro
         MsgBox(ex.Message)
       End Try
     End Using
-  End Sub
-  ' Debug
-  Private Sub BtnDebugCaptcha_Click(sender As Object, e As EventArgs) Handles BtnDebugCaptcha.Click
-    InpCaptcha.Text = Captcha
   End Sub
 End Class
