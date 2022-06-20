@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class CtrMain
   Private Sub CtrMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    AddHandler Me.MouseMove, AddressOf MoverVentana ' Mover formulario
+    AddHandler Me.PnlView.MouseMove, AddressOf MoverVentana ' Mover formulario
 
     ContarProyectos()
     LlenarProyectos()
@@ -53,9 +53,39 @@ Public Class CtrMain
   End Sub
   Private Sub DgvPAprob_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPAprob.CellClick
     Try
-      TxbPDesc.Text = DgvPAprob.Rows(e.RowIndex).Cells.Item(2).Value & " - " & DgvPAprob.Rows(e.RowIndex).Cells.Item(1).Value
+      LblPId.Text = DgvPAprob.Rows(e.RowIndex).Cells(0).Value
+      CargarProy()
       PnlPABorde.Show()
     Catch ex As System.ArgumentOutOfRangeException
     End Try
+  End Sub
+  Private Sub BtnViewForo_Click(sender As Object, e As EventArgs) Handles BtnViewForo.Click
+    ViewForo = New CtrForo
+    ViewForo.Tag = LblPId.Text
+    CambiarVista("Foro")
+  End Sub
+  Private Sub CargarProy()
+    Using conn = New SqlClient.SqlConnection(sqlConn)
+      Try
+        conn.Open()
+        Dim sql As String = $"SELECT * FROM proyectos WHERE id_proyecto = {LblPId.Text}"
+        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
+        Dim dr As SqlDataReader = cmd.ExecuteReader()
+        While dr.Read()
+          LblPNombre.Text = dr.Item(1)
+          TxbPDesc.Text = dr.Item(2)
+          LblMonto.Text = $"Monto: ${dr.Item(4)}"
+        End While
+      Catch ex As Exception
+        MsgBox(ex.ToString)
+      Finally
+        conn.Close()
+      End Try
+    End Using
+  End Sub
+
+  Private Sub DgvPAprob_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPAprob.CellDoubleClick
+    LblPId.Text = DgvPAprob.Rows(e.RowIndex).Cells(0).Value
+    BtnViewForo_Click(sender, e)
   End Sub
 End Class

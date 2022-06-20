@@ -120,6 +120,18 @@
     <Compile Include="CtrCargarProy.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="CtrComentario.Designer.vb">
+      <DependentUpon>CtrComentario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CtrComentario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrForo.Designer.vb">
+      <DependentUpon>CtrForo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CtrForo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CtrLogin.Designer.vb">
       <DependentUpon>CtrLogin.vb</DependentUpon>
     </Compile>
@@ -136,6 +148,18 @@
       <DependentUpon>CtrRegistro.vb</DependentUpon>
     </Compile>
     <Compile Include="CtrRegistro.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrResponder.Designer.vb">
+      <DependentUpon>CtrResponder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CtrResponder.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrRespuesta.Designer.vb">
+      <DependentUpon>CtrRespuesta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CtrRespuesta.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.vb">
@@ -174,6 +198,12 @@
     <EmbeddedResource Include="CtrCargarProy.resx">
       <DependentUpon>CtrCargarProy.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CtrComentario.resx">
+      <DependentUpon>CtrComentario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrForo.resx">
+      <DependentUpon>CtrForo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CtrLogin.resx">
       <DependentUpon>CtrLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CtrRegistro.resx">
       <DependentUpon>CtrRegistro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrResponder.resx">
+      <DependentUpon>CtrResponder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrRespuesta.resx">
+      <DependentUpon>CtrRespuesta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>

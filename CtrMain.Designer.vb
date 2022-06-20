@@ -36,13 +36,11 @@ Partial Class CtrMain
     Me.LblPTop = New System.Windows.Forms.Label()
     Me.PnlPABorde = New System.Windows.Forms.Panel()
     Me.PnlPA = New System.Windows.Forms.Panel()
-    Me.Button2 = New System.Windows.Forms.Button()
-    Me.Label4 = New System.Windows.Forms.Label()
-    Me.Panel3 = New System.Windows.Forms.Panel()
-    Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-    Me.Panel2 = New System.Windows.Forms.Panel()
-    Me.Label5 = New System.Windows.Forms.Label()
-    Me.Panel9 = New System.Windows.Forms.Panel()
+    Me.LblPId = New System.Windows.Forms.Label()
+    Me.BtnViewForo = New System.Windows.Forms.Button()
+    Me.LblMonto = New System.Windows.Forms.Label()
+    Me.LblPNombre = New System.Windows.Forms.Label()
+    Me.PnlDesc = New System.Windows.Forms.Panel()
     Me.TxbPDesc = New System.Windows.Forms.RichTextBox()
     Me.PnlView = New System.Windows.Forms.Panel()
     Me.PnlPBorde.SuspendLayout()
@@ -51,9 +49,7 @@ Partial Class CtrMain
     Me.PnlPTop.SuspendLayout()
     Me.PnlPABorde.SuspendLayout()
     Me.PnlPA.SuspendLayout()
-    Me.Panel3.SuspendLayout()
-    Me.Panel2.SuspendLayout()
-    Me.Panel9.SuspendLayout()
+    Me.PnlDesc.SuspendLayout()
     Me.PnlView.SuspendLayout()
     Me.SuspendLayout()
     '
@@ -132,7 +128,7 @@ Partial Class CtrMain
     Me.Precio.HeaderText = "Monto"
     Me.Precio.Name = "Precio"
     Me.Precio.ReadOnly = True
-    Me.Precio.Width = 62
+    Me.Precio.Visible = False
     '
     'Id
     '
@@ -144,11 +140,12 @@ Partial Class CtrMain
     '
     'Fecha
     '
+    Me.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
     Me.Fecha.DataPropertyName = "fecha"
     Me.Fecha.HeaderText = "Fecha"
     Me.Fecha.Name = "Fecha"
     Me.Fecha.ReadOnly = True
-    Me.Fecha.Visible = False
+    Me.Fecha.Width = 62
     '
     'Descripción
     '
@@ -193,106 +190,83 @@ Partial Class CtrMain
     'PnlPA
     '
     Me.PnlPA.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.PnlPA.Controls.Add(Me.Button2)
-    Me.PnlPA.Controls.Add(Me.Label4)
-    Me.PnlPA.Controls.Add(Me.Panel3)
-    Me.PnlPA.Controls.Add(Me.Panel2)
+    Me.PnlPA.Controls.Add(Me.LblPId)
+    Me.PnlPA.Controls.Add(Me.BtnViewForo)
+    Me.PnlPA.Controls.Add(Me.LblMonto)
+    Me.PnlPA.Controls.Add(Me.LblPNombre)
+    Me.PnlPA.Controls.Add(Me.PnlDesc)
     Me.PnlPA.Location = New System.Drawing.Point(1, 1)
     Me.PnlPA.Name = "PnlPA"
     Me.PnlPA.Size = New System.Drawing.Size(562, 402)
     Me.PnlPA.TabIndex = 5
     '
-    'Button2
+    'LblPId
     '
-    Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(36, Byte), Integer))
-    Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-    Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-    Me.Button2.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.Button2.Location = New System.Drawing.Point(440, 360)
-    Me.Button2.Name = "Button2"
-    Me.Button2.Size = New System.Drawing.Size(92, 33)
-    Me.Button2.TabIndex = 10
-    Me.Button2.Text = "(Enviar)"
-    Me.Button2.UseVisualStyleBackColor = False
+    Me.LblPId.AutoSize = True
+    Me.LblPId.Location = New System.Drawing.Point(488, 8)
+    Me.LblPId.Name = "LblPId"
+    Me.LblPId.Size = New System.Drawing.Size(39, 13)
+    Me.LblPId.TabIndex = 13
+    Me.LblPId.Text = "Label1"
+    Me.LblPId.Visible = False
     '
-    'Label4
+    'BtnViewForo
     '
-    Me.Label4.AutoSize = True
-    Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.Label4.Location = New System.Drawing.Point(7, 302)
-    Me.Label4.Name = "Label4"
-    Me.Label4.Size = New System.Drawing.Size(44, 23)
-    Me.Label4.TabIndex = 7
-    Me.Label4.Text = "Foro"
+    Me.BtnViewForo.Location = New System.Drawing.Point(464, 368)
+    Me.BtnViewForo.Name = "BtnViewForo"
+    Me.BtnViewForo.Size = New System.Drawing.Size(75, 23)
+    Me.BtnViewForo.TabIndex = 12
+    Me.BtnViewForo.Text = "Button1"
+    Me.BtnViewForo.UseVisualStyleBackColor = True
     '
-    'Panel3
+    'LblMonto
     '
-    Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-    Me.Panel3.Controls.Add(Me.RichTextBox1)
-    Me.Panel3.Location = New System.Drawing.Point(11, 329)
-    Me.Panel3.Name = "Panel3"
-    Me.Panel3.Padding = New System.Windows.Forms.Padding(1)
-    Me.Panel3.Size = New System.Drawing.Size(525, 26)
-    Me.Panel3.TabIndex = 9
+    Me.LblMonto.AutoSize = True
+    Me.LblMonto.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.LblMonto.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.LblMonto.ForeColor = System.Drawing.SystemColors.ButtonFace
+    Me.LblMonto.Location = New System.Drawing.Point(16, 368)
+    Me.LblMonto.Name = "LblMonto"
+    Me.LblMonto.Size = New System.Drawing.Size(134, 23)
+    Me.LblMonto.TabIndex = 11
+    Me.LblMonto.Text = "Monto: _________"
     '
-    'RichTextBox1
+    'LblPNombre
     '
-    Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-    Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.RichTextBox1.Location = New System.Drawing.Point(1, 1)
-    Me.RichTextBox1.Name = "RichTextBox1"
-    Me.RichTextBox1.Size = New System.Drawing.Size(523, 24)
-    Me.RichTextBox1.TabIndex = 0
-    Me.RichTextBox1.Text = ""
+    Me.LblPNombre.AutoSize = True
+    Me.LblPNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.LblPNombre.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.LblPNombre.ForeColor = System.Drawing.SystemColors.ButtonFace
+    Me.LblPNombre.Location = New System.Drawing.Point(16, 8)
+    Me.LblPNombre.Name = "LblPNombre"
+    Me.LblPNombre.Size = New System.Drawing.Size(73, 23)
+    Me.LblPNombre.TabIndex = 9
+    Me.LblPNombre.Text = "Nombre"
     '
-    'Panel2
+    'PnlDesc
     '
-    Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.Panel2.Controls.Add(Me.Label5)
-    Me.Panel2.Controls.Add(Me.Panel9)
-    Me.Panel2.Location = New System.Drawing.Point(11, 7)
-    Me.Panel2.Name = "Panel2"
-    Me.Panel2.Size = New System.Drawing.Size(529, 279)
-    Me.Panel2.TabIndex = 8
-    '
-    'Label5
-    '
-    Me.Label5.AutoSize = True
-    Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.Label5.Location = New System.Drawing.Point(-4, 6)
-    Me.Label5.Name = "Label5"
-    Me.Label5.Size = New System.Drawing.Size(98, 23)
-    Me.Label5.TabIndex = 2
-    Me.Label5.Text = "Descripción"
-    '
-    'Panel9
-    '
-    Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-    Me.Panel9.Controls.Add(Me.TxbPDesc)
-    Me.Panel9.Location = New System.Drawing.Point(-1, 36)
-    Me.Panel9.Name = "Panel9"
-    Me.Panel9.Size = New System.Drawing.Size(529, 243)
-    Me.Panel9.TabIndex = 8
+    Me.PnlDesc.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
+    Me.PnlDesc.Controls.Add(Me.TxbPDesc)
+    Me.PnlDesc.Location = New System.Drawing.Point(11, 38)
+    Me.PnlDesc.Name = "PnlDesc"
+    Me.PnlDesc.Size = New System.Drawing.Size(529, 314)
+    Me.PnlDesc.TabIndex = 10
     '
     'TxbPDesc
     '
     Me.TxbPDesc.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(23, Byte), Integer))
     Me.TxbPDesc.BorderStyle = System.Windows.Forms.BorderStyle.None
     Me.TxbPDesc.Cursor = System.Windows.Forms.Cursors.IBeam
+    Me.TxbPDesc.Dock = System.Windows.Forms.DockStyle.Fill
     Me.TxbPDesc.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.TxbPDesc.ForeColor = System.Drawing.SystemColors.ButtonFace
     Me.TxbPDesc.HideSelection = False
     Me.TxbPDesc.ImeMode = System.Windows.Forms.ImeMode.NoControl
-    Me.TxbPDesc.Location = New System.Drawing.Point(2, 1)
+    Me.TxbPDesc.Location = New System.Drawing.Point(0, 0)
     Me.TxbPDesc.Name = "TxbPDesc"
     Me.TxbPDesc.ReadOnly = True
     Me.TxbPDesc.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-    Me.TxbPDesc.Size = New System.Drawing.Size(526, 241)
+    Me.TxbPDesc.Size = New System.Drawing.Size(529, 314)
     Me.TxbPDesc.TabIndex = 3
     Me.TxbPDesc.Text = ""
     '
@@ -324,10 +298,7 @@ Partial Class CtrMain
     Me.PnlPABorde.ResumeLayout(False)
     Me.PnlPA.ResumeLayout(False)
     Me.PnlPA.PerformLayout()
-    Me.Panel3.ResumeLayout(False)
-    Me.Panel2.ResumeLayout(False)
-    Me.Panel2.PerformLayout()
-    Me.Panel9.ResumeLayout(False)
+    Me.PnlDesc.ResumeLayout(False)
     Me.PnlView.ResumeLayout(False)
     Me.ResumeLayout(False)
     Me.PerformLayout()
@@ -339,21 +310,19 @@ Partial Class CtrMain
     Friend WithEvents PnlProyectos As Panel
     Friend WithEvents PnlPABorde As Panel
     Friend WithEvents PnlPA As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents TxbPDesc As RichTextBox
-    Friend WithEvents PnlView As Panel
+  Friend WithEvents PnlView As Panel
   Friend WithEvents PnlPTop As Panel
   Friend WithEvents LblPTop As Label
   Friend WithEvents DgvPAprob As DataGridView
+  Friend WithEvents LblMonto As Label
+  Friend WithEvents LblPNombre As Label
+  Friend WithEvents PnlDesc As Panel
+  Friend WithEvents TxbPDesc As RichTextBox
+  Friend WithEvents BtnViewForo As Button
+  Friend WithEvents LblPId As Label
   Friend WithEvents Nombre As DataGridViewTextBoxColumn
   Friend WithEvents Precio As DataGridViewTextBoxColumn
   Friend WithEvents Id As DataGridViewTextBoxColumn
   Friend WithEvents Fecha As DataGridViewTextBoxColumn
   Friend WithEvents Descripción As DataGridViewTextBoxColumn
-  Friend WithEvents RichTextBox1 As RichTextBox
 End Class

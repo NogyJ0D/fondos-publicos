@@ -24,6 +24,7 @@ Partial Class FrmMain
     Private Sub InitializeComponent()
     Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
     Me.PnlNav = New System.Windows.Forms.Panel()
+    Me.BtnLogout = New System.Windows.Forms.PictureBox()
     Me.Label1 = New System.Windows.Forms.Label()
     Me.CmbTema = New System.Windows.Forms.ComboBox()
     Me.BtnNMinim = New System.Windows.Forms.Button()
@@ -31,11 +32,10 @@ Partial Class FrmMain
     Me.BtnViewLogin = New System.Windows.Forms.PictureBox()
     Me.BtnViewMain = New System.Windows.Forms.PictureBox()
     Me.PnlView = New System.Windows.Forms.Panel()
-    Me.BtnLogout = New System.Windows.Forms.PictureBox()
     Me.PnlNav.SuspendLayout()
+    CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.BtnViewMain, System.ComponentModel.ISupportInitialize).BeginInit()
-    CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.SuspendLayout()
     '
     'PnlNav
@@ -53,6 +53,21 @@ Partial Class FrmMain
     Me.PnlNav.Name = "PnlNav"
     Me.PnlNav.Size = New System.Drawing.Size(847, 42)
     Me.PnlNav.TabIndex = 1
+    '
+    'BtnLogout
+    '
+    Me.BtnLogout.Cursor = System.Windows.Forms.Cursors.Hand
+    Me.BtnLogout.Dock = System.Windows.Forms.DockStyle.Left
+    Me.BtnLogout.Enabled = False
+    Me.BtnLogout.Image = CType(resources.GetObject("BtnLogout.Image"), System.Drawing.Image)
+    Me.BtnLogout.Location = New System.Drawing.Point(84, 0)
+    Me.BtnLogout.Name = "BtnLogout"
+    Me.BtnLogout.Padding = New System.Windows.Forms.Padding(7)
+    Me.BtnLogout.Size = New System.Drawing.Size(42, 42)
+    Me.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+    Me.BtnLogout.TabIndex = 8
+    Me.BtnLogout.TabStop = False
+    Me.BtnLogout.Visible = False
     '
     'Label1
     '
@@ -141,25 +156,11 @@ Partial Class FrmMain
     Me.PnlView.Size = New System.Drawing.Size(847, 466)
     Me.PnlView.TabIndex = 2
     '
-    'BtnLogout
-    '
-    Me.BtnLogout.Cursor = System.Windows.Forms.Cursors.Hand
-    Me.BtnLogout.Dock = System.Windows.Forms.DockStyle.Left
-    Me.BtnLogout.Enabled = False
-    Me.BtnLogout.Image = CType(resources.GetObject("BtnLogout.Image"), System.Drawing.Image)
-    Me.BtnLogout.Location = New System.Drawing.Point(84, 0)
-    Me.BtnLogout.Name = "BtnLogout"
-    Me.BtnLogout.Padding = New System.Windows.Forms.Padding(7)
-    Me.BtnLogout.Size = New System.Drawing.Size(42, 42)
-    Me.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-    Me.BtnLogout.TabIndex = 8
-    Me.BtnLogout.TabStop = False
-    Me.BtnLogout.Visible = False
-    '
     'FrmMain
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+    Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(36, Byte), Integer))
     Me.ClientSize = New System.Drawing.Size(847, 508)
     Me.Controls.Add(Me.PnlView)
     Me.Controls.Add(Me.PnlNav)
@@ -169,9 +170,9 @@ Partial Class FrmMain
     Me.Text = "Fondos Públicos"
     Me.PnlNav.ResumeLayout(False)
     Me.PnlNav.PerformLayout()
+    CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.BtnViewMain, System.ComponentModel.ISupportInitialize).EndInit()
-    CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).EndInit()
     Me.ResumeLayout(False)
 
   End Sub
@@ -183,5 +184,5 @@ Partial Class FrmMain
     Friend WithEvents BtnNCerrar As Button
     Friend WithEvents CmbTema As ComboBox
     Friend WithEvents Label1 As Label
-  Friend WithEvents BtnLogout As PictureBox
+    Friend WithEvents BtnLogout As PictureBox
 End Class
