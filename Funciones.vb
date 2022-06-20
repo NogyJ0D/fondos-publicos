@@ -5,30 +5,30 @@ Imports SendGrid.Helpers.Mail
 
 Module Funciones
   Public Sub CambiarVista(origen As String)
-    Dim Vista As UserControl
     Select Case origen
       Case "Main"
-        Vista = ViewMain
+        Viewing = ViewMain
       Case "Login"
-        Vista = ViewLogin
+        Viewing = ViewLogin
       Case "Registro"
         If Not UserLogged Then
-          Vista = ViewRegistro
+          Viewing = ViewRegistro
         Else
           MsgBox("No puedes registrarte teniendo ya una cuenta abierta.", MsgBoxStyle.Critical, "Error")
         End If
       Case "NuevosProy"
-        Vista = ViewNuevosProy
+        Viewing = ViewNuevosProy
       Case "ViewCargarProy"
         If UserInfo.UserRol >= 2 Then
-          Vista = ViewCargarProy
+          Viewing = ViewCargarProy
         Else
           MsgBox("No posees el rol válido para esto.", MsgBoxStyle.Critical, "Permisos insuficientes")
         End If
+      Case "Foro"
+        Viewing = ViewForo
     End Select
-    Viewing = Vista
     OpenedMain.PnlView.Controls.Clear()
-    OpenedMain.PnlView.Controls.Add(Vista)
+    OpenedMain.PnlView.Controls.Add(Viewing)
   End Sub
   Public Function GenerarCaptcha(ByRef len As Integer, ByRef upper As Boolean) As String
     Dim rand As New Random()

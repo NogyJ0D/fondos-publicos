@@ -22,54 +22,40 @@ Partial Class CtrMain
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-    Me.BtnViewNuevosProy = New System.Windows.Forms.Button()
+    Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+    Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+    Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+    Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
     Me.Label3 = New System.Windows.Forms.Label()
     Me.PnlPBorde = New System.Windows.Forms.Panel()
     Me.PnlProyectos = New System.Windows.Forms.Panel()
     Me.DgvPAprob = New System.Windows.Forms.DataGridView()
+    Me.PnlPTop = New System.Windows.Forms.Panel()
+    Me.LblPTop = New System.Windows.Forms.Label()
+    Me.PnlPABorde = New System.Windows.Forms.Panel()
+    Me.PnlPA = New System.Windows.Forms.Panel()
+    Me.LblPId = New System.Windows.Forms.Label()
+    Me.BtnViewForo = New System.Windows.Forms.Button()
+    Me.LblMonto = New System.Windows.Forms.Label()
+    Me.LblPNombre = New System.Windows.Forms.Label()
+    Me.PnlDesc = New System.Windows.Forms.Panel()
+    Me.TxbPDesc = New System.Windows.Forms.RichTextBox()
+    Me.PnlView = New System.Windows.Forms.Panel()
+    Me.BtnViewNuevosProy = New System.Windows.Forms.Button()
     Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.PnlPTop = New System.Windows.Forms.Panel()
-    Me.LblPTop = New System.Windows.Forms.Label()
-    Me.PnlPABorde = New System.Windows.Forms.Panel()
-    Me.PnlPA = New System.Windows.Forms.Panel()
-    Me.Button2 = New System.Windows.Forms.Button()
-    Me.Label4 = New System.Windows.Forms.Label()
-    Me.Panel3 = New System.Windows.Forms.Panel()
-    Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-    Me.Panel2 = New System.Windows.Forms.Panel()
-    Me.Label5 = New System.Windows.Forms.Label()
-    Me.Panel9 = New System.Windows.Forms.Panel()
-    Me.TxbPDesc = New System.Windows.Forms.RichTextBox()
-    Me.PnlView = New System.Windows.Forms.Panel()
     Me.PnlPBorde.SuspendLayout()
     Me.PnlProyectos.SuspendLayout()
     CType(Me.DgvPAprob, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.PnlPTop.SuspendLayout()
     Me.PnlPABorde.SuspendLayout()
     Me.PnlPA.SuspendLayout()
-    Me.Panel3.SuspendLayout()
-    Me.Panel2.SuspendLayout()
-    Me.Panel9.SuspendLayout()
+    Me.PnlDesc.SuspendLayout()
     Me.PnlView.SuspendLayout()
     Me.SuspendLayout()
-    '
-    'BtnViewNuevosProy
-    '
-    Me.BtnViewNuevosProy.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.BtnViewNuevosProy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-    Me.BtnViewNuevosProy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-    Me.BtnViewNuevosProy.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.BtnViewNuevosProy.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.BtnViewNuevosProy.Location = New System.Drawing.Point(14, 415)
-    Me.BtnViewNuevosProy.Name = "BtnViewNuevosProy"
-    Me.BtnViewNuevosProy.Size = New System.Drawing.Size(236, 33)
-    Me.BtnViewNuevosProy.TabIndex = 5
-    Me.BtnViewNuevosProy.Text = "(abir proyectos no aprobados)"
-    Me.BtnViewNuevosProy.UseVisualStyleBackColor = False
     '
     'Label3
     '
@@ -108,55 +94,47 @@ Partial Class CtrMain
     '
     Me.DgvPAprob.AllowUserToAddRows = False
     Me.DgvPAprob.AllowUserToDeleteRows = False
+    Me.DgvPAprob.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(23, Byte), Integer))
+    Me.DgvPAprob.BorderStyle = System.Windows.Forms.BorderStyle.None
+    Me.DgvPAprob.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+    Me.DgvPAprob.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+    DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+    DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+    DataGridViewCellStyle1.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight
+    DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(3)
+    DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+    DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+    DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+    Me.DgvPAprob.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
     Me.DgvPAprob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
     Me.DgvPAprob.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Precio, Me.Id, Me.Fecha, Me.Descripción})
+    DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+    DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    DataGridViewCellStyle3.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText
+    DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+    DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+    DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+    Me.DgvPAprob.DefaultCellStyle = DataGridViewCellStyle3
     Me.DgvPAprob.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.DgvPAprob.GridColor = System.Drawing.SystemColors.ButtonHighlight
     Me.DgvPAprob.Location = New System.Drawing.Point(0, 40)
     Me.DgvPAprob.Name = "DgvPAprob"
+    Me.DgvPAprob.ReadOnly = True
+    Me.DgvPAprob.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+    DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+    DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+    DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+    DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+    DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+    DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+    Me.DgvPAprob.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
     Me.DgvPAprob.RowHeadersVisible = False
+    Me.DgvPAprob.ShowEditingIcon = False
     Me.DgvPAprob.Size = New System.Drawing.Size(234, 323)
-    Me.DgvPAprob.TabIndex = 7
-    '
-    'Nombre
-    '
-    Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-    Me.Nombre.DataPropertyName = "titulo"
-    Me.Nombre.HeaderText = "Título"
-    Me.Nombre.Name = "Nombre"
-    Me.Nombre.ReadOnly = True
-    '
-    'Precio
-    '
-    Me.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-    Me.Precio.DataPropertyName = "monto"
-    Me.Precio.HeaderText = "Monto"
-    Me.Precio.Name = "Precio"
-    Me.Precio.ReadOnly = True
-    Me.Precio.Width = 62
-    '
-    'Id
-    '
-    Me.Id.DataPropertyName = "id_proyecto"
-    Me.Id.HeaderText = "Id"
-    Me.Id.Name = "Id"
-    Me.Id.ReadOnly = True
-    Me.Id.Visible = False
-    '
-    'Fecha
-    '
-    Me.Fecha.DataPropertyName = "fecha"
-    Me.Fecha.HeaderText = "Fecha"
-    Me.Fecha.Name = "Fecha"
-    Me.Fecha.ReadOnly = True
-    Me.Fecha.Visible = False
-    '
-    'Descripción
-    '
-    Me.Descripción.DataPropertyName = "descripcion"
-    Me.Descripción.HeaderText = "Descripción"
-    Me.Descripción.Name = "Descripción"
-    Me.Descripción.ReadOnly = True
-    Me.Descripción.Visible = False
+    Me.DgvPAprob.TabIndex = 8
     '
     'PnlPTop
     '
@@ -193,112 +171,90 @@ Partial Class CtrMain
     'PnlPA
     '
     Me.PnlPA.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.PnlPA.Controls.Add(Me.Button2)
-    Me.PnlPA.Controls.Add(Me.Label4)
-    Me.PnlPA.Controls.Add(Me.Panel3)
-    Me.PnlPA.Controls.Add(Me.Panel2)
+    Me.PnlPA.Controls.Add(Me.LblPId)
+    Me.PnlPA.Controls.Add(Me.BtnViewForo)
+    Me.PnlPA.Controls.Add(Me.LblMonto)
+    Me.PnlPA.Controls.Add(Me.LblPNombre)
+    Me.PnlPA.Controls.Add(Me.PnlDesc)
     Me.PnlPA.Location = New System.Drawing.Point(1, 1)
     Me.PnlPA.Name = "PnlPA"
     Me.PnlPA.Size = New System.Drawing.Size(562, 402)
     Me.PnlPA.TabIndex = 5
     '
-    'Button2
+    'LblPId
     '
-    Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(36, Byte), Integer))
-    Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-    Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-    Me.Button2.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.Button2.Location = New System.Drawing.Point(440, 360)
-    Me.Button2.Name = "Button2"
-    Me.Button2.Size = New System.Drawing.Size(92, 33)
-    Me.Button2.TabIndex = 10
-    Me.Button2.Text = "(Enviar)"
-    Me.Button2.UseVisualStyleBackColor = False
+    Me.LblPId.AutoSize = True
+    Me.LblPId.Location = New System.Drawing.Point(488, 8)
+    Me.LblPId.Name = "LblPId"
+    Me.LblPId.Size = New System.Drawing.Size(39, 13)
+    Me.LblPId.TabIndex = 13
+    Me.LblPId.Text = "Label1"
+    Me.LblPId.Visible = False
     '
-    'Label4
+    'BtnViewForo
     '
-    Me.Label4.AutoSize = True
-    Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.Label4.Location = New System.Drawing.Point(7, 302)
-    Me.Label4.Name = "Label4"
-    Me.Label4.Size = New System.Drawing.Size(44, 23)
-    Me.Label4.TabIndex = 7
-    Me.Label4.Text = "Foro"
+    Me.BtnViewForo.Location = New System.Drawing.Point(464, 368)
+    Me.BtnViewForo.Name = "BtnViewForo"
+    Me.BtnViewForo.Size = New System.Drawing.Size(75, 23)
+    Me.BtnViewForo.TabIndex = 12
+    Me.BtnViewForo.Text = "Button1"
+    Me.BtnViewForo.UseVisualStyleBackColor = True
     '
-    'Panel3
+    'LblMonto
     '
-    Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-    Me.Panel3.Controls.Add(Me.RichTextBox1)
-    Me.Panel3.Location = New System.Drawing.Point(11, 329)
-    Me.Panel3.Name = "Panel3"
-    Me.Panel3.Padding = New System.Windows.Forms.Padding(1)
-    Me.Panel3.Size = New System.Drawing.Size(525, 26)
-    Me.Panel3.TabIndex = 9
+    Me.LblMonto.AutoSize = True
+    Me.LblMonto.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.LblMonto.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.LblMonto.ForeColor = System.Drawing.SystemColors.ButtonFace
+    Me.LblMonto.Location = New System.Drawing.Point(16, 368)
+    Me.LblMonto.Name = "LblMonto"
+    Me.LblMonto.Size = New System.Drawing.Size(134, 23)
+    Me.LblMonto.TabIndex = 11
+    Me.LblMonto.Text = "Monto: _________"
     '
-    'RichTextBox1
+    'LblPNombre
     '
-    Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-    Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.RichTextBox1.Location = New System.Drawing.Point(1, 1)
-    Me.RichTextBox1.Name = "RichTextBox1"
-    Me.RichTextBox1.Size = New System.Drawing.Size(523, 24)
-    Me.RichTextBox1.TabIndex = 0
-    Me.RichTextBox1.Text = ""
+    Me.LblPNombre.AutoSize = True
+    Me.LblPNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.LblPNombre.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    Me.LblPNombre.ForeColor = System.Drawing.SystemColors.ButtonFace
+    Me.LblPNombre.Location = New System.Drawing.Point(16, 8)
+    Me.LblPNombre.Name = "LblPNombre"
+    Me.LblPNombre.Size = New System.Drawing.Size(73, 23)
+    Me.LblPNombre.TabIndex = 9
+    Me.LblPNombre.Text = "Nombre"
     '
-    'Panel2
+    'PnlDesc
     '
-    Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.Panel2.Controls.Add(Me.Label5)
-    Me.Panel2.Controls.Add(Me.Panel9)
-    Me.Panel2.Location = New System.Drawing.Point(11, 7)
-    Me.Panel2.Name = "Panel2"
-    Me.Panel2.Size = New System.Drawing.Size(529, 279)
-    Me.Panel2.TabIndex = 8
-    '
-    'Label5
-    '
-    Me.Label5.AutoSize = True
-    Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
-    Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.Label5.Location = New System.Drawing.Point(-4, 6)
-    Me.Label5.Name = "Label5"
-    Me.Label5.Size = New System.Drawing.Size(98, 23)
-    Me.Label5.TabIndex = 2
-    Me.Label5.Text = "Descripción"
-    '
-    'Panel9
-    '
-    Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-    Me.Panel9.Controls.Add(Me.TxbPDesc)
-    Me.Panel9.Location = New System.Drawing.Point(-1, 36)
-    Me.Panel9.Name = "Panel9"
-    Me.Panel9.Size = New System.Drawing.Size(529, 243)
-    Me.Panel9.TabIndex = 8
+    Me.PnlDesc.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
+    Me.PnlDesc.Controls.Add(Me.TxbPDesc)
+    Me.PnlDesc.Location = New System.Drawing.Point(11, 38)
+    Me.PnlDesc.Name = "PnlDesc"
+    Me.PnlDesc.Size = New System.Drawing.Size(529, 314)
+    Me.PnlDesc.TabIndex = 10
     '
     'TxbPDesc
     '
     Me.TxbPDesc.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(23, Byte), Integer))
     Me.TxbPDesc.BorderStyle = System.Windows.Forms.BorderStyle.None
     Me.TxbPDesc.Cursor = System.Windows.Forms.Cursors.IBeam
+    Me.TxbPDesc.Dock = System.Windows.Forms.DockStyle.Fill
     Me.TxbPDesc.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.TxbPDesc.ForeColor = System.Drawing.SystemColors.ButtonFace
     Me.TxbPDesc.HideSelection = False
     Me.TxbPDesc.ImeMode = System.Windows.Forms.ImeMode.NoControl
-    Me.TxbPDesc.Location = New System.Drawing.Point(2, 1)
+    Me.TxbPDesc.Location = New System.Drawing.Point(0, 0)
     Me.TxbPDesc.Name = "TxbPDesc"
     Me.TxbPDesc.ReadOnly = True
     Me.TxbPDesc.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-    Me.TxbPDesc.Size = New System.Drawing.Size(526, 241)
+    Me.TxbPDesc.Size = New System.Drawing.Size(529, 314)
     Me.TxbPDesc.TabIndex = 3
     Me.TxbPDesc.Text = ""
     '
     'PnlView
     '
     Me.PnlView.BackColor = System.Drawing.Color.Transparent
+    Me.PnlView.Controls.Add(Me.BtnViewNuevosProy)
     Me.PnlView.Controls.Add(Me.PnlPABorde)
     Me.PnlView.Controls.Add(Me.PnlPBorde)
     Me.PnlView.Location = New System.Drawing.Point(0, 0)
@@ -306,13 +262,69 @@ Partial Class CtrMain
     Me.PnlView.Size = New System.Drawing.Size(847, 460)
     Me.PnlView.TabIndex = 6
     '
+    'BtnViewNuevosProy
+    '
+    Me.BtnViewNuevosProy.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.BtnViewNuevosProy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
+    Me.BtnViewNuevosProy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+    Me.BtnViewNuevosProy.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
+    Me.BtnViewNuevosProy.ForeColor = System.Drawing.SystemColors.ButtonFace
+    Me.BtnViewNuevosProy.Location = New System.Drawing.Point(15, 416)
+    Me.BtnViewNuevosProy.Name = "BtnViewNuevosProy"
+    Me.BtnViewNuevosProy.Size = New System.Drawing.Size(236, 35)
+    Me.BtnViewNuevosProy.TabIndex = 12
+    Me.BtnViewNuevosProy.Text = "Proyectos No Aprobados"
+    Me.BtnViewNuevosProy.UseVisualStyleBackColor = False
+    '
+    'Nombre
+    '
+    Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+    Me.Nombre.DataPropertyName = "titulo"
+    Me.Nombre.HeaderText = "Título"
+    Me.Nombre.Name = "Nombre"
+    Me.Nombre.ReadOnly = True
+    '
+    'Precio
+    '
+    Me.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+    Me.Precio.DataPropertyName = "monto"
+    DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+    Me.Precio.DefaultCellStyle = DataGridViewCellStyle2
+    Me.Precio.HeaderText = "Monto"
+    Me.Precio.Name = "Precio"
+    Me.Precio.ReadOnly = True
+    Me.Precio.Visible = False
+    Me.Precio.Width = 80
+    '
+    'Id
+    '
+    Me.Id.DataPropertyName = "id_proyecto"
+    Me.Id.HeaderText = "Id"
+    Me.Id.Name = "Id"
+    Me.Id.ReadOnly = True
+    Me.Id.Visible = False
+    '
+    'Fecha
+    '
+    Me.Fecha.DataPropertyName = "fecha"
+    Me.Fecha.HeaderText = "Fecha"
+    Me.Fecha.Name = "Fecha"
+    Me.Fecha.ReadOnly = True
+    '
+    'Descripción
+    '
+    Me.Descripción.DataPropertyName = "descripcion"
+    Me.Descripción.HeaderText = "Descripción"
+    Me.Descripción.Name = "Descripción"
+    Me.Descripción.ReadOnly = True
+    Me.Descripción.Visible = False
+    '
     'CtrMain
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.BackColor = System.Drawing.Color.Transparent
     Me.Controls.Add(Me.Label3)
-    Me.Controls.Add(Me.BtnViewNuevosProy)
     Me.Controls.Add(Me.PnlView)
     Me.Name = "CtrMain"
     Me.Size = New System.Drawing.Size(847, 460)
@@ -324,36 +336,31 @@ Partial Class CtrMain
     Me.PnlPABorde.ResumeLayout(False)
     Me.PnlPA.ResumeLayout(False)
     Me.PnlPA.PerformLayout()
-    Me.Panel3.ResumeLayout(False)
-    Me.Panel2.ResumeLayout(False)
-    Me.Panel2.PerformLayout()
-    Me.Panel9.ResumeLayout(False)
+    Me.PnlDesc.ResumeLayout(False)
     Me.PnlView.ResumeLayout(False)
     Me.ResumeLayout(False)
     Me.PerformLayout()
 
   End Sub
-  Friend WithEvents BtnViewNuevosProy As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents PnlPBorde As Panel
-    Friend WithEvents PnlProyectos As Panel
-    Friend WithEvents PnlPABorde As Panel
-    Friend WithEvents PnlPA As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents TxbPDesc As RichTextBox
-    Friend WithEvents PnlView As Panel
+  Friend WithEvents Label3 As Label
+  Friend WithEvents PnlPBorde As Panel
+  Friend WithEvents PnlProyectos As Panel
+  Friend WithEvents PnlPABorde As Panel
+  Friend WithEvents PnlPA As Panel
+  Friend WithEvents PnlView As Panel
   Friend WithEvents PnlPTop As Panel
   Friend WithEvents LblPTop As Label
+  Friend WithEvents LblMonto As Label
+  Friend WithEvents LblPNombre As Label
+  Friend WithEvents PnlDesc As Panel
+  Friend WithEvents TxbPDesc As RichTextBox
+  Friend WithEvents BtnViewForo As Button
+  Friend WithEvents LblPId As Label
   Friend WithEvents DgvPAprob As DataGridView
+  Friend WithEvents BtnViewNuevosProy As Button
   Friend WithEvents Nombre As DataGridViewTextBoxColumn
   Friend WithEvents Precio As DataGridViewTextBoxColumn
   Friend WithEvents Id As DataGridViewTextBoxColumn
   Friend WithEvents Fecha As DataGridViewTextBoxColumn
   Friend WithEvents Descripción As DataGridViewTextBoxColumn
-  Friend WithEvents RichTextBox1 As RichTextBox
 End Class
