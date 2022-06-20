@@ -26,7 +26,6 @@
   Private Sub CmbTema_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTema.SelectedIndexChanged
     CambiarTema(CmbTema.SelectedItem)
   End Sub
-
   Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles BtnLogout.Click
     Dim conf As DialogResult = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo)
     If conf = vbYes Then

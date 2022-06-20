@@ -7,6 +7,7 @@
   Public ViewRegistro As New CtrRegistro
   Public ViewNuevosProy As New CtrNuevosProy
   Public ViewCargarProy As New CtrCargarProy
+  Public ViewForo As CtrForo
   Public Viewing As UserControl = ViewMain
   ' Captcha
   Public Captcha As String
