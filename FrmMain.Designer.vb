@@ -31,6 +31,7 @@ Partial Class FrmMain
     Me.BtnViewLogin = New System.Windows.Forms.PictureBox()
     Me.BtnViewMain = New System.Windows.Forms.PictureBox()
     Me.PnlView = New System.Windows.Forms.Panel()
+    Me.BtnAyuda = New System.Windows.Forms.Button()
     Me.PnlNav.SuspendLayout()
     CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,6 +41,7 @@ Partial Class FrmMain
     'PnlNav
     '
     Me.PnlNav.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.PnlNav.Controls.Add(Me.BtnAyuda)
     Me.PnlNav.Controls.Add(Me.BtnLogout)
     Me.PnlNav.Controls.Add(Me.Label1)
     Me.PnlNav.Controls.Add(Me.CmbTema)
@@ -155,6 +157,15 @@ Partial Class FrmMain
     Me.PnlView.Size = New System.Drawing.Size(847, 466)
     Me.PnlView.TabIndex = 2
     '
+    'BtnAyuda
+    '
+    Me.BtnAyuda.Location = New System.Drawing.Point(488, 8)
+    Me.BtnAyuda.Name = "BtnAyuda"
+    Me.BtnAyuda.Size = New System.Drawing.Size(75, 23)
+    Me.BtnAyuda.TabIndex = 9
+    Me.BtnAyuda.Text = "Ayuda"
+    Me.BtnAyuda.UseVisualStyleBackColor = True
+    '
     'FrmMain
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -184,4 +195,5 @@ Partial Class FrmMain
     Friend WithEvents CmbTema As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnLogout As PictureBox
+  Friend WithEvents BtnAyuda As Button
 End Class

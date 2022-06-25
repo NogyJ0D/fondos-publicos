@@ -52,7 +52,7 @@ Partial Class CtrResponder
     Me.BtnEnviar.Name = "BtnEnviar"
     Me.BtnEnviar.Size = New System.Drawing.Size(96, 24)
     Me.BtnEnviar.TabIndex = 3
-    Me.BtnEnviar.Text = "Button1"
+    Me.BtnEnviar.Text = "Enviar"
     Me.BtnEnviar.UseVisualStyleBackColor = True
     '
     'BtnCerrar
@@ -61,7 +61,7 @@ Partial Class CtrResponder
     Me.BtnCerrar.Name = "BtnCerrar"
     Me.BtnCerrar.Size = New System.Drawing.Size(75, 23)
     Me.BtnCerrar.TabIndex = 6
-    Me.BtnCerrar.Text = "Button1"
+    Me.BtnCerrar.Text = "Cancelar"
     Me.BtnCerrar.UseVisualStyleBackColor = True
     '
     'CtrResponder

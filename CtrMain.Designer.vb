@@ -30,6 +30,11 @@ Partial Class CtrMain
     Me.PnlPBorde = New System.Windows.Forms.Panel()
     Me.PnlProyectos = New System.Windows.Forms.Panel()
     Me.DgvPAprob = New System.Windows.Forms.DataGridView()
+    Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.PnlPTop = New System.Windows.Forms.Panel()
     Me.LblPTop = New System.Windows.Forms.Label()
     Me.PnlPABorde = New System.Windows.Forms.Panel()
@@ -42,11 +47,6 @@ Partial Class CtrMain
     Me.TxbPDesc = New System.Windows.Forms.RichTextBox()
     Me.PnlView = New System.Windows.Forms.Panel()
     Me.BtnViewNuevosProy = New System.Windows.Forms.Button()
-    Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.PnlPBorde.SuspendLayout()
     Me.PnlProyectos.SuspendLayout()
     CType(Me.DgvPAprob, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,6 +136,48 @@ Partial Class CtrMain
     Me.DgvPAprob.Size = New System.Drawing.Size(234, 323)
     Me.DgvPAprob.TabIndex = 8
     '
+    'Nombre
+    '
+    Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+    Me.Nombre.DataPropertyName = "titulo"
+    Me.Nombre.HeaderText = "Título"
+    Me.Nombre.Name = "Nombre"
+    Me.Nombre.ReadOnly = True
+    '
+    'Precio
+    '
+    Me.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+    Me.Precio.DataPropertyName = "monto"
+    DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+    Me.Precio.DefaultCellStyle = DataGridViewCellStyle2
+    Me.Precio.HeaderText = "Monto"
+    Me.Precio.Name = "Precio"
+    Me.Precio.ReadOnly = True
+    Me.Precio.Visible = False
+    '
+    'Id
+    '
+    Me.Id.DataPropertyName = "id_proyecto"
+    Me.Id.HeaderText = "Id"
+    Me.Id.Name = "Id"
+    Me.Id.ReadOnly = True
+    Me.Id.Visible = False
+    '
+    'Fecha
+    '
+    Me.Fecha.DataPropertyName = "fecha"
+    Me.Fecha.HeaderText = "Fecha"
+    Me.Fecha.Name = "Fecha"
+    Me.Fecha.ReadOnly = True
+    '
+    'Descripción
+    '
+    Me.Descripción.DataPropertyName = "descripcion"
+    Me.Descripción.HeaderText = "Descripción"
+    Me.Descripción.Name = "Descripción"
+    Me.Descripción.ReadOnly = True
+    Me.Descripción.Visible = False
+    '
     'PnlPTop
     '
     Me.PnlPTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -197,7 +239,7 @@ Partial Class CtrMain
     Me.BtnViewForo.Name = "BtnViewForo"
     Me.BtnViewForo.Size = New System.Drawing.Size(75, 23)
     Me.BtnViewForo.TabIndex = 12
-    Me.BtnViewForo.Text = "Button1"
+    Me.BtnViewForo.Text = "Ir al foro"
     Me.BtnViewForo.UseVisualStyleBackColor = True
     '
     'LblMonto
@@ -275,49 +317,6 @@ Partial Class CtrMain
     Me.BtnViewNuevosProy.TabIndex = 12
     Me.BtnViewNuevosProy.Text = "Proyectos No Aprobados"
     Me.BtnViewNuevosProy.UseVisualStyleBackColor = False
-    '
-    'Nombre
-    '
-    Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-    Me.Nombre.DataPropertyName = "titulo"
-    Me.Nombre.HeaderText = "Título"
-    Me.Nombre.Name = "Nombre"
-    Me.Nombre.ReadOnly = True
-    '
-    'Precio
-    '
-    Me.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-    Me.Precio.DataPropertyName = "monto"
-    DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-    Me.Precio.DefaultCellStyle = DataGridViewCellStyle2
-    Me.Precio.HeaderText = "Monto"
-    Me.Precio.Name = "Precio"
-    Me.Precio.ReadOnly = True
-    Me.Precio.Visible = False
-    Me.Precio.Width = 80
-    '
-    'Id
-    '
-    Me.Id.DataPropertyName = "id_proyecto"
-    Me.Id.HeaderText = "Id"
-    Me.Id.Name = "Id"
-    Me.Id.ReadOnly = True
-    Me.Id.Visible = False
-    '
-    'Fecha
-    '
-    Me.Fecha.DataPropertyName = "fecha"
-    Me.Fecha.HeaderText = "Fecha"
-    Me.Fecha.Name = "Fecha"
-    Me.Fecha.ReadOnly = True
-    '
-    'Descripción
-    '
-    Me.Descripción.DataPropertyName = "descripcion"
-    Me.Descripción.HeaderText = "Descripción"
-    Me.Descripción.Name = "Descripción"
-    Me.Descripción.ReadOnly = True
-    Me.Descripción.Visible = False
     '
     'CtrMain
     '

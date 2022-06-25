@@ -33,9 +33,9 @@ Partial Class CtrRespuesta
     '
     Me.BtnCon.Location = New System.Drawing.Point(328, 11)
     Me.BtnCon.Name = "BtnCon"
-    Me.BtnCon.Size = New System.Drawing.Size(75, 23)
+    Me.BtnCon.Size = New System.Drawing.Size(96, 23)
     Me.BtnCon.TabIndex = 15
-    Me.BtnCon.Text = "En contra: x"
+    Me.BtnCon.Text = "No Me Gusta: 0"
     Me.BtnCon.UseVisualStyleBackColor = True
     '
     'BtnFav
@@ -44,7 +44,7 @@ Partial Class CtrRespuesta
     Me.BtnFav.Name = "BtnFav"
     Me.BtnFav.Size = New System.Drawing.Size(75, 23)
     Me.BtnFav.TabIndex = 14
-    Me.BtnFav.Text = "A favor: x"
+    Me.BtnFav.Text = "Me Gusta: 0"
     Me.BtnFav.UseVisualStyleBackColor = True
     '
     'LblFecha

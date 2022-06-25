@@ -72,10 +72,10 @@ Public Class CtrForo
       Next
       'Esperar(500) ' Simular espera de gran carga
       LblNumCom.Text = $"Comentarios: {PnlComentarios.Controls.Count}"
-      PnlCargando.Hide()
     Else
       'MsgBox("No hay comentarios")
     End If
+    PnlCargando.Hide()
   End Sub
 
   Private Sub BtnNComentario_Click(sender As Object, e As EventArgs) Handles BtnNComentario.Click

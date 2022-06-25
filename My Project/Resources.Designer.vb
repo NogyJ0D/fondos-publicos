@@ -75,6 +75,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Byte[].
+        '''</summary>
+        Friend Shared ReadOnly Property pdf_prueba() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("pdf_prueba", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
         Friend Shared ReadOnly Property recargar() As System.Drawing.Bitmap

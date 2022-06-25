@@ -24,6 +24,11 @@ Public Class CtrNuevosProy
       End Try
     End Using
   End Sub
+  Private Sub BtnViewForo_Click(sender As Object, e As EventArgs) Handles BtnViewForo.Click
+    ViewForo = New CtrForo
+    ViewForo.Tag = LblProyId.Text
+    CambiarVista("Foro")
+  End Sub
   Public Sub LlenarProyectos()
     Using conn = New SqlClient.SqlConnection(sqlConn)
       Try
