@@ -40,6 +40,7 @@ Partial Class CtrNuevosProy
     Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.LblPTop = New System.Windows.Forms.Label()
     Me.BtnANP = New System.Windows.Forms.Button()
+    Me.BtnViewForo = New System.Windows.Forms.Button()
     Me.PnlProyecto.SuspendLayout()
     Me.Panel1.SuspendLayout()
     Me.Panel2.SuspendLayout()
@@ -49,6 +50,7 @@ Partial Class CtrNuevosProy
     'PnlProyecto
     '
     Me.PnlProyecto.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+    Me.PnlProyecto.Controls.Add(Me.BtnViewForo)
     Me.PnlProyecto.Controls.Add(Me.Panel1)
     Me.PnlProyecto.Controls.Add(Me.Label5)
     Me.PnlProyecto.Controls.Add(Me.LblProyId)
@@ -108,7 +110,7 @@ Partial Class CtrNuevosProy
     Me.LblVotosC.AutoSize = True
     Me.LblVotosC.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
     Me.LblVotosC.ForeColor = System.Drawing.Color.White
-    Me.LblVotosC.Location = New System.Drawing.Point(335, 317)
+    Me.LblVotosC.Location = New System.Drawing.Point(280, 317)
     Me.LblVotosC.Name = "LblVotosC"
     Me.LblVotosC.Size = New System.Drawing.Size(135, 23)
     Me.LblVotosC.TabIndex = 6
@@ -119,7 +121,7 @@ Partial Class CtrNuevosProy
     Me.LblVotosF.AutoSize = True
     Me.LblVotosF.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
     Me.LblVotosF.ForeColor = System.Drawing.Color.White
-    Me.LblVotosF.Location = New System.Drawing.Point(82, 317)
+    Me.LblVotosF.Location = New System.Drawing.Point(27, 317)
     Me.LblVotosF.Name = "LblVotosF"
     Me.LblVotosF.Size = New System.Drawing.Size(116, 23)
     Me.LblVotosF.TabIndex = 5
@@ -132,7 +134,7 @@ Partial Class CtrNuevosProy
     Me.BtnVotarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.BtnVotarC.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold)
     Me.BtnVotarC.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.BtnVotarC.Location = New System.Drawing.Point(358, 272)
+    Me.BtnVotarC.Location = New System.Drawing.Point(303, 272)
     Me.BtnVotarC.Name = "BtnVotarC"
     Me.BtnVotarC.Size = New System.Drawing.Size(93, 28)
     Me.BtnVotarC.TabIndex = 1
@@ -147,7 +149,7 @@ Partial Class CtrNuevosProy
     Me.BtnVotarF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.BtnVotarF.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold)
     Me.BtnVotarF.ForeColor = System.Drawing.SystemColors.ButtonFace
-    Me.BtnVotarF.Location = New System.Drawing.Point(95, 272)
+    Me.BtnVotarF.Location = New System.Drawing.Point(40, 272)
     Me.BtnVotarF.Name = "BtnVotarF"
     Me.BtnVotarF.Size = New System.Drawing.Size(93, 28)
     Me.BtnVotarF.TabIndex = 0
@@ -247,6 +249,15 @@ Partial Class CtrNuevosProy
     Me.BtnANP.UseVisualStyleBackColor = False
     Me.BtnANP.Visible = False
     '
+    'BtnViewForo
+    '
+    Me.BtnViewForo.Location = New System.Drawing.Point(432, 272)
+    Me.BtnViewForo.Name = "BtnViewForo"
+    Me.BtnViewForo.Size = New System.Drawing.Size(75, 23)
+    Me.BtnViewForo.TabIndex = 10
+    Me.BtnViewForo.Text = "Ir al foro"
+    Me.BtnViewForo.UseVisualStyleBackColor = True
+    '
     'CtrNuevosProy
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,4 +296,5 @@ Partial Class CtrNuevosProy
   Friend WithEvents BtnANP As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
+  Friend WithEvents BtnViewForo As Button
 End Class

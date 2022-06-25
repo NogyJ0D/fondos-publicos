@@ -1,7 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Drawing.Text
-Imports SendGrid
-Imports SendGrid.Helpers.Mail
+﻿Imports System.Drawing.Text
 
 Module Funciones
   Public Sub CambiarVista(origen As String)
@@ -45,39 +42,43 @@ Module Funciones
     pfc.AddFontFile("./Recursos/Mom_font.ttf")
     Captcha = GenerarCaptcha(6, False)
 
-    Dim newImage As Bitmap = New Bitmap(288, 40)
+    Dim newImage As New Bitmap(288, 40)
     Dim gr As Graphics = Graphics.FromImage(newImage)
-    Dim rec As RectangleF = New RectangleF(0, 0, newImage.Width, newImage.Height)
-    Dim strF As StringFormat = New StringFormat()
-    strF.Alignment = StringAlignment.Center
-    strF.LineAlignment = StringAlignment.Center
-    gr.Clear(Color.White)
-    gr.DrawImageUnscaled(newImage, 0, 0)
-    gr.DrawString(Captcha, New Font(pfc.Families(0), 22), Brushes.Black, rec, strF)
+    Dim rec As New RectangleF(0, 0, newImage.Width, newImage.Height)
+    Dim strF As New StringFormat With {
+      .Alignment = StringAlignment.Center,
+      .LineAlignment = StringAlignment.Center
+    }
+    With gr
+      .Clear(Color.White)
+      .DrawImageUnscaled(newImage, 0, 0)
+      .DrawString(Captcha, New Font(pfc.Families(0), 22), Brushes.Black, rec, strF)
+    End With
 
     Return newImage
   End Function
-  Public Async Function EnviarEmail(email As String) As Task(Of Boolean)
-    Dim foto = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gtk-ok.svg/2048px-Gtk-ok.svg.png"
-    If email.Length > 0 Then
-      Try
-        Dim apiKey = ConfigurationManager.AppSettings("SENDGRID_APIKEY")
-        Dim cliente = New SendGridClient(apiKey)
-        Dim msg = New SendGridMessage() With {
-.From = New EmailAddress(email, "Fondos Públicos"),
-.Subject = "Registro exitoso - Fondos Públicos",
-.PlainTextContent = "Registro exitoso - Fondos Públicos",
-.HtmlContent = $"<b>Gracias por registrarte en Fondos Públicos</b><img src='{foto}'/>"
-}
-        msg.AddTo(New EmailAddress(email, "Fondos Públicos"))
-        Dim response = Await cliente.SendEmailAsync(msg)
-        Return True
-      Catch ex As Exception
-        MessageBox.Show(ex.Message)
-        Return False
-      End Try
-    End If
-    Return False
+  Public Function EnviarEmail(email As String)
+    '    Dim foto = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gtk-ok.svg/2048px-Gtk-ok.svg.png"
+    '    If email.Length > 0 Then
+    '      Try
+    '        Dim apiKey = ConfigurationManager.AppSettings("SENDGRID_APIKEY")
+    '        Dim cliente = New SendGridClient(apiKey)
+    '        Dim msg = New SendGridMessage() With {
+    '.From = New EmailAddress(email, "Fondos Públicos"),
+    '.Subject = "Registro exitoso - Fondos Públicos",
+    '.PlainTextContent = "Registro exitoso - Fondos Públicos",
+    '.HtmlContent = $"<b>Gracias por registrarte en Fondos Públicos</b><img src='{foto}'/>"
+    '}
+    '        msg.AddTo(New EmailAddress(email, "Fondos Públicos"))
+    '        Dim response = Await cliente.SendEmailAsync(msg)
+    '        Return True
+    '      Catch ex As Exception
+    '        MessageBox.Show(ex.Message)
+    '        Return False
+    '      End Try
+    'End If
+    'Return False
+    Return True
   End Function
   ' Esperar y congelar
   'Declare Sub Esperar Lib "kernel32" Alias "Sleep" (ByVal dwMilliseconds As Long)

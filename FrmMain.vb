@@ -32,4 +32,8 @@
       UserInfo.Logout()
     End If
   End Sub
+
+  Private Sub BtnAyuda_Click(sender As Object, e As EventArgs) Handles BtnAyuda.Click
+    FrmManual.Show()
+  End Sub
 End Class

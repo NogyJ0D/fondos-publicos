@@ -110,9 +110,9 @@ Partial Class CtrForo
     Me.LblNumCom.ForeColor = System.Drawing.Color.White
     Me.LblNumCom.Location = New System.Drawing.Point(225, 25)
     Me.LblNumCom.Name = "LblNumCom"
-    Me.LblNumCom.Size = New System.Drawing.Size(76, 13)
+    Me.LblNumCom.Size = New System.Drawing.Size(77, 13)
     Me.LblNumCom.TabIndex = 5
-    Me.LblNumCom.Text = "Comentarios: x"
+    Me.LblNumCom.Text = "Comentarios: 0"
     '
     'PnlCargando
     '
