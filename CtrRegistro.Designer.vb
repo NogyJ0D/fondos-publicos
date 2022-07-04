@@ -87,7 +87,7 @@ Partial Class CtrRegistro
         '
         'PnlCuil
         '
-        Me.PnlCuil.BackColor = System.Drawing.Color.White
+        Me.PnlCuil.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlCuil.Controls.Add(Me.InpCuil)
         Me.PnlCuil.Location = New System.Drawing.Point(48, 32)
         Me.PnlCuil.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -98,7 +98,7 @@ Partial Class CtrRegistro
         '
         'InpCuil
         '
-        Me.InpCuil.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpCuil.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpCuil.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpCuil.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpCuil.Font = New System.Drawing.Font("Verdana", 17.0!)
@@ -124,7 +124,7 @@ Partial Class CtrRegistro
         '
         'PnlContraseña
         '
-        Me.PnlContraseña.BackColor = System.Drawing.Color.White
+        Me.PnlContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlContraseña.Controls.Add(Me.InpContraseña)
         Me.PnlContraseña.Location = New System.Drawing.Point(48, 96)
         Me.PnlContraseña.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -135,7 +135,7 @@ Partial Class CtrRegistro
         '
         'InpContraseña
         '
-        Me.InpContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpContraseña.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpContraseña.Font = New System.Drawing.Font("Verdana", 17.0!)
@@ -148,7 +148,7 @@ Partial Class CtrRegistro
         '
         'PnlCaptcha
         '
-        Me.PnlCaptcha.BackColor = System.Drawing.Color.White
+        Me.PnlCaptcha.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlCaptcha.Controls.Add(Me.InpCaptcha)
         Me.PnlCaptcha.Location = New System.Drawing.Point(424, 336)
         Me.PnlCaptcha.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -159,7 +159,7 @@ Partial Class CtrRegistro
         '
         'InpCaptcha
         '
-        Me.InpCaptcha.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpCaptcha.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpCaptcha.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpCaptcha.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpCaptcha.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -203,11 +203,11 @@ Partial Class CtrRegistro
         '
         'BtnRegistro
         '
-        Me.BtnRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BtnRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.BtnRegistro.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegistro.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.BtnRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BtnRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnRegistro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.BtnRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.BtnRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.BtnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRegistro.Font = New System.Drawing.Font("Verdana", 14.0!)
         Me.BtnRegistro.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -232,7 +232,7 @@ Partial Class CtrRegistro
         '
         'PnlEmail
         '
-        Me.PnlEmail.BackColor = System.Drawing.Color.White
+        Me.PnlEmail.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlEmail.Controls.Add(Me.InpEmail)
         Me.PnlEmail.Location = New System.Drawing.Point(424, 32)
         Me.PnlEmail.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -243,7 +243,7 @@ Partial Class CtrRegistro
         '
         'InpEmail
         '
-        Me.InpEmail.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpEmail.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpEmail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpEmail.Font = New System.Drawing.Font("Verdana", 17.0!)
@@ -269,7 +269,7 @@ Partial Class CtrRegistro
         '
         'PnlNombre
         '
-        Me.PnlNombre.BackColor = System.Drawing.Color.White
+        Me.PnlNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlNombre.Controls.Add(Me.InpNombre)
         Me.PnlNombre.Location = New System.Drawing.Point(424, 96)
         Me.PnlNombre.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -280,7 +280,7 @@ Partial Class CtrRegistro
         '
         'InpNombre
         '
-        Me.InpNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpNombre.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpNombre.Font = New System.Drawing.Font("Verdana", 17.0!)
@@ -306,7 +306,7 @@ Partial Class CtrRegistro
         '
         'PnlApellido
         '
-        Me.PnlApellido.BackColor = System.Drawing.Color.White
+        Me.PnlApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlApellido.Controls.Add(Me.InpApellido)
         Me.PnlApellido.Location = New System.Drawing.Point(424, 160)
         Me.PnlApellido.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -317,7 +317,7 @@ Partial Class CtrRegistro
         '
         'InpApellido
         '
-        Me.InpApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpApellido.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpApellido.Font = New System.Drawing.Font("Verdana", 17.0!)
@@ -343,7 +343,7 @@ Partial Class CtrRegistro
         '
         'PnlDireccion
         '
-        Me.PnlDireccion.BackColor = System.Drawing.Color.White
+        Me.PnlDireccion.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlDireccion.Controls.Add(Me.InpDireccion)
         Me.PnlDireccion.Location = New System.Drawing.Point(49, 224)
         Me.PnlDireccion.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -354,7 +354,7 @@ Partial Class CtrRegistro
         '
         'InpDireccion
         '
-        Me.InpDireccion.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpDireccion.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpDireccion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpDireccion.Font = New System.Drawing.Font("Verdana", 17.0!)
@@ -380,7 +380,7 @@ Partial Class CtrRegistro
         '
         'PnlCP
         '
-        Me.PnlCP.BackColor = System.Drawing.Color.White
+        Me.PnlCP.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlCP.Controls.Add(Me.InpCP)
         Me.PnlCP.Location = New System.Drawing.Point(424, 224)
         Me.PnlCP.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -442,7 +442,7 @@ Partial Class CtrRegistro
         '
         'PnlFN
         '
-        Me.PnlFN.BackColor = System.Drawing.Color.White
+        Me.PnlFN.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlFN.Controls.Add(Me.InpFN)
         Me.PnlFN.Location = New System.Drawing.Point(48, 320)
         Me.PnlFN.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -454,6 +454,7 @@ Partial Class CtrRegistro
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 0)
@@ -464,7 +465,7 @@ Partial Class CtrRegistro
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(48, 288)
@@ -486,7 +487,7 @@ Partial Class CtrRegistro
         '
         'PnlCContraseña
         '
-        Me.PnlCContraseña.BackColor = System.Drawing.Color.White
+        Me.PnlCContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.PnlCContraseña.Controls.Add(Me.InpCContraseña)
         Me.PnlCContraseña.Location = New System.Drawing.Point(48, 160)
         Me.PnlCContraseña.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
@@ -497,7 +498,7 @@ Partial Class CtrRegistro
         '
         'InpCContraseña
         '
-        Me.InpCContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(167, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.InpCContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.InpCContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpCContraseña.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InpCContraseña.Font = New System.Drawing.Font("Verdana", 17.0!)
