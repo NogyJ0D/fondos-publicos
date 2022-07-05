@@ -33,11 +33,17 @@ Partial Class CtrCargarProy
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         CType(Me.InpMonto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'InpDesc
         '
+        Me.InpDesc.BackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.InpDesc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InpDesc.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
         Me.InpDesc.Location = New System.Drawing.Point(21, 148)
@@ -49,13 +55,17 @@ Partial Class CtrCargarProy
         '
         'BtnEnviar
         '
+        Me.BtnEnviar.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.BtnEnviar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.BtnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEnviar.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.BtnEnviar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.BtnEnviar.Location = New System.Drawing.Point(433, 408)
         Me.BtnEnviar.Name = "BtnEnviar"
         Me.BtnEnviar.Size = New System.Drawing.Size(200, 41)
         Me.BtnEnviar.TabIndex = 1
         Me.BtnEnviar.Text = "Cargar Proyecto"
-        Me.BtnEnviar.UseVisualStyleBackColor = True
+        Me.BtnEnviar.UseVisualStyleBackColor = False
         '
         'InpTitulo
         '
@@ -84,7 +94,7 @@ Partial Class CtrCargarProy
         Me.InpMonto.DecimalPlaces = 2
         Me.InpMonto.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
         Me.InpMonto.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.InpMonto.Location = New System.Drawing.Point(265, 51)
+        Me.InpMonto.Location = New System.Drawing.Point(264, 51)
         Me.InpMonto.Maximum = New Decimal(New Integer() {-1486618625, 232830643, 0, 0})
         Me.InpMonto.Name = "InpMonto"
         Me.InpMonto.Size = New System.Drawing.Size(120, 27)
@@ -106,6 +116,7 @@ Partial Class CtrCargarProy
         '
         Me.lblDesc.AutoSize = True
         Me.lblDesc.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDesc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.lblDesc.Location = New System.Drawing.Point(17, 115)
         Me.lblDesc.Name = "lblDesc"
         Me.lblDesc.Size = New System.Drawing.Size(89, 20)
@@ -116,6 +127,7 @@ Partial Class CtrCargarProy
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(429, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(54, 20)
@@ -126,6 +138,7 @@ Partial Class CtrCargarProy
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(17, 19)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(156, 20)
@@ -136,6 +149,7 @@ Partial Class CtrCargarProy
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(429, 115)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 20)
@@ -146,16 +160,58 @@ Partial Class CtrCargarProy
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(261, 19)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(55, 20)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Monto"
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Panel1.Location = New System.Drawing.Point(20, 147)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(366, 303)
+        Me.Panel1.TabIndex = 13
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Panel2.Location = New System.Drawing.Point(432, 50)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(202, 30)
+        Me.Panel2.TabIndex = 14
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(263, 49)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(122, 30)
+        Me.Panel3.TabIndex = 15
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Panel4.Location = New System.Drawing.Point(20, 50)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(219, 29)
+        Me.Panel4.TabIndex = 16
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Panel5.Location = New System.Drawing.Point(432, 145)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(202, 29)
+        Me.Panel5.TabIndex = 17
+        '
         'CtrCargarProy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -167,6 +223,11 @@ Partial Class CtrCargarProy
         Me.Controls.Add(Me.InpTitulo)
         Me.Controls.Add(Me.BtnEnviar)
         Me.Controls.Add(Me.InpDesc)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel5)
         Me.Name = "CtrCargarProy"
         Me.Size = New System.Drawing.Size(652, 468)
         CType(Me.InpMonto, System.ComponentModel.ISupportInitialize).EndInit()
@@ -186,4 +247,9 @@ Partial Class CtrCargarProy
   Friend WithEvents Label3 As Label
   Friend WithEvents Label4 As Label
   Friend WithEvents Label5 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
 End Class
