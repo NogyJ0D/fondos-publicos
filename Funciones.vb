@@ -100,24 +100,24 @@ Module Funciones
     Pos = Control.MousePosition
   End Sub
   Public Sub CambiarTema(tema As String)
-    Dim ColorNav, ColorView As Color
-    Select Case tema
-      Case "Oscuro"
-        ColorNav = Color.FromArgb(15, 41, 27)
-        ColorView = Color.FromArgb(19, 56, 36)
-      Case "Claro"
-        ColorNav = Color.FromArgb(193, 255, 223)
-        ColorView = Color.FromArgb(224, 255, 239)
+    'Dim ColorNav, ColorView As Color
+    'Select Case tema
+    'Case "Oscuro"
+    'ColorNav = Color.FromArgb(15, 41, 27)
+    'ColorView = Color.FromArgb(19, 56, 36)
+    'Case "Claro"
+    ' ColorNav = Color.FromArgb(193, 255, 223)
+    'ColorView = Color.FromArgb(224, 255, 239)
 
-        'Case "Rosario"
-        '  ColorNav = Color.FromArgb(27, 75, 136)
-        '  ColorView = Color.FromArgb(0, 102, 204)
-        'Case "Francia"
-        '  ColorNav = Color.FromArgb(230, 57, 70)
-        '  ColorView = Color.FromArgb(241, 250, 238)
-    End Select
-    OpenedMain.PnlNav.BackColor = ColorNav
-    OpenedMain.PnlView.BackColor = ColorView
+    'Case "Rosario"
+    '  ColorNav = Color.FromArgb(27, 75, 136)
+    '  ColorView = Color.FromArgb(0, 102, 204)
+    'Case "Francia"
+    '  ColorNav = Color.FromArgb(230, 57, 70)
+    '  ColorView = Color.FromArgb(241, 250, 238)
+    'End Select
+    'OpenedMain.PnlNav.BackColor = ColorNav
+    'OpenedMain.PnlView.BackColor = ColorView
   End Sub
   Public Sub AuthError(pnl As Panel, lbl As Label, cond As Boolean)
     If cond Then

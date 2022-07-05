@@ -20,5 +20,5 @@
   Private sqlValentin = "Data Source=DESKTOP-7N22TGM\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
   Private sqlValentinIzo = "Data Source=LAB-L04\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
   ' Cambiar la cadena según quien está usando localmente
-  Public sqlConn = sqlValentin
+  Public sqlConn = sqlValentinIzo
 End Module

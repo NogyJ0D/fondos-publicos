@@ -22,6 +22,7 @@ Partial Class FrmMain
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.PnlNav = New System.Windows.Forms.Panel()
         Me.BtnAyuda = New System.Windows.Forms.Button()
         Me.BtnLogout = New System.Windows.Forms.PictureBox()
@@ -31,11 +32,13 @@ Partial Class FrmMain
         Me.BtnNCerrar = New System.Windows.Forms.Button()
         Me.BtnViewLogin = New System.Windows.Forms.PictureBox()
         Me.BtnViewMain = New System.Windows.Forms.PictureBox()
+        Me.pbxLogo = New System.Windows.Forms.PictureBox()
         Me.PnlView = New System.Windows.Forms.Panel()
         Me.PnlNav.SuspendLayout()
         CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnViewMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PnlNav
@@ -49,6 +52,7 @@ Partial Class FrmMain
         Me.PnlNav.Controls.Add(Me.BtnNCerrar)
         Me.PnlNav.Controls.Add(Me.BtnViewLogin)
         Me.PnlNav.Controls.Add(Me.BtnViewMain)
+        Me.PnlNav.Controls.Add(Me.pbxLogo)
         Me.PnlNav.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlNav.Location = New System.Drawing.Point(0, 0)
         Me.PnlNav.Name = "PnlNav"
@@ -70,7 +74,7 @@ Partial Class FrmMain
         Me.BtnLogout.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnLogout.Enabled = False
         Me.BtnLogout.Image = Global.fondos_publicos.My.Resources.Resources.ViewLogout
-        Me.BtnLogout.Location = New System.Drawing.Point(84, 0)
+        Me.BtnLogout.Location = New System.Drawing.Point(132, 0)
         Me.BtnLogout.Name = "BtnLogout"
         Me.BtnLogout.Padding = New System.Windows.Forms.Padding(7)
         Me.BtnLogout.Size = New System.Drawing.Size(42, 42)
@@ -136,7 +140,7 @@ Partial Class FrmMain
         Me.BtnViewLogin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnViewLogin.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnViewLogin.Image = Global.fondos_publicos.My.Resources.Resources.ViewLogin
-        Me.BtnViewLogin.Location = New System.Drawing.Point(42, 0)
+        Me.BtnViewLogin.Location = New System.Drawing.Point(90, 0)
         Me.BtnViewLogin.Name = "BtnViewLogin"
         Me.BtnViewLogin.Padding = New System.Windows.Forms.Padding(7)
         Me.BtnViewLogin.Size = New System.Drawing.Size(42, 42)
@@ -149,13 +153,24 @@ Partial Class FrmMain
         Me.BtnViewMain.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnViewMain.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnViewMain.Image = Global.fondos_publicos.My.Resources.Resources.ViewBack
-        Me.BtnViewMain.Location = New System.Drawing.Point(0, 0)
+        Me.BtnViewMain.Location = New System.Drawing.Point(48, 0)
         Me.BtnViewMain.Name = "BtnViewMain"
         Me.BtnViewMain.Padding = New System.Windows.Forms.Padding(7)
         Me.BtnViewMain.Size = New System.Drawing.Size(42, 42)
         Me.BtnViewMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.BtnViewMain.TabIndex = 3
         Me.BtnViewMain.TabStop = False
+        '
+        'pbxLogo
+        '
+        Me.pbxLogo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pbxLogo.Image = Global.fondos_publicos.My.Resources.Resources.logoCONCOR
+        Me.pbxLogo.Location = New System.Drawing.Point(0, 0)
+        Me.pbxLogo.Name = "pbxLogo"
+        Me.pbxLogo.Size = New System.Drawing.Size(48, 42)
+        Me.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxLogo.TabIndex = 10
+        Me.pbxLogo.TabStop = False
         '
         'PnlView
         '
@@ -175,6 +190,7 @@ Partial Class FrmMain
         Me.Controls.Add(Me.PnlView)
         Me.Controls.Add(Me.PnlNav)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Fondos Públicos"
@@ -183,6 +199,7 @@ Partial Class FrmMain
         CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnViewMain, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -196,4 +213,5 @@ Partial Class FrmMain
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnLogout As PictureBox
   Friend WithEvents BtnAyuda As Button
+    Friend WithEvents pbxLogo As PictureBox
 End Class

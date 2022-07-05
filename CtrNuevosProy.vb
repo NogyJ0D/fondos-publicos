@@ -151,9 +151,9 @@ Public Class CtrNuevosProy
     End Using
   End Sub
 
-    Private Sub BtnANP_Click(sender As Object, e As EventArgs) Handles BtnANP.Click
-        If UserInfo.UserRol >= 2 Then
-            CambiarVista("ViewCargarProy")
-        End If
-    End Sub
+  Private Sub BtnANP_Click(sender As Object, e As EventArgs) Handles BtnANP.Click
+    If UserInfo.UserRol >= 2 Then
+      CambiarVista("ViewCargarProy")
+    End If
+  End Sub
 End Class

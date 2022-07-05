@@ -22,8 +22,10 @@ Partial Class CtrNuevosProy
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PnlProyecto = New System.Windows.Forms.Panel()
-        Me.BtnVotarC = New System.Windows.Forms.Button()
         Me.BtnVotarF = New System.Windows.Forms.Button()
         Me.BtnViewForo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -32,9 +34,7 @@ Partial Class CtrNuevosProy
         Me.LblProyId = New System.Windows.Forms.Label()
         Me.LblVotosC = New System.Windows.Forms.Label()
         Me.LblVotosF = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BtnVotarC = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DgvP = New System.Windows.Forms.DataGridView()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,7 +55,6 @@ Partial Class CtrNuevosProy
         'PnlProyecto
         '
         Me.PnlProyecto.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.PnlProyecto.Controls.Add(Me.BtnVotarC)
         Me.PnlProyecto.Controls.Add(Me.BtnVotarF)
         Me.PnlProyecto.Controls.Add(Me.BtnViewForo)
         Me.PnlProyecto.Controls.Add(Me.Panel1)
@@ -63,37 +62,21 @@ Partial Class CtrNuevosProy
         Me.PnlProyecto.Controls.Add(Me.LblProyId)
         Me.PnlProyecto.Controls.Add(Me.LblVotosC)
         Me.PnlProyecto.Controls.Add(Me.LblVotosF)
-        Me.PnlProyecto.Controls.Add(Me.Button1)
-        Me.PnlProyecto.Controls.Add(Me.Button2)
+        Me.PnlProyecto.Controls.Add(Me.BtnVotarC)
         Me.PnlProyecto.Location = New System.Drawing.Point(215, 34)
         Me.PnlProyecto.Name = "PnlProyecto"
         Me.PnlProyecto.Size = New System.Drawing.Size(529, 354)
         Me.PnlProyecto.TabIndex = 0
         Me.PnlProyecto.Visible = False
         '
-        'BtnVotarC
-        '
-        Me.BtnVotarC.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.BtnVotarC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.BtnVotarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnVotarC.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.BtnVotarC.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.BtnVotarC.Location = New System.Drawing.Point(301, 272)
-        Me.BtnVotarC.Name = "BtnVotarC"
-        Me.BtnVotarC.Size = New System.Drawing.Size(93, 28)
-        Me.BtnVotarC.TabIndex = 1
-        Me.BtnVotarC.Text = "En contra"
-        Me.BtnVotarC.UseVisualStyleBackColor = False
-        Me.BtnVotarC.Visible = False
-        '
         'BtnVotarF
         '
         Me.BtnVotarF.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.BtnVotarF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.BtnVotarF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.BtnVotarF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnVotarF.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BtnVotarF.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.BtnVotarF.Location = New System.Drawing.Point(51, 273)
+        Me.BtnVotarF.Location = New System.Drawing.Point(40, 272)
         Me.BtnVotarF.Name = "BtnVotarF"
         Me.BtnVotarF.Size = New System.Drawing.Size(93, 28)
         Me.BtnVotarF.TabIndex = 0
@@ -107,9 +90,9 @@ Partial Class CtrNuevosProy
         Me.BtnViewForo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnViewForo.Font = New System.Drawing.Font("Yu Gothic UI", 7.75!, System.Drawing.FontStyle.Bold)
         Me.BtnViewForo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.BtnViewForo.Location = New System.Drawing.Point(432, 272)
+        Me.BtnViewForo.Location = New System.Drawing.Point(440, 272)
         Me.BtnViewForo.Name = "BtnViewForo"
-        Me.BtnViewForo.Size = New System.Drawing.Size(75, 23)
+        Me.BtnViewForo.Size = New System.Drawing.Size(80, 28)
         Me.BtnViewForo.TabIndex = 10
         Me.BtnViewForo.Text = "Ir al foro"
         Me.BtnViewForo.UseVisualStyleBackColor = True
@@ -127,6 +110,7 @@ Partial Class CtrNuevosProy
         '
         Me.TxbPDesc.BackColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.TxbPDesc.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxbPDesc.Font = New System.Drawing.Font("Yu Gothic UI", 9.0!)
         Me.TxbPDesc.ForeColor = System.Drawing.Color.White
         Me.TxbPDesc.Location = New System.Drawing.Point(1, 1)
         Me.TxbPDesc.Name = "TxbPDesc"
@@ -161,7 +145,7 @@ Partial Class CtrNuevosProy
         Me.LblVotosC.AutoSize = True
         Me.LblVotosC.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
         Me.LblVotosC.ForeColor = System.Drawing.Color.White
-        Me.LblVotosC.Location = New System.Drawing.Point(280, 317)
+        Me.LblVotosC.Location = New System.Drawing.Point(256, 317)
         Me.LblVotosC.Name = "LblVotosC"
         Me.LblVotosC.Size = New System.Drawing.Size(135, 23)
         Me.LblVotosC.TabIndex = 6
@@ -178,41 +162,20 @@ Partial Class CtrNuevosProy
         Me.LblVotosF.TabIndex = 5
         Me.LblVotosF.Text = "Votos a favor:"
         '
-        'Button1
+        'BtnVotarC
         '
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(50, 272)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 30)
-        Me.Button1.TabIndex = 13
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(300, 271)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(95, 30)
-        Me.Button2.TabIndex = 14
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.Button3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.Button3.Location = New System.Drawing.Point(668, 2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(77, 25)
-        Me.Button3.TabIndex = 15
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnVotarC.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.BtnVotarC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.BtnVotarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnVotarC.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BtnVotarC.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.BtnVotarC.Location = New System.Drawing.Point(296, 272)
+        Me.BtnVotarC.Name = "BtnVotarC"
+        Me.BtnVotarC.Size = New System.Drawing.Size(93, 28)
+        Me.BtnVotarC.TabIndex = 1
+        Me.BtnVotarC.Text = "En contra"
+        Me.BtnVotarC.UseVisualStyleBackColor = False
+        Me.BtnVotarC.Visible = False
         '
         'Panel2
         '
@@ -229,12 +192,43 @@ Partial Class CtrNuevosProy
         Me.DgvP.AllowUserToAddRows = False
         Me.DgvP.AllowUserToDeleteRows = False
         Me.DgvP.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.DgvP.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgvP.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.DgvP.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvP.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Precio, Me.Id, Me.Fecha, Me.Descripción})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(27, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvP.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvP.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DgvP.GridColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DgvP.Location = New System.Drawing.Point(0, 40)
         Me.DgvP.Name = "DgvP"
+        Me.DgvP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvP.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DgvP.RowHeadersVisible = False
+        Me.DgvP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvP.ShowEditingIcon = False
         Me.DgvP.Size = New System.Drawing.Size(180, 314)
         Me.DgvP.TabIndex = 9
         '
@@ -253,7 +247,7 @@ Partial Class CtrNuevosProy
         Me.Precio.HeaderText = "Monto"
         Me.Precio.Name = "Precio"
         Me.Precio.ReadOnly = True
-        Me.Precio.Width = 62
+        Me.Precio.Width = 74
         '
         'Id
         '
@@ -295,11 +289,11 @@ Partial Class CtrNuevosProy
         '
         Me.BtnANP.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.BtnANP.Enabled = False
-        Me.BtnANP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.BtnANP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.BtnANP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnANP.Font = New System.Drawing.Font("Yu Gothic UI", 7.75!, System.Drawing.FontStyle.Bold)
         Me.BtnANP.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.BtnANP.Location = New System.Drawing.Point(669, 3)
+        Me.BtnANP.Location = New System.Drawing.Point(672, 3)
         Me.BtnANP.Name = "BtnANP"
         Me.BtnANP.Size = New System.Drawing.Size(75, 23)
         Me.BtnANP.TabIndex = 2
@@ -332,7 +326,6 @@ Partial Class CtrNuevosProy
         Me.Controls.Add(Me.BtnANP)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PnlProyecto)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
         Me.Name = "CtrNuevosProy"

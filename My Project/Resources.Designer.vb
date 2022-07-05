@@ -65,6 +65,36 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend Shared ReadOnly Property logoCONCOR() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logoCONCOR", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        '''</summary>
+        Friend Shared ReadOnly Property logoCONCORico() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logoCONCORico", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        '''</summary>
+        Friend Shared ReadOnly Property logoConcorICO_USAR_ESTE() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logoConcorICO_USAR_ESTE", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca un recurso adaptado de tipo System.Byte[].
         '''</summary>
         Friend Shared ReadOnly Property Mom_font() As Byte()
