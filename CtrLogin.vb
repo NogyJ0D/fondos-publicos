@@ -113,6 +113,6 @@ Public Class CtrLogin
   End Sub
 
   Private Sub BtnSkipCaptcha_Click(sender As Object, e As EventArgs) Handles BtnSkipCaptcha.Click
-    InpCaptcha.Text = Captcha
+    'InpCaptcha.Text = Captcha
   End Sub
 End Class

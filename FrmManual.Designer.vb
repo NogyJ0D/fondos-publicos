@@ -22,32 +22,37 @@ Partial Class FrmManual
   'No lo modifique con el editor de código.
   <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
-    Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmManual))
-    'Me.ViewManual = New AxAcroPDFLib.AxAcroPDF()
-    'CType(Me.ViewManual, System.ComponentModel.ISupportInitialize).BeginInit()
-    Me.SuspendLayout()
-    '
-    'ViewManual
-    '
-    'Me.ViewManual.Dock = System.Windows.Forms.DockStyle.Fill
-    'Me.ViewManual.Enabled = True
-    'Me.ViewManual.Location = New System.Drawing.Point(0, 0)
-    'Me.ViewManual.Name = "ViewManual"
-    'Me.ViewManual.OcxState = CType(resources.GetObject("ViewManual.OcxState"), System.Windows.Forms.AxHost.State)
-    'Me.ViewManual.Size = New System.Drawing.Size(800, 450)
-    'Me.ViewManual.TabIndex = 0
-    '
-    'FrmManual
-    '
-    Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-    Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-    Me.ClientSize = New System.Drawing.Size(800, 450)
-    'Me.Controls.Add(Me.ViewManual)
-    Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
-    Me.Name = "FrmManual"
-    Me.Text = "CONCOR - Manual de Usuario"
-    'CType(Me.ViewManual, System.ComponentModel.ISupportInitialize).EndInit()
-    Me.ResumeLayout(False)
+        Me.ViewManual = New Spire.PdfViewer.Forms.PdfViewer()
+        Me.SuspendLayout()
+        '
+        'ViewManual
+        '
+        Me.ViewManual.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ViewManual.FindTextHighLightColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(218, Byte), Integer))
+        Me.ViewManual.IgnoreCase = False
+        Me.ViewManual.IsToolBarVisible = True
+        Me.ViewManual.Location = New System.Drawing.Point(0, 0)
+        Me.ViewManual.MultiPagesThreshold = 60
+        Me.ViewManual.Name = "ViewManual"
+        Me.ViewManual.Size = New System.Drawing.Size(800, 450)
+        Me.ViewManual.TabIndex = 0
+        Me.ViewManual.Text = "PdfViewer1"
+        Me.ViewManual.Threshold = 60
+        Me.ViewManual.ViewerBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+        '
+        'FrmManual
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ViewManual)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Name = "FrmManual"
+        Me.Text = "CONCOR - Manual de Usuario"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.ResumeLayout(False)
 
-  End Sub
+    End Sub
+
+    Friend WithEvents ViewManual As Spire.PdfViewer.Forms.PdfViewer
 End Class

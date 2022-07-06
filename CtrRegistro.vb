@@ -22,7 +22,7 @@ Public Class CtrRegistro
     BtnCaptcha.Image = My.Resources.Resources.recargar
   End Sub
 
-  Private Async Sub BtnRegistro_Click(sender As Object, e As EventArgs) Handles BtnRegistro.Click
+  Private Sub BtnRegistro_Click(sender As Object, e As EventArgs) Handles BtnRegistro.Click
     Dim Err As Boolean = False
 
     If InpCuil.Text = "" Or InpCuil.Text = "CUIL" Then
@@ -85,7 +85,7 @@ Public Class CtrRegistro
           BtnRegistro.Enabled = False
           LblExito.ForeColor = Color.White
           LblExito.Text = "Registro exitoso, valide su email para ingresar."
-          Await EnviarEmail(InpEmail.Text)
+          'EnviarEmail(InpEmail.Text)
           LblExito.Show()
         End If
       End If

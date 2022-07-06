@@ -26,8 +26,6 @@ Partial Class FrmMain
         Me.PnlNav = New System.Windows.Forms.Panel()
         Me.BtnAyuda = New System.Windows.Forms.Button()
         Me.BtnLogout = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.CmbTema = New System.Windows.Forms.ComboBox()
         Me.BtnNMinim = New System.Windows.Forms.Button()
         Me.BtnNCerrar = New System.Windows.Forms.Button()
         Me.BtnViewLogin = New System.Windows.Forms.PictureBox()
@@ -46,8 +44,6 @@ Partial Class FrmMain
         Me.PnlNav.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.PnlNav.Controls.Add(Me.BtnAyuda)
         Me.PnlNav.Controls.Add(Me.BtnLogout)
-        Me.PnlNav.Controls.Add(Me.Label1)
-        Me.PnlNav.Controls.Add(Me.CmbTema)
         Me.PnlNav.Controls.Add(Me.BtnNMinim)
         Me.PnlNav.Controls.Add(Me.BtnNCerrar)
         Me.PnlNav.Controls.Add(Me.BtnViewLogin)
@@ -61,12 +57,18 @@ Partial Class FrmMain
         '
         'BtnAyuda
         '
-        Me.BtnAyuda.Location = New System.Drawing.Point(489, 9)
+        Me.BtnAyuda.BackColor = System.Drawing.Color.SteelBlue
+        Me.BtnAyuda.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtnAyuda.FlatAppearance.BorderSize = 0
+        Me.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAyuda.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnAyuda.ForeColor = System.Drawing.Color.White
+        Me.BtnAyuda.Location = New System.Drawing.Point(721, 0)
         Me.BtnAyuda.Name = "BtnAyuda"
-        Me.BtnAyuda.Size = New System.Drawing.Size(75, 23)
+        Me.BtnAyuda.Size = New System.Drawing.Size(42, 42)
         Me.BtnAyuda.TabIndex = 9
-        Me.BtnAyuda.Text = "Ayuda"
-        Me.BtnAyuda.UseVisualStyleBackColor = True
+        Me.BtnAyuda.Text = "?"
+        Me.BtnAyuda.UseVisualStyleBackColor = False
         '
         'BtnLogout
         '
@@ -82,26 +84,6 @@ Partial Class FrmMain
         Me.BtnLogout.TabIndex = 8
         Me.BtnLogout.TabStop = False
         Me.BtnLogout.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(584, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Tema:"
-        '
-        'CmbTema
-        '
-        Me.CmbTema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbTema.FormattingEnabled = True
-        Me.CmbTema.Items.AddRange(New Object() {"Oscuro", "Claro"})
-        Me.CmbTema.Location = New System.Drawing.Point(629, 11)
-        Me.CmbTema.Name = "CmbTema"
-        Me.CmbTema.Size = New System.Drawing.Size(104, 21)
-        Me.CmbTema.TabIndex = 6
         '
         'BtnNMinim
         '
@@ -195,7 +177,6 @@ Partial Class FrmMain
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Fondos Públicos"
         Me.PnlNav.ResumeLayout(False)
-        Me.PnlNav.PerformLayout()
         CType(Me.BtnLogout, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnViewLogin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnViewMain, System.ComponentModel.ISupportInitialize).EndInit()
@@ -209,9 +190,7 @@ Partial Class FrmMain
     Friend WithEvents BtnViewMain As PictureBox
     Friend WithEvents BtnNMinim As Button
     Friend WithEvents BtnNCerrar As Button
-    Friend WithEvents CmbTema As ComboBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents BtnLogout As PictureBox
-  Friend WithEvents BtnAyuda As Button
+    Friend WithEvents BtnAyuda As Button
     Friend WithEvents pbxLogo As PictureBox
 End Class

@@ -27,7 +27,6 @@ Partial Class CtrNuevosProy
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PnlProyecto = New System.Windows.Forms.Panel()
         Me.BtnVotarF = New System.Windows.Forms.Button()
-        Me.BtnViewForo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TxbPDesc = New System.Windows.Forms.RichTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -46,6 +45,7 @@ Partial Class CtrNuevosProy
         Me.BtnANP = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.BtnViewForo = New System.Windows.Forms.Button()
         Me.PnlProyecto.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -55,8 +55,8 @@ Partial Class CtrNuevosProy
         'PnlProyecto
         '
         Me.PnlProyecto.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.PnlProyecto.Controls.Add(Me.BtnVotarF)
         Me.PnlProyecto.Controls.Add(Me.BtnViewForo)
+        Me.PnlProyecto.Controls.Add(Me.BtnVotarF)
         Me.PnlProyecto.Controls.Add(Me.Panel1)
         Me.PnlProyecto.Controls.Add(Me.Label5)
         Me.PnlProyecto.Controls.Add(Me.LblProyId)
@@ -76,26 +76,13 @@ Partial Class CtrNuevosProy
         Me.BtnVotarF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnVotarF.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BtnVotarF.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.BtnVotarF.Location = New System.Drawing.Point(40, 272)
+        Me.BtnVotarF.Location = New System.Drawing.Point(32, 261)
         Me.BtnVotarF.Name = "BtnVotarF"
         Me.BtnVotarF.Size = New System.Drawing.Size(93, 28)
         Me.BtnVotarF.TabIndex = 0
         Me.BtnVotarF.Text = "A favor"
         Me.BtnVotarF.UseVisualStyleBackColor = False
         Me.BtnVotarF.Visible = False
-        '
-        'BtnViewForo
-        '
-        Me.BtnViewForo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.BtnViewForo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnViewForo.Font = New System.Drawing.Font("Yu Gothic UI", 7.75!, System.Drawing.FontStyle.Bold)
-        Me.BtnViewForo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.BtnViewForo.Location = New System.Drawing.Point(440, 272)
-        Me.BtnViewForo.Name = "BtnViewForo"
-        Me.BtnViewForo.Size = New System.Drawing.Size(80, 28)
-        Me.BtnViewForo.TabIndex = 10
-        Me.BtnViewForo.Text = "Ir al foro"
-        Me.BtnViewForo.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -145,7 +132,7 @@ Partial Class CtrNuevosProy
         Me.LblVotosC.AutoSize = True
         Me.LblVotosC.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
         Me.LblVotosC.ForeColor = System.Drawing.Color.White
-        Me.LblVotosC.Location = New System.Drawing.Point(256, 317)
+        Me.LblVotosC.Location = New System.Drawing.Point(128, 296)
         Me.LblVotosC.Name = "LblVotosC"
         Me.LblVotosC.Size = New System.Drawing.Size(135, 23)
         Me.LblVotosC.TabIndex = 6
@@ -156,7 +143,7 @@ Partial Class CtrNuevosProy
         Me.LblVotosF.AutoSize = True
         Me.LblVotosF.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
         Me.LblVotosF.ForeColor = System.Drawing.Color.White
-        Me.LblVotosF.Location = New System.Drawing.Point(27, 317)
+        Me.LblVotosF.Location = New System.Drawing.Point(128, 264)
         Me.LblVotosF.Name = "LblVotosF"
         Me.LblVotosF.Size = New System.Drawing.Size(116, 23)
         Me.LblVotosF.TabIndex = 5
@@ -169,7 +156,7 @@ Partial Class CtrNuevosProy
         Me.BtnVotarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnVotarC.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BtnVotarC.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.BtnVotarC.Location = New System.Drawing.Point(296, 272)
+        Me.BtnVotarC.Location = New System.Drawing.Point(32, 293)
         Me.BtnVotarC.Name = "BtnVotarC"
         Me.BtnVotarC.Size = New System.Drawing.Size(93, 28)
         Me.BtnVotarC.TabIndex = 1
@@ -317,6 +304,20 @@ Partial Class CtrNuevosProy
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(531, 356)
         Me.Panel4.TabIndex = 15
+        Me.Panel4.Visible = False
+        '
+        'BtnViewForo
+        '
+        Me.BtnViewForo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.BtnViewForo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnViewForo.Font = New System.Drawing.Font("Yu Gothic UI", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.BtnViewForo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.BtnViewForo.Location = New System.Drawing.Point(384, 304)
+        Me.BtnViewForo.Name = "BtnViewForo"
+        Me.BtnViewForo.Size = New System.Drawing.Size(131, 35)
+        Me.BtnViewForo.TabIndex = 13
+        Me.BtnViewForo.Text = "Opiniones"
+        Me.BtnViewForo.UseVisualStyleBackColor = True
         '
         'CtrNuevosProy
         '
@@ -358,10 +359,10 @@ Partial Class CtrNuevosProy
     Friend WithEvents BtnANP As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents BtnViewForo As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents BtnViewForo As Button
 End Class

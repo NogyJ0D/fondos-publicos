@@ -55,19 +55,23 @@ Public Class CtrNuevosProy
     End Using
   End Sub
   Private Sub DgvP_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvP.CellClick
-    PnlProyecto.Show()
-    LblProyId.Text = DgvP.Rows(e.RowIndex).Cells.Item(0).Value
-    TxbPDesc.Text = DgvP.Rows(e.RowIndex).Cells.Item(2).Value
-    ContarVotos(0)
-    ContarVotos(1)
-    BuscarVoto()
-    If UserLogged Then
-      BtnVotarC.Show()
-      BtnVotarF.Show()
-    Else
-      BtnVotarC.Hide()
-      BtnVotarF.Hide()
-    End If
+    Try
+      Panel4.Show()
+      PnlProyecto.Show()
+      LblProyId.Text = DgvP.Rows(e.RowIndex).Cells.Item(0).Value
+      TxbPDesc.Text = DgvP.Rows(e.RowIndex).Cells.Item(2).Value
+      ContarVotos(0)
+      ContarVotos(1)
+      BuscarVoto()
+      If UserLogged Then
+        BtnVotarC.Show()
+        BtnVotarF.Show()
+      Else
+        BtnVotarC.Hide()
+        BtnVotarF.Hide()
+      End If
+    Catch ex As Exception
+    End Try
   End Sub
   Private Sub ContarVotos(tipoVoto As Integer)
     Using conn = New SqlClient.SqlConnection(sqlConn)

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "fondos-publicos", "fondos-publicos.vbproj", "{02F8FF51-5475-4598-A542-D924B72FEFD8}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "v1_0", "..\v1_0\v1_0.vdproj", "{04EA20A6-16FF-4B09-922A-D0AF6B712BA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{02F8FF51-5475-4598-A542-D924B72FEFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02F8FF51-5475-4598-A542-D924B72FEFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02F8FF51-5475-4598-A542-D924B72FEFD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04EA20A6-16FF-4B09-922A-D0AF6B712BA1}.Debug|Any CPU.ActiveCfg = Debug
+		{04EA20A6-16FF-4B09-922A-D0AF6B712BA1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

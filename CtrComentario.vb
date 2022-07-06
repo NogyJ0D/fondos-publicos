@@ -113,21 +113,21 @@ Public Class CtrComentario
           While dr.Read()
             If Not dr.IsDBNull(0) AndAlso Not dr.IsDBNull(1) Then
               MeGustas = dr.Item(0)
-              BtnFav.Text = $"A favor: {MeGustas}"
+              BtnFav.Text = $"Me gusta: {MeGustas}"
               NoMeGustas = dr.Item(1) Or 0
-              BtnCon.Text = $"En contra: {NoMeGustas}"
+              BtnCon.Text = $"No me gusta: {NoMeGustas}"
             Else
               MeGustas = 0
-              BtnFav.Text = "A favor: 0"
+              BtnFav.Text = "Me gusta: 0"
               NoMeGustas = 0
-              BtnCon.Text = "En contra: 0"
+              BtnCon.Text = "No me gusta: 0"
             End If
           End While
         Else
           MeGustas = 0
-          BtnFav.Text = "A favor: 0"
+          BtnFav.Text = "Me gusta: 0"
           NoMeGustas = 0
-          BtnCon.Text = "En contra: 0"
+          BtnCon.Text = "No me gusta: 0"
         End If
       Catch ex As Exception
         MsgBox(ex.ToString)
