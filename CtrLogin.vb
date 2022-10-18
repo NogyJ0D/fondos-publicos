@@ -66,7 +66,7 @@ Public Class CtrLogin
           Throw New Exception()
         End If
 
-        UserInfo.Login(dt.Rows(0).Item(0), dt.Rows(0).Item(1), dt.Rows(0).Item(2), dt.Rows(0).Item(3), dt.Rows(0).Item(5), dt.Rows(0).Item(6), dt.Rows(0).Item(7), dt.Rows(0).Item(8), dt.Rows(0).Item(9))
+        UserInfo.Login(dt.Rows(0).Item(0), dt.Rows(0).Item(1), dt.Rows(0).Item(2), dt.Rows(0).Item(3), dt.Rows(0).Item(5), dt.Rows(0).Item(6), dt.Rows(0).Item(7), dt.Rows(0).Item(8), dt.Rows(0).Item(10))
 
         CambiarVista("Main")
       Catch ex As Exception
@@ -113,6 +113,6 @@ Public Class CtrLogin
   End Sub
 
   Private Sub BtnSkipCaptcha_Click(sender As Object, e As EventArgs) Handles BtnSkipCaptcha.Click
-    'InpCaptcha.Text = Captcha
+    InpCaptcha.Text = Captcha
   End Sub
 End Class

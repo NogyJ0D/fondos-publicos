@@ -21,6 +21,11 @@
     Me.Correo = Correo
     Me.Rol = Rol
 
+    If Rol > 0 Then
+      ViewNuevosProy.BtnANP.Visible = True
+      ViewNuevosProy.BtnANP.Enabled = True
+    End If
+
     UserLogged = True
 
     OpenedMain.BtnViewLogin.Hide()
@@ -29,10 +34,6 @@
     OpenedMain.BtnLogout.Show()
     OpenedMain.BtnLogout.Enabled = True
 
-    If Me.Rol >= 2 Then
-      ViewNuevosProy.BtnANP.Show()
-      ViewNuevosProy.BtnANP.Enabled = True
-    End If
   End Sub
   Public Sub Logout()
     Me.Id = Nothing

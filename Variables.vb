@@ -17,8 +17,8 @@
   Public UserLogged As Boolean = False
 
   ' Cadenas sql locales
-  Private sqlValentin = "Data Source=DESKTOP-7N22TGM\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
+  Private sqlValentin = "Data Source=DESKTOP-VFSMI3C\VGSERVER14;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=1234"
   Private sqlValentinIzo = "Data Source=LAB-L04\SQLEXPRESS;Initial Catalog=PPI;Integrated Security=false; user id=sa;password=<>"
   ' Cambiar la cadena según quien está usando localmente
-  Public sqlConn = sqlValentinIzo
+  Public sqlConn = sqlValentin
 End Module

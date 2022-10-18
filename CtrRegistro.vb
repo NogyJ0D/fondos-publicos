@@ -5,7 +5,7 @@ Public Class CtrRegistro
     PcbCaptcha.Image = MostrarCaptcha()
 
     AddHandler Me.MouseMove, AddressOf MoverVentana
-    CargarCP()
+    LlenarCmb("SELECT id_localidad AS ID, codigo_postal AS CP FROM localidades", InpCP)
   End Sub
   Private Sub BtnCaptcha_Click(sender As Object, e As EventArgs) Handles BtnCaptcha.Click
     BtnCaptcha.Size = New Size(46, 46)
@@ -85,7 +85,7 @@ Public Class CtrRegistro
           BtnRegistro.Enabled = False
           LblExito.ForeColor = Color.White
           LblExito.Text = "Registro exitoso, valide su email para ingresar."
-          'EnviarEmail(InpEmail.Text)
+          EnviarEmail(InpEmail.Text)
           LblExito.Show()
         End If
       End If
@@ -177,14 +177,14 @@ Public Class CtrRegistro
     End Using
   End Function
   Private Function Registrar()
+
     Using conn = New SqlClient.SqlConnection(sqlConn)
+
       Try
         Dim hashedPass = BCrypt.Net.BCrypt.HashPassword(InpContraseña.Text)
         conn.Open()
-        Dim sql As String = $"INSERT INTO usuarios
-            (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, id_localidad, correo_electronico)
-        VALUES
-            ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{CDate(InpFN.Value.ToShortDateString).ToString("yyyy/MM/dd")}', '{InpDireccion.Text}', {InpCP.SelectedValue.ToString}, '{InpEmail.Text}')"
+
+        Dim sql As String = $"INSERT INTO usuarios (nombre, apellido, cuit, contrasena, fecha_nacimiento, direccion, localidad, correo_electronico) VALUES ('{InpNombre.Text}', '{InpApellido.Text}', '{InpCuil.Text}', '{hashedPass}', '{CDate(InpFN.Value.ToShortDateString).ToString("yyyy/MM/dd")}', '{InpDireccion.Text}', {InpCP.SelectedValue}, '{InpEmail.Text}')"
 
         Dim cmd As SqlCommand = New SqlCommand(sql, conn)
         cmd.ExecuteNonQuery()
@@ -193,6 +193,7 @@ Public Class CtrRegistro
         da.SelectCommand = cmd
         conn.Close()
         Return True
+
       Catch ex As Exception
         conn.Close()
         MsgBox(ex.ToString)
@@ -200,28 +201,4 @@ Public Class CtrRegistro
       End Try
     End Using
   End Function
-  Private Sub CargarCP()
-    Using conn = New SqlClient.SqlConnection(sqlConn)
-      Try
-        conn.Open()
-        Dim sql As String = "SELECT id_localidad AS ID, codigo_postal AS CP FROM localidades"
-        Dim cmd As SqlCommand = New SqlCommand(sql, conn)
-        cmd.ExecuteNonQuery()
-
-        Dim ds As New DataSet()
-        Dim da As SqlDataAdapter = New SqlDataAdapter
-        da.SelectCommand = cmd
-        da.Fill(ds)
-
-        InpCP.DataSource = ds.Tables(0)
-        InpCP.DisplayMember = "CP"
-        InpCP.ValueMember = "ID"
-
-        conn.Close()
-      Catch ex As Exception
-        conn.Close()
-        MsgBox(ex.Message)
-      End Try
-    End Using
-  End Sub
 End Class
